@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:loop_wear/home_screen.dart';
+import 'package:loop_wear/welcome_screen.dart';
 import 'dart:async';
-import 'home_screen.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -25,15 +27,27 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFFCCB7AE),
+    return Scaffold(
+      backgroundColor: const Color(0xFFCCB7AE),
       body: Center(
-        child: Text(
-          'Loop wear',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/logoo.png',
+              height:120,
+            ),
+            const SizedBox(height: 0),
+            const Text(
+              'Loop wear',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+
+          ],
         ),
       ),
     );
