@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'splash_screen.dart';
 
-void main() {
+void main(){
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'loopwear.com',
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.cyan),
-      ),
-      home: const MyHomePage(),
+      home: SplashScreen(),
+
     );
   }
 }
