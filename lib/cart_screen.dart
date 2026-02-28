@@ -6,9 +6,10 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xFFCCB7AE),
-        title: const Text('My Cart'),
+        title: const Text('My Cart',style: TextStyle(fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
 
@@ -73,12 +74,12 @@ class CartScreen extends StatelessWidget {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFCCB7AE),
-                    padding: const EdgeInsets.symmetric(vertical: 50),
+                    padding: const EdgeInsets.symmetric(vertical: 7),
                   ),
                   onPressed: () {},
                   child: const Text(
-                    'Checkout',
-                    style: TextStyle(fontSize: 37),
+                    'Check out',
+                    style: TextStyle(fontSize: 25),
                   ),
                 ),
               ),

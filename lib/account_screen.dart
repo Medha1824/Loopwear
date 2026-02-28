@@ -12,8 +12,7 @@ class AccountScreen extends StatelessWidget {
         title: const Text(
           'My Account',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 26,
+            fontFamily: 'Philosopher',
             fontWeight: FontWeight.bold,
           ),
         ),

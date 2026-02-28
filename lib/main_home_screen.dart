@@ -33,7 +33,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
       appBar: AppBar(
         backgroundColor:Color(0xFFCCB7AE),
         leading: Icon(Icons.menu, color: Colors.white,size: 26,),
-        title:Text("LoopWear",style:TextStyle(color:Colors.white,fontSize:34,fontFamily: 'Anydore')),
+        title:Text("LoopWear",style:TextStyle(color:Colors.white,fontSize:35,fontFamily: 'Anydore')),
         centerTitle: true,
         actions: [IconButton(
                     icon:Icon(
@@ -43,22 +43,59 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
         },
         )],
       ),
-      body: Container(
+      body:SingleChildScrollView(child:Column(children: [
+        SizedBox(
+            height: 250,
+            child:ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                SizedBox(width: 6),
+                buildCard(),
+                SizedBox(width: 12),
+                buildCard(),
+                SizedBox(width: 12),
+                buildCard(),
+                SizedBox(width: 6),
+              ],
+            )
+        ),
+        SizedBox(height: 25),
+        Text("Categories",style:TextStyle(color:Color(0xFF7F665F),
+            fontFamily: 'Philosopher',fontSize: 23,fontWeight: FontWeight.bold)),
+        SizedBox(height: 10),
+        SizedBox(
+          height: 140,
+          child:ListView.builder(
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
+            itemCount: 6,
+              itemBuilder: (context, index){
+              List<String> categoryNames=["Men","Women","Kids","EcoWear","Summer Collection","Winter Collection"];
+            return Padding(
+              padding: const EdgeInsets.all(6.0),
+              child:Column( children:[
+                InkWell(
+                  onTap: (){
 
-        height: 250,
-        child:ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            SizedBox(width: 6),
-            buildCard(),
-            SizedBox(width: 12),
-            buildCard(),
-            SizedBox(width: 12),
-            buildCard(),
-            SizedBox(width: 6),
-          ],
-        )
-      )
+                  },
+                  child: const CircleAvatar(
+                    radius:45,
+                    backgroundImage: NetworkImage("https://www.mjunction.in/wp-content/uploads/2020/09/Dummy.jpg"),
+                  ),
+                ),
+                SizedBox(height: 6),
+                Text(
+                  categoryNames[index],style: TextStyle(fontSize: 16,fontFamily: 'Roboto',
+                    color:Color(0xFF7F665F)),),
+              ]),
+
+            );
+          })
+        ),
+        SizedBox(),
+      ],),)
+
+
     );
 
   }
