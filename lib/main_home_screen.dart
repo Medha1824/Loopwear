@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/search_screen.dart';
 
+import 'navigation_drawer_widget.dart';
+
 
 class MainHomeScreen extends StatefulWidget{
   const MainHomeScreen({super.key});
@@ -30,9 +32,10 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         backgroundColor:Color(0xFFCCB7AE),
-        leading: Icon(Icons.menu, color: Colors.white,size: 26,),
+        iconTheme: IconThemeData(color:Colors.white),
         title:Text("LoopWear",style:TextStyle(color:Colors.white,fontSize:35,fontFamily: 'Anydore')),
         centerTitle: true,
         actions: [IconButton(
@@ -43,6 +46,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
         },
         )],
       ),
+
       body:SingleChildScrollView(child:Column(children: [
         SizedBox(
             height: 250,
@@ -100,3 +104,4 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
 
   }
 }
+
