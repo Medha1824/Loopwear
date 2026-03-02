@@ -19,7 +19,6 @@ class OrderConfirmScreen extends StatelessWidget {
         centerTitle: true,
       ),
 
-      // এখানে body যোগ করা হলো
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
