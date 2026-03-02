@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/home_screen.dart';
-import 'package:loop_wear/welcome_screen.dart';
 import 'dart:async';
 
 
@@ -41,8 +40,10 @@ class _SplashScreenState extends State<SplashScreen> {
             const Text(
               'Loop wear',
               style: TextStyle(
-                fontSize: 24,
+                fontFamily:'Philosopher',
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
+                fontStyle:FontStyle.italic,
                 color: Colors.white,
               ),
             ),
