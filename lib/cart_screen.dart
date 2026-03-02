@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:loop_wear/checkout_screen.dart';
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
 
@@ -9,7 +9,7 @@ class CartScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xFFCCB7AE),
-        title: const Text('My Cart',style: TextStyle(fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
+        title: const Text('My Cart',style: TextStyle(color:Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
 
@@ -33,7 +33,7 @@ class CartScreen extends StatelessWidget {
               child: ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.brown[100],
-                  child: const Icon(Icons.shopping_bag),
+                  child: const Icon(color:Colors.brown,Icons.shopping_bag),
                 ),
                 title: const Text('Item Name'),
                 subtitle: const Text('Quantity: 1'),
@@ -45,7 +45,7 @@ class CartScreen extends StatelessWidget {
               child: ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.brown[100],
-                  child: const Icon(Icons.shopping_bag),
+                  child: const Icon(color:Colors.brown,Icons.shopping_bag),
                 ),
                 title: const Text('Item Name'),
                 subtitle: const Text('Quantity: 1'),
@@ -57,7 +57,7 @@ class CartScreen extends StatelessWidget {
               child: ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.brown[100],
-                  child: const Icon(Icons.shopping_bag),
+                  child: const Icon(color:Colors.brown,Icons.shopping_bag),
                 ),
                 title: const Text('Item Name'),
                 subtitle: const Text('Quantity: 1'),
@@ -76,10 +76,13 @@ class CartScreen extends StatelessWidget {
                     backgroundColor: const Color(0xFFCCB7AE),
                     padding: const EdgeInsets.symmetric(vertical: 7),
                   ),
-                  onPressed: () {},
+                  onPressed: () { Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CheckoutScreen()),
+                  );},
                   child: const Text(
                     'Check out',
-                    style: TextStyle(fontSize: 25),
+                    style: TextStyle(color:Colors.brown,fontSize: 25),
                   ),
                 ),
               ),

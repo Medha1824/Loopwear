@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:loop_wear/setting_screen.dart';
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
 
@@ -12,6 +12,7 @@ class AccountScreen extends StatelessWidget {
         title: const Text(
           'My Account',
           style: TextStyle(
+            color:Colors.white,
             fontFamily: 'Philosopher',
             fontWeight: FontWeight.bold,
           ),
@@ -57,11 +58,6 @@ class AccountScreen extends StatelessWidget {
 
             // Options
             ListTile(
-              leading: const Icon(Icons.account_circle, color: Colors.brown),
-              title: const Text('Edit Profile'),
-              onTap: () {},
-            ),
-            ListTile(
               leading: const Icon(Icons.shopping_bag_outlined, color: Colors.brown),
               title: const Text('My Orders'),
               onTap: () {},
@@ -69,7 +65,12 @@ class AccountScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.settings_outlined, color: Colors.brown),
               title: const Text('Settings'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SettingScreen()),
+                );
+              },
             ),
             ListTile(
               leading: const Icon(Icons.logout, color: Colors.redAccent),
