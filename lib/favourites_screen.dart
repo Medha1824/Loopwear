@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loop_wear/product_details.dart';
 
+import 'navigation_drawer_widget.dart';
+
 class FavouritesScreen extends StatelessWidget {
   const FavouritesScreen({super.key});
 
@@ -9,9 +11,10 @@ class FavouritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: const Text('Favourites', style: TextStyle(
-            fontFamily: 'Philosopher', fontWeight: FontWeight.bold),),
+            fontFamily: 'Philosopher', fontWeight: FontWeight.bold, color:Color(0xFF68514D))),
         backgroundColor: const Color(0xFFCCB7AE),
         centerTitle: true,
       ),

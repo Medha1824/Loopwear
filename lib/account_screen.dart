@@ -12,9 +12,9 @@ class AccountScreen extends StatelessWidget {
         title: const Text(
           'My Account',
           style: TextStyle(
-            color:Colors.white,
             fontFamily: 'Philosopher',
             fontWeight: FontWeight.bold,
+            color :Color(0xFF68514D),
           ),
         ),
         centerTitle: true,

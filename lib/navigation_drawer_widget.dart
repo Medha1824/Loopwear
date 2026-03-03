@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class NavigationDrawerWidget extends StatelessWidget{
   final padding =EdgeInsets.symmetric(horizontal: 20);
 
+  NavigationDrawerWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(

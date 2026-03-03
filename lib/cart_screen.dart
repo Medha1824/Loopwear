@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/checkout_screen.dart';
+
+import 'navigation_drawer_widget.dart';
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
 
@@ -7,9 +9,10 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         backgroundColor: const Color(0xFFCCB7AE),
-        title: const Text('My Cart',style: TextStyle(color:Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
+        title: const Text('My Cart',style: TextStyle(color: Color(0xFF68514D),fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
 
