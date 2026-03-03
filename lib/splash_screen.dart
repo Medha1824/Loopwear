@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loop_wear/home_screen.dart';
-import 'dart:async';
+import 'package:loop_wear/welcome_screen.dart';
+
 
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const MyHomePage()),
+        MaterialPageRoute(builder: (context) => const WelcomeScreen()),
       );
     });
   }
@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
               'assets/logoo.png',
               height:120,
             ),
-            const SizedBox(height: 0),
+            const SizedBox(height: 10),
             const Text(
               'Loop wear',
               style: TextStyle(
