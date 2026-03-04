@@ -26,9 +26,9 @@ class SignUpPage extends StatelessWidget {
         children: [
           Text(
             "Create Account",
-            style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color:Color(0xFF68514D)),
           ),
-          Text("Enter details to get started"),
+          Text("Enter details to get started",style:TextStyle(color:Color(0xFF68514D))),
         ],
     );
   }

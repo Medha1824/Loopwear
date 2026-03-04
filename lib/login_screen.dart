@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:loop_wear/home_screen.dart';
 import 'package:loop_wear/sign_up_screen.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
 
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -25,14 +32,16 @@ class LoginPage extends StatelessWidget {
         )
     );
   }
+
   _header(context){
     return Column(
       children: [
         Text("Enter your credential to login",
-          style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold)),
+          style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color:Color(0xFF68514D))),
       ],
     );
   }
+
   _inputField(context){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -78,10 +87,12 @@ class LoginPage extends StatelessWidget {
       ],
     );
   }
+
   _forgotPassword(context){
     return TextButton(onPressed: (){},
         child: Text("Forgot password?"));
   }
+
   _signup(context){
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
