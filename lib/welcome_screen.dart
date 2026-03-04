@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/home_screen.dart';
+import 'package:loop_wear/login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget{
   const WelcomeScreen({super.key});
@@ -7,7 +8,7 @@ class WelcomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFFCCB7AE),
+        backgroundColor: Colors.white,
         body:Center(
             child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -23,20 +24,20 @@ class WelcomeScreen extends StatelessWidget{
                     fontFamily:'Philosopher',
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: const Color(0xFFCCB7AE),
                   ),
                 ),
                   SizedBox(height: 20),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
-                      foregroundColor: Colors.brown,
+                      foregroundColor: const Color (0xFFCCB7AE),
                     ),
 
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const MyHomePage()),
+                        MaterialPageRoute(builder: (context) => LoginPage()),
                       );
                     },
                     child: const Text("Skip"),
