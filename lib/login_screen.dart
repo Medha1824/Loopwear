@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(18),
               borderSide: BorderSide.none),
             filled: true,
-            prefixIcon: Icon(Icons.person),
+            prefixIcon: Icon(Icons.email_outlined),
           ),
           ),
         SizedBox(height: 10),
@@ -61,7 +61,8 @@ class LoginPage extends StatelessWidget {
         ),
         SizedBox(height: 10),
         ElevatedButton(
-            onPressed: (){Navigator.push(
+            onPressed: (){
+              Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => MyHomePage()),
             );},
@@ -86,7 +87,8 @@ class LoginPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("Don't have an account?"),
-        TextButton(onPressed: (){Navigator.push(
+        TextButton(onPressed: (){
+          Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => SignUpPage()),
         );}, child: Text("Sign Up"))
