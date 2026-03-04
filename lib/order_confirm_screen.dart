@@ -1,24 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'home_screen.dart';
 class OrderConfirmScreen extends StatelessWidget {
   const OrderConfirmScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(seconds: 1), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const MyHomePage()),
+      );
+    });
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFCCB7AE),
-        title: const Text(
-          'Confirm Order',
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Philosopher',
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
-      ),
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

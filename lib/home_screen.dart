@@ -22,13 +22,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        backgroundColor:Color(0xFFCCB7AE),
-      ),*/
       body: IndexedStack(index: myIndex,children: widgetList,),
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          //backgroundColor:Color(0xFFCAB6AD),
           showUnselectedLabels: true,
           iconSize: 25,
           selectedItemColor: Color(0xFF806760),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/available_size.dart';
+import 'package:loop_wear/product.dart';
 
 class ProductDetails extends StatefulWidget{
-  final Map<String,dynamic> product;
-  const ProductDetails({super.key,required this.product});
+  final Product product;
+  const ProductDetails( {super.key, required this.product, });
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
@@ -31,7 +32,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 bottomLeft: Radius.circular(40),
                 bottomRight: Radius.circular(40),
               ),
-              child:Image.network('https://t4.ftcdn.net/jpg/06/83/67/09/360_F_683670903_y142G40Y2n7Zt22YIyVWUKS2etD8USw9.jpg',fit: BoxFit.cover),
+              child:Image.network(widget.product.image,fit: BoxFit.cover),
             ),
 
 
@@ -46,13 +47,13 @@ class _ProductDetailsState extends State<ProductDetails> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Product Name ",style:TextStyle(
+                    Text(widget.product.title,style:TextStyle(
                       fontSize: 23,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF7F665F),
                     ),),
-                    Text("Tk 1230",style:TextStyle(
+                    Text(widget.product.price,style:TextStyle(
                       fontSize: 23,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,
@@ -61,7 +62,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   ],
                 ),
                 SizedBox(height:14),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+                Text(widget.product.description
                     ,style:TextStyle(
                       fontSize: 14,
                     )

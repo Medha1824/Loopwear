@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:loop_wear/login_screen.dart';
 import 'package:loop_wear/setting_screen.dart';
+
+import 'navigation_drawer_widget.dart';
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
 
@@ -7,6 +10,7 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         backgroundColor: const Color(0xFFCCB7AE),
         title: const Text(
@@ -22,7 +26,7 @@ class AccountScreen extends StatelessWidget {
 
        //body: Padding(
         // padding:const EdgeInsets.all(30),
-      body: SingleChildScrollView(//widget for scrolling and for using column/row
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -75,7 +79,8 @@ class AccountScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.logout, color: Colors.redAccent),
               title: const Text('Logout'),
-              onTap: () {},
+              onTap: () {
+              },
             ),
           ],
         ),
