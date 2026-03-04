@@ -29,7 +29,8 @@ class LoginPage extends StatelessWidget {
     return Column(
       children: [
         Text("Enter your credential to login",
-          style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold)),
+          style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.brown),
+        ),
       ],
     );
   }
@@ -40,6 +41,9 @@ class LoginPage extends StatelessWidget {
         TextField(
           decoration: InputDecoration(
             hintText: "Email",
+            hintStyle: TextStyle(
+              color: Colors.brown,
+            ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(18),
               borderSide: BorderSide.none),
@@ -51,6 +55,9 @@ class LoginPage extends StatelessWidget {
         TextField(
           decoration: InputDecoration(
             hintText: "Password",
+            hintStyle: TextStyle(
+              color: Colors.brown,
+            ),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
@@ -68,7 +75,7 @@ class LoginPage extends StatelessWidget {
             );},
             child: Text(
               "Login",
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20,color: Colors.brown),
             ),
             style: ElevatedButton.styleFrom(
               shape: StadiumBorder(),
@@ -80,18 +87,22 @@ class LoginPage extends StatelessWidget {
   }
   _forgotPassword(context){
     return TextButton(onPressed: (){},
-        child: Text("Forgot password?"));
+        child: Text("Forgot password?",style: TextStyle(color: Colors.brown),
+        ),
+    );
   }
   _signup(context){
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Don't have an account?"),
+        Text("Don't have an account?",style: TextStyle(color: Colors.brown),),
         TextButton(onPressed: (){
           Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => SignUpPage()),
-        );}, child: Text("Sign Up"))
+        );}, child: Text("Sign Up",style: TextStyle(color: Colors.brown),
+            ),
+        ),
       ],
     );
   }

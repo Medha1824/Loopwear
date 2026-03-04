@@ -26,7 +26,7 @@ class SignUpPage extends StatelessWidget {
         children: [
           Text(
             "Create Account",
-            style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.brown),
           ),
           Text("Enter details to get started"),
         ],
@@ -39,6 +39,9 @@ class SignUpPage extends StatelessWidget {
           TextField(
             decoration: InputDecoration(
             hintText: "Email",
+              hintStyle: TextStyle(
+                color: Colors.brown,
+              ),
             filled: true,
             prefixIcon: Icon(Icons.email_outlined),
             border: OutlineInputBorder(
@@ -50,6 +53,9 @@ class SignUpPage extends StatelessWidget {
           TextField(
             decoration: InputDecoration(
               hintText: "Password",
+              hintStyle: TextStyle(
+                color: Colors.brown,
+              ),
               filled: true,
               prefixIcon: Icon(Icons.person),
               border: OutlineInputBorder(
@@ -61,7 +67,10 @@ class SignUpPage extends StatelessWidget {
           SizedBox(height: 10,),
           TextField(
             decoration: InputDecoration(
-              hintText: "Password",
+              hintText: "Confirm Password",
+              hintStyle: TextStyle(
+                color: Colors.brown,
+              ),
               filled: true,
               prefixIcon: Icon(Icons.person),
               border: OutlineInputBorder(
@@ -76,10 +85,10 @@ class SignUpPage extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) => MyHomePage()),
             );
-          }, child: Text(""
+          }, child: Text(
               "Sign Up",
-              style: TextStyle(fontSize: 20),
-              ),
+              style: TextStyle(fontSize: 20,color: Colors.brown),
+          ),
               style: ElevatedButton.styleFrom(
                 shape: StadiumBorder(),
                 padding: EdgeInsets.symmetric(vertical: 16),
@@ -92,15 +101,16 @@ class SignUpPage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Already have an account?"),
+        Text("Already have an account?",style: TextStyle(color: Colors.brown),),
         TextButton(onPressed: (){
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => LoginPage()),
-          );}, child: Text("Login"))
+          );}, child: Text(
+                "Login",
+                style: TextStyle(color: Colors.brown),),
+        ),
       ],
     );
   }
-
-
 }
