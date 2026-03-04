@@ -22,7 +22,7 @@ class AccountScreen extends StatelessWidget {
 
        //body: Padding(
         // padding:const EdgeInsets.all(30),
-      body: SingleChildScrollView(//widget for scrolling and for using column/row
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
