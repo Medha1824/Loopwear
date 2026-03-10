@@ -7,16 +7,11 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFCCB7AE),
-        title: const Text(
-          'Search',
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Philosopher',
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        backgroundColor: const Color(0xFF9F7F88),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: const Text('Search Bar',style: TextStyle(color: Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
       body: Padding(
@@ -32,8 +27,8 @@ class SearchScreen extends StatelessWidget {
 
                 decoration: const InputDecoration(
                   hintText: 'Search products...',
-                  hintStyle: TextStyle(color: Colors.grey),
-                  prefixIcon: Icon(Icons.search, color: Color(0xFF806760)),
+                  hintStyle: TextStyle(color:const Color(0xFF9F7F88)),
+                  prefixIcon: Icon(Icons.search, color:const Color(0xFF9F7F88)),
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.symmetric(vertical: 15),
                 ),

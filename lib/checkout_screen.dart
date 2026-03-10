@@ -6,16 +6,11 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFCCB7AE),
-        title: const Text(
-          'Checkout',
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Philosopher',
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        backgroundColor: const Color(0xFF9F7F88),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: const Text('My Cart',style: TextStyle(color: Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -23,20 +18,22 @@ class CheckoutScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Delivery Address
             const Text(
               'Delivery Address',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
               child: ListTile(
-                leading: const Icon(Icons.location_on),
-                title: const Text('Mirpur 2'),
-                subtitle: const Text('Rupnagar, Dhaka, Bangladesh'),
+                leading: const Icon(Icons.location_on,color: Color(0xFF9F7F88),),
+                title: const Text('Mirpur 2',style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
+                subtitle: const Text('Rupnagar, Dhaka, Bangladesh',style: TextStyle(color: Color(0xFF9F7F88),fontSize: 15,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
                 trailing: TextButton(
                   onPressed: () {},
-                  child: const Text('Change'),
+                  child: const Text('Change',style: TextStyle(color: Color(0xFF9F7F88),fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
                 ),
               ),
             ),
@@ -44,47 +41,56 @@ class CheckoutScreen extends StatelessWidget {
 
             const Text(
               'Payment Method',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
               child: ListTile(
-                leading: const Icon(Icons.payment),
-                title: const Text('Credit Card'),
+                leading: const Icon(Icons.payment,color: Color(0xFF9F7F88),),
+                title: const Text('Credit Card' ,style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
 
                 trailing: TextButton(
                   onPressed: () {},
-                  child: const Text( 'Select'),
+                  child: const Text( 'Select', style: TextStyle(color: Color(0xFF9F7F88), fontWeight: FontWeight.bold),),
                 ),
               ),
             ),
             Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
               child: ListTile(
                 leading: Image.asset(
                   'assets/images/bkash.png',
                   height: 30,
                   width: 30,
                 ),
-                title: const Text('Bkash Payment'),
+                title: const Text('Bkash Payment', style: TextStyle(color: Color(0xFF9F7F88), fontWeight: FontWeight.bold),),
 
                 trailing: TextButton(
                   onPressed: () {},
-                  child: const Text('Select'),
+                  child: const Text('Select', style: TextStyle(color: Color(0xFF9F7F88), fontWeight: FontWeight.bold),),
                 ),
               ),
             ),
             Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
               child: ListTile(
                 leading: Image.asset(
                   'assets/images/nagod.png',
                   height: 30,
                   width: 30,
                 ),
-                title: const Text('Nagod Payment'),
+                title: const Text('Nagod Payment', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
 
                 trailing: TextButton(
                   onPressed: () {},
-                  child: const Text('Select'),
+                  child: const Text('Select', style: TextStyle(color: Color(0xFF9F7F88),fontWeight: FontWeight.bold),),
                 ),
               ),
             ),
@@ -94,22 +100,26 @@ class CheckoutScreen extends StatelessWidget {
             // Cart Summary
             const Text(
               'Cart Summary',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
               child: Column(
                 children: [
                   ListTile(
-                    title: const Text('Item 1'),
-                    subtitle: const Text('Quantity: 2'),
-                    trailing: const Text('৳200'),
+                    title: const Text('Item 1', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
+                    subtitle: const Text('Quantity: 2', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
+                    trailing: const Text('৳200', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
                   ),
-                  const Divider(),
+                 // const Divider(),
+                  const SizedBox(height: 8),
                   ListTile(
-                    title: const Text('Item 2'),
-                    subtitle: const Text('Quantity: 1'),
-                    trailing: const Text('৳150'),
+                    title: const Text('Item 2', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
+                    subtitle: const Text('Quantity: 1', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
+                    trailing: const Text('৳150', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
                   ),
                 ],
               ),
@@ -118,25 +128,32 @@ class CheckoutScreen extends StatelessWidget {
 
             // Total Price
             Card(
-              color: Colors.grey[200],
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
               child: ListTile(
                 title: const Text(
                   'Total',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 trailing: const Text(
                   '৳350',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             const SizedBox(height: 24),
 
-            // Checkout Button
+
             SizedBox(
+
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  elevation: 5,
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -145,7 +162,7 @@ class CheckoutScreen extends StatelessWidget {
                 },
                 child: const Text(
                   'Place Order',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
             ),

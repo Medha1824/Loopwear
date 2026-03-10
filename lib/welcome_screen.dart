@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+//import 'package:loop_wear/home_screen.dart';
 import 'package:loop_wear/login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget{
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,49 +13,39 @@ class WelcomeScreen extends StatelessWidget{
             child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(child: _getlogo()),
-                const SizedBox(
-                  height: 20,
-                  width:20,
+                Image.asset(
+                  'assets/logoo.png',
+                  height: 120,
                 ),
-                _footer(context),
+                SizedBox(height: 10),
+                Text(
+                  'Welcome to Loop wear',
+                  style: const TextStyle(
+                    fontFamily:'Philosopher',
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFCCB7AE),
+                  ),
+                ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: const Color (0xFFCCB7AE),
+                    ),
+
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
+                    child: const Text("Skip"),
+
+                  ),
           ],
         )
       )
-    );
-  }
-  Widget _getlogo(){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children:[
-        Image.asset("assets/logoo.png",height:200,width:200),
-        const Text(
-          'Welcome to Loop wear',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.brown),
-        ),
-      ],
-    );
-  }
-  _footer(context){
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        ElevatedButton(
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );},
-            child: Text(
-              "Skip",
-              style: TextStyle(fontSize: 10,color: Colors.brown),
-            ),
-
-        )
-      ],
     );
   }
 }

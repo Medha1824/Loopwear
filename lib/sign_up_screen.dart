@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loop_wear/home_screen.dart';
+import 'package:loop_wear/navigation_bar.dart';
 import 'package:loop_wear/login_screen.dart';
 
 class SignUpPage extends StatelessWidget {

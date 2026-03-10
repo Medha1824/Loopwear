@@ -11,7 +11,7 @@ class ProductDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFCCB7AE),
         title: const Text(
-          'Product Details',
+          'Our Product Details',
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Philosopher',
@@ -21,13 +21,24 @@ class ProductDetailsScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          'Hey there',
-
-          style: const TextStyle(
-            fontSize: 20,
-            fontFamily: 'Philosopher',
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/dress.png',
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Product related to',
+              style: const TextStyle(
+                fontSize: 20,
+                fontFamily: 'Philosopher',
+              ),
+            ),
+          ],
         ),
       ),
     );

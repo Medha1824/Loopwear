@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'navigation_bar.dart';
 class OrderConfirmScreen extends StatelessWidget {
   const OrderConfirmScreen({super.key});
 
@@ -12,17 +12,19 @@ class OrderConfirmScreen extends StatelessWidget {
       );
     });
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Icon(Icons.check_circle_outline,
-                color: Colors.green, size: 100),
+                color:const Color(0xFF9F7F88) , size: 100),
             SizedBox(height: 20),
             Text(
               'Order Confirmed!',
               style: TextStyle(
                 fontSize: 24,
+                color:const Color(0xFF9F7F88),
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Philosopher',
               ),
@@ -32,7 +34,7 @@ class OrderConfirmScreen extends StatelessWidget {
               'Thank you for your purchase!',
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.grey,
+               color: const Color(0xFF9F7F88),
               ),
             ),
           ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/checkout_screen.dart';
-
 import 'navigation_drawer_widget.dart';
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -16,14 +15,14 @@ class CartScreen extends StatelessWidget {
         title: const Text('My Cart',style: TextStyle(color: Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
-
-      body: Padding(
+        body: SafeArea(
+      child:Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             CircleAvatar(
               radius: 60,
-              backgroundColor: Colors.grey[300],
+              backgroundColor: const Color(0xFFF0E4E7),
               child: Icon(
                 Icons.shopping_cart,
                 size: 60,
@@ -31,53 +30,109 @@ class CartScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            // Static Cart Items UI
-            Card(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.brown[100],
-                  child: const Icon(color:Colors.brown,Icons.shopping_bag),
-                ),
-                title: const Text('Item Name'),
-                subtitle: const Text('Quantity: 1'),
-                trailing: const Text('0'),
-              ),
-            ),
-            Card(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.brown[100],
-                  child: const Icon(color:Colors.brown,Icons.shopping_bag),
-                ),
-                title: const Text('Item Name'),
-                subtitle: const Text('Quantity: 1'),
-                trailing: const Text('0'),
-              ),
-            ),
-            Card(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.brown[100],
-                  child: const Icon(color:Colors.brown,Icons.shopping_bag),
-                ),
-                title: const Text('Item Name'),
-                subtitle: const Text('Quantity: 1'),
-                trailing: const Text('0'),
-              ),
-            ),
 
-            const Spacer(),
+           Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor:  const Color(0xFFF0E4E7),
+                  child: const Icon(color:const Color(0xFF9F7F88),Icons.shopping_bag),
+                ),
+                title: const Text(
+                  'Item Name',
+                  style: TextStyle(
+                    color: Color(0xFF9F7F88),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                subtitle: const Text(
+                  'Quantity: 1',
+                  style: TextStyle(
+                    color:Color(0xFF9F7F88),
+                  ),
+                ),
+                trailing: const Text(
+                  '0',
+                  style: TextStyle(
+                    color:Color(0xFF9F7F88),
 
-            // Checkout button (just UI)
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor:  const Color(0xFFF0E4E7),
+                  child: const Icon(color:const Color(0xFF9F7F88),Icons.shopping_bag),
+                ),
+                title: const Text(
+                  'Item Name',
+                  style: TextStyle(
+                    color: Color(0xFF9F7F88),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                subtitle: const Text(
+                  'Quantity: 1',
+                  style: TextStyle(
+                    color:Color(0xFF9F7F88),
+
+                  ),
+                ),
+                trailing: const Text(
+                  '0',
+                  style: TextStyle(
+                    color:Color(0xFF9F7F88),
+
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              color: Colors.white,
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              elevation: 5,
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor:  const Color(0xFFF0E4E7),
+                  child: const Icon(color:const Color(0xFF9F7F88),Icons.shopping_bag),
+                ),
+                title: const Text(
+                  'Item Name',
+                  style: TextStyle(
+                    color: Color(0xFF9F7F88),
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                subtitle: const Text(
+                    'Quantity: 1',
+                style: TextStyle(
+                    color:Color(0xFF9F7F88),
+
+                ),
+            ),
+                trailing: const Text(
+                    '0',
+                  style: TextStyle(
+                    color:Color(0xFF9F7F88),
+
+                ),
+              ),
+            ),
+            ),
+           const Spacer(),
             SizedBox(
               width: double.infinity,
 
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFCCB7AE),
+                    backgroundColor: const Color(0xff9f7f88),
                     padding: const EdgeInsets.symmetric(vertical: 7),
                   ),
                   onPressed: () { Navigator.push(
@@ -86,14 +141,14 @@ class CartScreen extends StatelessWidget {
                   );},
                   child: const Text(
                     'Check out',
-                    style: TextStyle(color:Colors.brown,fontSize: 25),
+                    style: TextStyle(color:Colors.white,fontSize: 25),
                   ),
                 ),
               ),
-
           ],
         ),
       ),
+        ),
     );
   }
 }

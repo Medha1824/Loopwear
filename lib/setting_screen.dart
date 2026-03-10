@@ -7,7 +7,10 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFCCB7AE),
+        backgroundColor: const Color(0xFF9F7F88),
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
         title: const Text(
           'Settings',
           style: TextStyle(
@@ -25,7 +28,7 @@ class SettingScreen extends StatelessWidget {
 
           CircleAvatar(
             radius: 60,
-            backgroundColor: Colors.grey[300],
+            backgroundColor: const Color(0xFFF0E4E7),
             child: Icon(
               Icons.person,
               size: 60,
@@ -35,57 +38,128 @@ class SettingScreen extends StatelessWidget {
             const SizedBox(height: 16),
             const Text(
               'Tartila Gofur',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 22,color: Color(0xFF9F7F88), fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 4),
             const Text(
               'tartila@example.com',
-              style: TextStyle(color: Colors.blueGrey, fontSize: 16),
+              style: TextStyle(color: Color(0xFF9F7F88), fontSize: 16),
             ),
             const SizedBox(height: 20),
-            const Divider(thickness: 2),
+            const Divider(thickness: 2,
+                color:Color(0xFF9F7F88),
+            ),
+            ListTile(
+              leading: const Icon(Icons.person,color: Color(0xFF9F7F88), ),
+              title: const Text(
+                  'Name',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              subtitle: const Text(
+                  'Tartila Gofur',
+                style: TextStyle(
+                 // fontSize: 13,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
 
-            // Name
-            ListTile(
-              leading: const Icon(Icons.person, color: Colors.brown),
-              title: const Text('Name'),
-              subtitle: const Text('Tartila Gofur'),
-              trailing: const Icon(Icons.edit),
+              ),
+              trailing: const Icon(Icons.edit,color: Color(0xFF9F7F88),),
               onTap: () {
               },
             ),
 
             ListTile(
-              leading: const Icon(Icons.email, color: Colors.brown),
-              title: const Text('Email'),
-              subtitle: const Text('tartila@example.com'),
-              trailing: const Icon(Icons.edit),
+              leading: const Icon(Icons.email,color: Color(0xFF9F7F88), ),
+              title: const Text(
+                  'Email',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              subtitle: const Text(
+                  'tartila@example.com',
+                style: TextStyle(
+                  // fontSize: 13,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              trailing: const Icon(Icons.edit,color: Color(0xFF9F7F88),),
               onTap: () {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.lock, color: Colors.brown),
-              title: const Text('Password'),
-              subtitle: const Text('********'),
-              trailing: const Icon(Icons.edit),
+              leading: const Icon(Icons.lock, color: Color(0xFF9F7F88),),
+              title: const Text(
+                  'Password',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              subtitle: const Text(
+                  '********',
+                style: TextStyle(
+                  // fontSize: 13,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              trailing: const Icon(Icons.edit,color: Color(0xFF9F7F88),),
               onTap: () {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.location_on, color: Colors.brown),
-              title: const Text('Address'),
-              subtitle: const Text('123, Dhaka, Bangladesh'),
-              trailing: const Icon(Icons.edit),
+              leading: const Icon(Icons.location_on, color: Color(0xFF9F7F88),),
+              title: const Text(
+                  'Address',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              subtitle: const Text(
+                  '123, Dhaka, Bangladesh',
+                style: TextStyle(
+                  // fontSize: 13,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              trailing: const Icon(Icons.edit,color: Color(0xFF9F7F88),),
               onTap: () {
               },
             ),
 
             // Language
             ListTile(
-              leading: const Icon(Icons.language, color: Colors.brown),
-              title: const Text('Language'),
-              subtitle: const Text('English'),
-              trailing: const Icon(Icons.arrow_forward_ios),
+              leading: const Icon(Icons.language,color: Color(0xFF9F7F88), ),
+              title: const Text(
+                  'Language',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              subtitle: const Text(
+                  'English',
+                style: TextStyle(
+                  // fontSize: 13,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              trailing: const Icon(Icons.arrow_forward_ios,color: Color(0xFF9F7F88),),
               onTap: () {
               },
             ),
@@ -93,8 +167,15 @@ class SettingScreen extends StatelessWidget {
             const SizedBox(height: 10),
 
             ListTile(
-              leading: const Icon(Icons.keyboard_return),
-              title: const Text('Return'),
+              leading: const Icon(Icons.keyboard_return,color: Color(0xFF9F7F88),),
+              title: const Text(
+                  'Return',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF9F7F88),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
               onTap: () {
               },
             ),
