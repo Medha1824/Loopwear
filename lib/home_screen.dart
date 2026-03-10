@@ -24,11 +24,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: IndexedStack(index: myIndex,children: widgetList,),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 15,
+        backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,
           showUnselectedLabels: true,
           iconSize: 25,
-          selectedItemColor: Color(0xFF806760),
-          unselectedItemColor: Color(0xFFCAB6AD),
+          selectedItemColor: Color(0xFF9F7F88),
+          unselectedItemColor: Color(0xFFE6DEE1),
           onTap: (index){
             setState(() {
               myIndex=index;

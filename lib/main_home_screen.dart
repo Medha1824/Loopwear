@@ -47,7 +47,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
       backgroundColor: Colors.white,
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        backgroundColor: Color(0xFFCCB7AE),
+        backgroundColor: Color(0xFF9F7F88),
         iconTheme: IconThemeData(color: Colors.white),
         title: Text(
           "LoopWear",
@@ -88,13 +88,21 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               ),
             ),
             SizedBox(height: 20),
-            Text(
-              "Categories",
-              style: TextStyle(
-                color: Color(0xFF7F665F),
-                fontFamily: 'Philosopher',
-                fontSize: 23,
-                fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: .start,
+                children: [
+                  Text(
+                    "Categories",
+                    style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontFamily: 'Philosopher',
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 10),
@@ -114,7 +122,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                     "Winter Collection",
                   ];
                   return Padding(
-                    padding: const EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
                         InkWell(
@@ -137,7 +145,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                           style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'Roboto',
-                            color: Color(0xFF7F665F),
+                            color:Color(0xFF9F7F88),
                           ),
                         ),
 
@@ -155,7 +163,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                   Text(
                     "Best Sellers",
                     style: TextStyle(
-                      color: Color(0xFF7F665F),
+                      color: Color(0xFF9F7F88),
                       fontFamily: 'Philosopher',
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
@@ -166,7 +174,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             ),
             SizedBox(height:10),
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(8.0),
               child:  GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),

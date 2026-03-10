@@ -11,8 +11,9 @@ class CartScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        backgroundColor: const Color(0xFFCCB7AE),
-        title: const Text('My Cart',style: TextStyle(color: Color(0xFF68514D),fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
+        backgroundColor: const Color(0xFF9F7F88),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: const Text('My Cart',style: TextStyle(color: Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
 

@@ -33,22 +33,28 @@ class BuildProducts extends StatelessWidget{
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text(
+      backgroundColor: Colors.white,
+      appBar: AppBar(backgroundColor: Colors.transparent,
+          iconTheme: IconThemeData(color: Color(0xFF9F7F88)),
+          title: Text(
           subsection!=null? "$categoryName - $subsection":categoryName, style: TextStyle(
-          fontFamily: 'Philosopher', fontWeight: FontWeight.bold, color:Color(0xFF68514D)))),
-      body:GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisExtent: 360,
-          crossAxisCount:2 ,
-          mainAxisSpacing: 15,
-          crossAxisSpacing: 15,
+          fontFamily: 'Philosopher', fontWeight: FontWeight.bold, color:Color(0xFF9F7F88)))),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisExtent: 360,
+            crossAxisCount:2 ,
+            mainAxisSpacing: 15,
+            crossAxisSpacing: 15,
+          ),
+          itemCount: products.length,
+          scrollDirection: Axis.vertical,
+          itemBuilder: (context,  index) {
+            final product=products[index];
+            return ProductCard(product: product);
+          },
         ),
-        itemCount: products.length,
-        scrollDirection: Axis.vertical,
-        itemBuilder: (context,  index) {
-          final product=products[index];
-          return ProductCard(product: product);
-        },
       ),
     );
   }

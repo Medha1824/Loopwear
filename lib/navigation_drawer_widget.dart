@@ -9,25 +9,25 @@ class NavigationDrawerWidget extends StatefulWidget{
 }
 
 class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
-
+  bool isExpanded=false;
   final padding =EdgeInsets.symmetric(horizontal: 20);
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child:Container(
-        color:Color(0xFFCCB7AE),
+        color:Color(0xFF9F7F88),
       child:SafeArea(
         child: ListView(
           children: [
             Padding(
               padding:EdgeInsets.all(16),
               child:Text("Categories",style:TextStyle(fontFamily: 'Philosopher',
-                  fontWeight:FontWeight.bold,fontSize:25,color: Color(0xFF806760)),),
+                  fontWeight:FontWeight.bold,fontSize:26,color: Colors.white),),
             ),
             ListTile(
-              title: Text("All Products"),
-              leading:Icon(Icons.shopping_bag_outlined),
+              title: Text("All Products",style:TextStyle(color: Colors.white70)),
+              leading:Icon(Icons.shopping_bag,color: Colors.white70,),
               onTap: (){
                 Navigator.push(
                     context,
@@ -36,12 +36,18 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               },
             ),
             ExpansionTile(
-              title: Text("Men"),
-            leading:Icon(Icons.man),
+              title: Text("Men",style:TextStyle(color: Colors.white70)),
+            leading:Icon(Icons.man,color: Colors.white70,),
             childrenPadding: EdgeInsets.only(left:60),
+            trailing: Icon(isExpanded?Icons.keyboard_arrow_up:Icons.keyboard_arrow_down,color: Colors.white70,),
+            onExpansionChanged: (expand){
+                setState(() {
+                  isExpanded=expand;
+                });
+            },
             children: [
               ListTile(
-                title:Text("Shirts"),
+                title:Text("Shirts",style:TextStyle(color: Colors.white70)),
                 onTap: (){
                   Navigator.push(
                       context,
@@ -50,7 +56,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                 },
               ),
               ListTile(
-                title:Text("Pants"),
+                title:Text("Pants",style:TextStyle(color: Colors.white70)),
                 onTap: (){
                   Navigator.push(
                       context,
@@ -59,7 +65,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                 },
               ),
               ListTile(
-                title:Text("T Shirts"),
+                title:Text("T Shirts",style:TextStyle(color: Colors.white70)),
                 onTap: (){
                   Navigator.push(
                       context,
@@ -68,7 +74,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                 },
               ),
               ListTile(
-                title:Text("Sweat Shirts"),
+                title:Text("Sweat Shirts",style:TextStyle(color: Colors.white70)),
                 onTap: (){
                   Navigator.push(
                       context,
@@ -79,12 +85,18 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
             ],
             ),
             ExpansionTile(
-              title: Text("Women"),
-              leading:Icon(Icons.woman),
+              title: Text("Women",style:TextStyle(color: Colors.white70)),
+              leading:Icon(Icons.woman,color: Colors.white70,),
               childrenPadding: EdgeInsets.only(left:60),
+              trailing: Icon(isExpanded?Icons.keyboard_arrow_up:Icons.keyboard_arrow_down,color: Colors.white70,),
+              onExpansionChanged: (expand){
+                setState(() {
+                  isExpanded=expand;
+                });
+              },
               children: [
                 ListTile(
-                  title:Text("Tops"),
+                  title:Text("Tops",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -93,7 +105,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Pants"),
+                  title:Text("Pants",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -102,7 +114,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Co-ord Set"),
+                  title:Text("Co-ord Set",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -111,7 +123,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Cardigan"),
+                  title:Text("Cardigan",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -122,12 +134,18 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               ],
             ),
             ExpansionTile(
-              title: Text("Kids"),
-              leading:Icon(Icons.child_friendly),
+              title: Text("Kids",style:TextStyle(color: Colors.white70)),
+              leading:Icon(Icons.child_friendly,color: Colors.white70,),
               childrenPadding: EdgeInsets.only(left:60),
+              trailing: Icon(isExpanded?Icons.keyboard_arrow_up:Icons.keyboard_arrow_down,color: Colors.white70,),
+              onExpansionChanged: (expand){
+                setState(() {
+                  isExpanded=expand;
+                });
+              },
               children: [
                 ListTile(
-                  title:Text("Co-ords"),
+                  title:Text("Co-ords",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -136,7 +154,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Jeans"),
+                  title:Text("Jeans",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -145,7 +163,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Play-wears"),
+                  title:Text("Play-wears",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -154,7 +172,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Jackets"),
+                  title:Text("Jackets",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -165,12 +183,18 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               ],
             ),
             ExpansionTile(
-              title: Text("Eco-wear"),
-              leading:Icon(Icons.recycling),
+              title: Text("Eco-wear",style:TextStyle(color: Colors.white70)),
+              leading:Icon(Icons.recycling,color: Colors.white70,),
               childrenPadding: EdgeInsets.only(left:60),
+              trailing: Icon(isExpanded?Icons.keyboard_arrow_up:Icons.keyboard_arrow_down,color: Colors.white70,),
+              onExpansionChanged: (expand){
+                setState(() {
+                  isExpanded=expand;
+                });
+              },
               children: [
                 ListTile(
-                  title:Text("Hats"),
+                  title:Text("Hats",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -179,7 +203,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Bags and Tote bags"),
+                  title:Text("Bags and Tote bags",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -188,7 +212,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Sandals And Shoes"),
+                  title:Text("Sandals And Shoes",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
@@ -197,7 +221,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Scarves"),
+                  title:Text("Scarves",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,

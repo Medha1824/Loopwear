@@ -13,8 +13,9 @@ class FavouritesScreen extends StatelessWidget {
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: const Text('Favourites', style: TextStyle(
-            fontFamily: 'Philosopher', fontWeight: FontWeight.bold, color:Color(0xFF68514D))),
-        backgroundColor: const Color(0xFFCCB7AE),
+            fontFamily: 'Philosopher', fontWeight: FontWeight.bold, color:Colors.white)),
+        backgroundColor: const Color(0xFF9F7F88),
+        iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
       body:

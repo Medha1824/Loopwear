@@ -22,14 +22,14 @@ class _AvailableSizeState extends State<AvailableSize> {
       width:40,
       height:30,
         decoration:BoxDecoration(
-          color:isSelected? Color(0xFFCCB7AE): Colors.transparent,
+          color:isSelected? Color(0xFF9F7F88): Colors.transparent,
             borderRadius: BorderRadius.circular(6),
-          border:Border.all(color:Color(0xFFCCB7AE)),
+          border:Border.all(color:Color(0xFF9F7F88)),
         ),
     child:Center(
       child: Text(widget.size,style:TextStyle(
         fontWeight: FontWeight.bold,
-        color: Color(0xFF65514C),
+        color: isSelected?Colors.white :Color(0xFF9F7F88),
         fontSize: 16,
       )),
     ),

@@ -12,13 +12,14 @@ class AccountScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        backgroundColor: const Color(0xFFCCB7AE),
+        backgroundColor: const Color(0xFF9F7F88),
+        iconTheme: IconThemeData(color: Colors.white),
         title: const Text(
           'My Account',
           style: TextStyle(
             fontFamily: 'Philosopher',
             fontWeight: FontWeight.bold,
-            color :Color(0xFF68514D),
+            color :Colors.white,
           ),
         ),
         centerTitle: true,

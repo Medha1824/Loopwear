@@ -35,44 +35,43 @@ class _ProductCardState extends State<ProductCard> {
                   fit:BoxFit.cover,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(widget.product.title,
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF7F665F),
-                      ),
+              SizedBox(height:5),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(widget.product.title,
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF9F7F88),
                     ),
-                    Text(widget.product.price ,
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF7F665F),
-                      ),
+                  ),
+                  Text(widget.product.price ,
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF9F7F88),
                     ),
+                  ),
 
-                    Row(
-                      children: [
-                        IconButton(onPressed: () {
-                          setState(() {
-                            isClicked = !isClicked;
-                          });
-                        },
-                          icon: isClicked? Icon(CupertinoIcons.heart_fill,color:Colors.red,):Icon(CupertinoIcons.heart,color:Color(0xFF7F665F),),
-                        ),
-                        IconButton(onPressed: () {  },
-                          icon: Icon(CupertinoIcons.cart,color:Color(0xFF7F665F)),
-                        )
-                      ],
-                    )
-                  ],
-                ),
+                  Row(
+                    mainAxisAlignment: .end,
+                    children: [
+                      IconButton(onPressed: () {
+                        setState(() {
+                          isClicked = !isClicked;
+                        });
+                      },
+                        icon: isClicked? Icon(CupertinoIcons.heart_fill,color:Colors.red,):Icon(CupertinoIcons.heart,color:Color(0xFF9F7F88),),
+                      ),
+                      IconButton(onPressed: () {  },
+                        icon: Icon(CupertinoIcons.cart,color:Color(0xFF9F7F88)),
+                      )
+                    ],
+                  )
+                ],
               )
             ]
         ),
