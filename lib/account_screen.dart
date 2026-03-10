@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loop_wear/login_screen.dart';
 import 'package:loop_wear/setting_screen.dart';
 
 import 'navigation_drawer_widget.dart';
