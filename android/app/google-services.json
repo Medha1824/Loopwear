@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657931468302",
+    "project_id": "loopwear-7be61",
+    "storage_bucket": "loopwear-7be61.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657931468302:android:1c449a8b3ce107f33ac65f",
+        "android_client_info": {
+          "package_name": "com.example.loop_wear"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiwO4dOC4o6wDJPB6JuTaH4QQ5IgcYwWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

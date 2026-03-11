@@ -7,45 +7,47 @@ class WelcomeScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        body:Center(
-            child:Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/logoo.png',
-                  height: 120,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Welcome to Loop wear',
-                  style: const TextStyle(
-                    fontFamily:'Philosopher',
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFFCCB7AE),
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: Colors.white,
+          body:Center(
+              child:Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/logoo.png',
+                    height: 120,
                   ),
-                ),
-                  SizedBox(height: 20),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: const Color (0xFFCCB7AE),
+                  SizedBox(height: 10),
+                  Text(
+                    'Welcome to Loop wear',
+                    style: const TextStyle(
+                      fontFamily:'Philosopher',
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xFFCCB7AE),
                     ),
-
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                      );
-                    },
-                    child: const Text("Skip"),
-
                   ),
-          ],
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: const Color (0xFFCCB7AE),
+                      ),
+      
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      child: const Text("Skip"),
+      
+                    ),
+            ],
+          )
         )
-      )
+      ),
     );
   }
 }
