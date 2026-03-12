@@ -26,9 +26,13 @@ class SignUpPage extends StatelessWidget {
         children: [
           Text(
             "Create Account",
-            style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.brown),
+            style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,
+                color: const Color (0xFF9F7F88)),
           ),
-          Text("Enter details to get started"),
+          Text("Enter details to get started",
+                style: TextStyle( color: const Color(0xFF9F7F88)),
+          ),
+
         ],
     );
   }
@@ -40,46 +44,49 @@ class SignUpPage extends StatelessWidget {
             decoration: InputDecoration(
             hintText: "Email",
               hintStyle: TextStyle(
-                color: Colors.brown,
+                color: Colors.white,
               ),
             filled: true,
-            prefixIcon: Icon(Icons.email_outlined),
+              fillColor: const Color(0xFF9F7F88),
+            prefixIcon: Icon(Icons.email_outlined,color: Colors.white),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 20,),
           TextField(
             decoration: InputDecoration(
               hintText: "Password",
               hintStyle: TextStyle(
-                color: Colors.brown,
+                color: Colors.white,
               ),
               filled: true,
-              prefixIcon: Icon(Icons.person),
+              fillColor: const Color(0xFF9F7F88),
+              prefixIcon: Icon(Icons.lock,color: Colors.white),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide.none),
             ),
             obscureText: true,
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 20,),
           TextField(
             decoration: InputDecoration(
               hintText: "Confirm Password",
               hintStyle: TextStyle(
-                color: Colors.brown,
+                color: Colors.white,
               ),
               filled: true,
-              prefixIcon: Icon(Icons.person),
+              fillColor: const Color(0xFF9F7F88),
+              prefixIcon: Icon(Icons.lock,color: Colors.white),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
               ),
               obscureText: true,
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 20,),
           ElevatedButton(onPressed: (){
             Navigator.push(
               context,
@@ -87,11 +94,13 @@ class SignUpPage extends StatelessWidget {
             );
           }, child: Text(
               "Sign Up",
-              style: TextStyle(fontSize: 20,color: Colors.brown),
+              style: TextStyle(fontSize: 20,color: Colors.white),
           ),
               style: ElevatedButton.styleFrom(
                 shape: StadiumBorder(),
                 padding: EdgeInsets.symmetric(vertical: 16),
+                backgroundColor:  const Color (0xFF9F7F88),
+
               )
           )
         ],
@@ -101,14 +110,14 @@ class SignUpPage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Already have an account?",style: TextStyle(color: Colors.brown),),
+        Text("Already have an account?",style: TextStyle(color: const Color (0xFF9F7F88)),),
         TextButton(onPressed: (){
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => LoginPage()),
           );}, child: Text(
                 "Login",
-                style: TextStyle(color: Colors.brown),),
+                style: TextStyle(color: const Color (0xFF9F7F88)),),
         ),
       ],
     );

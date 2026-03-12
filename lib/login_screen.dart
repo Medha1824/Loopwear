@@ -17,7 +17,6 @@ class LoginPage extends StatelessWidget {
               children: [
                 _header(context),
                 _inputField(context),
-                _forgotPassword(context),
                 _signup(context),
               ],
             )
@@ -29,11 +28,13 @@ class LoginPage extends StatelessWidget {
     return Column(
       children: [
         Text("Enter your credential to login",
-          style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.brown),
+          style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,
+              color: const Color(0xFF9F7F88)),
         ),
       ],
     );
   }
+
   _inputField(context){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -42,31 +43,45 @@ class LoginPage extends StatelessWidget {
           decoration: InputDecoration(
             hintText: "Email",
             hintStyle: TextStyle(
-              color: Colors.brown,
+              color: Colors.white,
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(18),
               borderSide: BorderSide.none),
             filled: true,
-            prefixIcon: Icon(Icons.email_outlined),
+            fillColor: const Color(0xFF9F7F88),
+
+            prefixIcon: Icon(Icons.email_outlined,color: Colors.white),
           ),
           ),
-        SizedBox(height: 10),
+        SizedBox(height: 20),
         TextField(
           decoration: InputDecoration(
             hintText: "Password",
             hintStyle: TextStyle(
-              color: Colors.brown,
+              color: Colors.white,
             ),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
             filled: true,
-            prefixIcon: Icon(Icons.person),
+            fillColor: const Color(0xFF9F7F88),
+            prefixIcon: Icon(Icons.lock,color: Colors.white),
           ),
           obscureText: true,
         ),
-        SizedBox(height: 10),
+        Align(
+          alignment:Alignment.centerRight,
+            child: TextButton(
+              onPressed: (){},
+              child: Text(
+                "Forgot password?",
+                style: TextStyle(color: const Color(0xFF9F7F88)),
+              ),
+            ),
+          ),
+
+        SizedBox(height: 20),
         ElevatedButton(
             onPressed: (){
               Navigator.push(
@@ -75,32 +90,30 @@ class LoginPage extends StatelessWidget {
             );},
             child: Text(
               "Login",
-              style: TextStyle(fontSize: 20,color: Colors.brown),
+              style: TextStyle(fontSize: 20,color: Colors.white),
             ),
             style: ElevatedButton.styleFrom(
               shape: StadiumBorder(),
               padding: EdgeInsets.symmetric(vertical: 16),
+              backgroundColor:  const Color (0xFF9F7F88),
+
             )
+
         )
+
       ],
-    );
-  }
-  _forgotPassword(context){
-    return TextButton(onPressed: (){},
-        child: Text("Forgot password?",style: TextStyle(color: Colors.brown),
-        ),
     );
   }
   _signup(context){
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Don't have an account?",style: TextStyle(color: Colors.brown),),
+        Text("Don't have an account?",style: TextStyle(color: const Color (0xFF9F7F88)),),
         TextButton(onPressed: (){
           Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => SignUpPage()),
-        );}, child: Text("Sign Up",style: TextStyle(color: Colors.brown),
+        );}, child: Text("Sign Up",style: TextStyle(color: const Color (0xFF9F7F88)),
             ),
         ),
       ],

@@ -2,51 +2,55 @@ import 'package:flutter/material.dart';
 //import 'package:loop_wear/home_screen.dart';
 import 'package:loop_wear/login_screen.dart';
 
-class WelcomeScreen extends StatelessWidget{
+class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          backgroundColor: Colors.white,
-          body:Center(
-              child:Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Center(
+              child: Column(
                 children: [
-                  Image.asset(
-                    'assets/logoo.png',
-                    height: 120,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Welcome to Loop wear',
-                    style: const TextStyle(
-                      fontFamily:'Philosopher',
+                  const SizedBox(height: 210),
+                  Image.asset('assets/logoo.png', height: 120,),
+                  const SizedBox(height: 1),
+                  const Text('Welcome to Loop wear',
+                    style: const TextStyle(fontFamily: 'Philosopher',
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: const Color(0xFFCCB7AE),
+                      color: const Color(0xFF9F7F88),
                     ),
                   ),
-                    SizedBox(height: 20),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        foregroundColor: const Color (0xFFCCB7AE),
-                      ),
-      
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginPage()),
-                        );
-                      },
-                      child: const Text("Skip"),
-      
-                    ),
-            ],
-          )
-        )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Align(
+                alignment: Alignment.bottomRight,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF9F7F88),
+                    foregroundColor: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage()),
+                    );
+                  },
+                  child: const Text("Continue"),
+                ),
+
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
