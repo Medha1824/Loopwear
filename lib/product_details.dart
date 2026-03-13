@@ -11,9 +11,15 @@ class ProductDetails extends StatefulWidget{
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+  int selectedImageIndex=0;
   int count=0;
   @override
   Widget build(BuildContext context) {
+    List<String> images = [
+      widget.product.image1,
+      widget.product.image2,
+      widget.product.image3
+    ];
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -27,14 +33,15 @@ class _ProductDetailsState extends State<ProductDetails> {
             children: [
               Container(
                 width:double.infinity,
-                height:420,
+                //height:500,
                 color: Colors.white,
                 child:ClipRRect(
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(40),
                     bottomRight: Radius.circular(40),
                   ),
-                  child:Image.network(widget.product.image,fit: BoxFit.cover),
+                  child:Image.asset(
+                      images[selectedImageIndex],fit: BoxFit.cover),
                 ),
           
           
@@ -87,10 +94,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                       children:[
-                        AvailableSize(size:"38"),
-                        AvailableSize(size:"40"),
-                        AvailableSize(size:"42"),
-                        AvailableSize(size:"44"),
+                        AvailableSize(size:"S"),
+                        AvailableSize(size:"M"),
+                        AvailableSize(size:"L"),
+                        AvailableSize(size:"XL"),
                     ]
                     ),
                     SizedBox(height:14),
@@ -107,23 +114,34 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ),
                     SizedBox(height:7),
                     Row(
-                      children:[
-                        CircleAvatar(
-                          radius:16,
-                          backgroundColor: Colors.red,
-                        ),
-                        SizedBox(width:8),
-                        CircleAvatar(
-                          radius:16,
-                          backgroundColor: Colors.black,
-                        ),
-                        SizedBox(width:8),
-                        CircleAvatar(
-                          radius:16,
-                          backgroundColor: Colors.blueGrey,
-                        ),
-                        SizedBox(width:8),
-                      ]
+                      children: List.generate(images.length, (index) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedImageIndex = index;
+                            });
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(right: 8),
+                            padding: EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: selectedImageIndex == index
+                                    ? Color(0xFF9F7F88)
+                                    : Colors.transparent,
+                                width: 2,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Image.asset(
+                              images[index],
+                              width: 32,
+                              height: 32,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      }),
                     ),
                     SizedBox(height:100),
                   ],

@@ -29,9 +29,9 @@ class _ProductCardState extends State<ProductCard> {
             children:[
               ClipRRect(
                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(15),topRight: Radius.circular(15)),
-                child: Image.network(widget.product.image,
+                child: Image.asset(widget.product.image1,
                   height:200,
-                  //width:double.infinity,
+                  width:double.infinity,
                   fit:BoxFit.cover,
                 ),
               ),

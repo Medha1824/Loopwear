@@ -14,15 +14,56 @@ class BuildProducts extends StatelessWidget{
 
     if (categoryName == "All Products") {
       products = MyProducts.allProducts;
-    } else if (categoryName == "Men") {
+    } else if (categoryName == "Men"&& subsection=="Shirts")
+      products = MyProducts.shirts;
+    else if (categoryName == "Men" && subsection== "Sweat Shirts")
+      products = MyProducts.sweatersM;
+    else if (categoryName == "Men" && subsection== "Blazar")
+      products = MyProducts.blazers;
+    else if (categoryName == "Men"&& subsection== "T Shirts")
+      products = MyProducts.tShirts;
+    else if (categoryName == "Men" && subsection== "Pants")
+      products = MyProducts.pants;
+    else if (categoryName == "Men") {
       products = MyProducts.men;
-    } else if (categoryName == "Women") {
+    } else if (categoryName == "Women" && subsection == "Tops")
+      products = MyProducts.tops;
+    else if (categoryName == "Women" && subsection == "Bottoms")
+      products = MyProducts.bottoms;
+
+    else if (categoryName == "Women" && subsection == "Dresses")
+      products = MyProducts.dresses;
+
+    else if (categoryName == "Women" && subsection == "Cardigan")
+      products = MyProducts.sweatersW;
+
+    else if (categoryName == "Women" && subsection == "Co-ords")
+      products = MyProducts.coords;
+
+    else if (categoryName == "Women") {
       products = MyProducts.women;
     }
-    else if (categoryName == "Kids") {
+    else if (categoryName == "Kids" && subsection == "Regular Wears")
+      products = MyProducts.kidsRegular;
+    else if (categoryName == "Kids" && subsection == "Night Wears")
+      products = MyProducts.kidsNight;
+    else if (categoryName == "Kids" && subsection == "Denims")
+      products = MyProducts.kidsDenims;
+    else if (categoryName == "Kids" && subsection == "Co-ords")
+      products = MyProducts.kidsCoOrds;
+    else if (categoryName == "Kids" && subsection == "Jackets")
+      products = MyProducts.kidsJackets;
+    else if (categoryName == "Kids")
       products = MyProducts.kids;
-    }
-    else if (categoryName == "EcoWear") {
+    else if (categoryName == "EcoWear" && subsection=="Hats") {
+      products = MyProducts.hats;
+    }else if (categoryName == "EcoWear"&& subsection=="Bags") {
+      products = MyProducts.bags;
+    }else if (categoryName == "EcoWear"&& subsection=="Foot Wear") {
+      products = MyProducts.footWear;
+    }else if (categoryName == "EcoWear"&& subsection=="Scarves") {
+      products = MyProducts.scarves;
+    } else if (categoryName == "EcoWear") {
       products = MyProducts.ecoWear;
     }
     else if (categoryName == "Summer Collection") {

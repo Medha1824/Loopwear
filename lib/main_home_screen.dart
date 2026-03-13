@@ -13,27 +13,29 @@ class MainHomeScreen extends StatefulWidget {
 }
 
 class _MainHomeScreenState extends State<MainHomeScreen> {
-  Widget buildCard(String name) => Column(
+  Widget buildCard(String name,String image) => Column(
     children: [
-      SizedBox(height:6),
+      SizedBox(height: 6),
       Container(
-        height: 250,
-        width: 400,
+        height: 230,
+        width: 330,
         color: Colors.white,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: Material(
             child: Ink.image(
-              image: NetworkImage(
-                'https://img.freepik.com/free-photo/shop-clothing-clothes-shop-hanger-modern-shop-boutique_1150-8886.jpg?semt=ais_hybrid&w=740&q=80',
-              ),
+              image: AssetImage(image),
               fit: BoxFit.cover,
-              child: InkWell(onTap: () {
-                Navigator.push(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => BuildProducts(categoryName:name)));
-              }),
+                      builder: (context) => BuildProducts(categoryName: name),
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         ),
@@ -75,14 +77,16 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 266,
+              height: 245,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   SizedBox(width: 6),
-                  buildCard("Summer Collection"),
+                  buildCard("Summer Collection","assets/photos/summer.jpg"),
                   SizedBox(width: 12),
-                  buildCard("Winter Collection"),
+                  buildCard("Winter Collection","assets/photos/winter.jpg"),
+                  SizedBox(width: 6),
+                  buildCard("Winter Collection","assets/photos/tree.jpg"),
                   SizedBox(width: 6),
                 ],
               ),
@@ -121,6 +125,14 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                     "Summer Collection",
                     "Winter Collection",
                   ];
+                  List<String> categoryImages = [
+                    "assets/photos/Men/blazar_4_green.jpg",
+                    "assets/photos/Women/coord_7_multi.jpg",
+                    "assets/photos/Kids/regular_3_yellow.jpg",
+                    "assets/photos/Eco/scarf_5_1.jpg",
+                    "assets/photos/Summer/summer_6_purple.jpg",
+                    "assets/photos/Women/sweater_4_pink.jpg",
+                  ];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -128,14 +140,21 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                         InkWell(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => BuildProducts(categoryName:categoryNames[index])));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BuildProducts(
+                                  categoryName: categoryNames[index],
+                                ),
+                              ),
+                            );
                           },
-                          child: const CircleAvatar(
-                            radius: 45,
-                            backgroundImage: NetworkImage(
-                              "https://www.mjunction.in/wp-content/uploads/2020/09/Dummy.jpg",
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.asset(
+                              categoryImages[index],
+                              width: 80,
+                              height: 80,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
@@ -145,10 +164,9 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                           style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'Roboto',
-                            color:Color(0xFF9F7F88),
+                            color: Color(0xFF9F7F88),
                           ),
                         ),
-
                       ],
                     ),
                   );
@@ -172,10 +190,10 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height:10),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child:  GridView.builder(
+              child: GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: MyProducts.allProducts.length,
@@ -196,4 +214,3 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
     );
   }
 }
-

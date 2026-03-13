@@ -74,6 +74,15 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                 },
               ),
               ListTile(
+                title:Text("Blazar",style:TextStyle(color: Colors.white70)),
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BuildProducts(categoryName:"Men",subsection: "Blazar",)));
+                },
+              ),
+              ListTile(
                 title:Text("Sweat Shirts",style:TextStyle(color: Colors.white70)),
                 onTap: (){
                   Navigator.push(
@@ -105,12 +114,12 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Pants",style:TextStyle(color: Colors.white70)),
+                  title:Text("Dresses",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BuildProducts(categoryName:"Women",subsection: "Pants",)));
+                            builder: (context) => BuildProducts(categoryName:"Women",subsection: "Dresses",)));
                   },
                 ),
                 ListTile(
@@ -119,7 +128,16 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BuildProducts(categoryName:"Women",subsection: "Co-ord Set",)));
+                            builder: (context) => BuildProducts(categoryName:"Women",subsection: "Co-ords",)));
+                  },
+                ),
+                ListTile(
+                  title:Text("Bottoms",style:TextStyle(color: Colors.white70)),
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BuildProducts(categoryName:"Women" ,subsection: "Bottoms")));
                   },
                 ),
                 ListTile(
@@ -154,21 +172,30 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Jeans",style:TextStyle(color: Colors.white70)),
+                  title:Text("Regular wears",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BuildProducts(categoryName:"Kids" ,subsection: "Jeans")));
+                            builder: (context) => BuildProducts(categoryName:"Kids" ,subsection: "Regular Wears")));
                   },
                 ),
                 ListTile(
-                  title:Text("Play-wears",style:TextStyle(color: Colors.white70)),
+                  title:Text("Denims",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BuildProducts(categoryName:"Kids" ,subsection: "Play wears")));
+                            builder: (context) => BuildProducts(categoryName:"Kids" ,subsection: "Denims")));
+                  },
+                ),
+                ListTile(
+                  title:Text("Night wears",style:TextStyle(color: Colors.white70)),
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BuildProducts(categoryName:"Kids" ,subsection: "Night Wears")));
                   },
                 ),
                 ListTile(
@@ -203,21 +230,21 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
                   },
                 ),
                 ListTile(
-                  title:Text("Bags and Tote bags",style:TextStyle(color: Colors.white70)),
+                  title:Text("Bags",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BuildProducts(categoryName:"EcoWear",subsection: "Bags and Tote bags")));
+                            builder: (context) => BuildProducts(categoryName:"EcoWear",subsection: "Bags")));
                   },
                 ),
                 ListTile(
-                  title:Text("Sandals And Shoes",style:TextStyle(color: Colors.white70)),
+                  title:Text("Foot Wear",style:TextStyle(color: Colors.white70)),
                   onTap: (){
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BuildProducts(categoryName:"EcoWear",subsection: "Sandals and Shoes")));
+                            builder: (context) => BuildProducts(categoryName:"EcoWear",subsection: "Foot Wear")));
                   },
                 ),
                 ListTile(
