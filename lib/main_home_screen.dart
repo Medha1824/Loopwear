@@ -4,7 +4,6 @@ import 'package:loop_wear/search_screen.dart';
 import 'build_products.dart';
 import 'my_product.dart';
 import 'navigation_drawer_widget.dart';
-
 class MainHomeScreen extends StatefulWidget {
   const MainHomeScreen({super.key});
 
@@ -51,6 +50,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xFF9F7F88),
         iconTheme: IconThemeData(color: Colors.white),
+
         title: Text(
           "LoopWear",
           style: TextStyle(

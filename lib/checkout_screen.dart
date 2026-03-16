@@ -53,8 +53,16 @@ class CheckoutScreen extends StatelessWidget {
                 title: const Text('Credit Card' ,style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
 
                 trailing: TextButton(
-                  onPressed: () {},
-                  child: const Text( 'Select', style: TextStyle(color: Color(0xFF9F7F88), fontWeight: FontWeight.bold),),
+                  onPressed: () {
+                    showPaymentBottomSheet(context, "Credit Card");
+                  },
+                  child: const Text(
+                    'Select',
+                    style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -71,8 +79,16 @@ class CheckoutScreen extends StatelessWidget {
                 title: const Text('Bkash Payment', style: TextStyle(color: Color(0xFF9F7F88), fontWeight: FontWeight.bold),),
 
                 trailing: TextButton(
-                  onPressed: () {},
-                  child: const Text('Select', style: TextStyle(color: Color(0xFF9F7F88), fontWeight: FontWeight.bold),),
+                  onPressed: () {
+                    showPaymentBottomSheet(context, "Bkash");
+                  },
+                  child: const Text(
+                    'Select',
+                    style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -89,8 +105,16 @@ class CheckoutScreen extends StatelessWidget {
                 title: const Text('Nagod Payment', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
 
                 trailing: TextButton(
-                  onPressed: () {},
-                  child: const Text('Select', style: TextStyle(color: Color(0xFF9F7F88),fontWeight: FontWeight.bold),),
+                  onPressed: () {
+                    showPaymentBottomSheet(context, "Nagad");
+                  },
+                  child: const Text(
+                    'Select',
+                    style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -171,4 +195,92 @@ class CheckoutScreen extends StatelessWidget {
       ),
     );
   }
+}
+void showPaymentBottomSheet(BuildContext context, String method) {
+
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController pinController = TextEditingController();
+
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(25),
+      ),
+    ),
+    builder: (context) {
+      return Padding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+          left: 20,
+          right: 20,
+          top: 20,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+
+            Container(
+              width: 40,
+              height: 5,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            Text(
+              "Payment",
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF9F7F88),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            TextField(
+              controller: phoneController,
+              decoration: const InputDecoration(
+                labelText: "Phone Number",
+                border: OutlineInputBorder(),
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            TextField(
+              controller: pinController,
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: "PIN",
+                border: OutlineInputBorder(),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF9F7F88),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text("Confirm Payment"),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+          ],
+        ),
+      );
+    },
+  );
 }

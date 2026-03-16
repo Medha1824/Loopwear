@@ -15,117 +15,11 @@ class CartScreen extends StatelessWidget {
         title: const Text('My Cart',style: TextStyle(color: Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
-        body: SafeArea(
-      child:Padding(
+        body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            CircleAvatar(
-              radius: 60,
-              backgroundColor: const Color(0xFFF0E4E7),
-              child: Icon(
-                Icons.shopping_cart,
-                size: 60,
-                color: Colors.white,
-              ),
-            ),
             const SizedBox(height: 16),
-
-           Card(
-              color: Colors.white,
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              elevation: 5,
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor:  const Color(0xFFF0E4E7),
-                  child: const Icon(color:const Color(0xFF9F7F88),Icons.shopping_bag),
-                ),
-                title: const Text(
-                  'Item Name',
-                  style: TextStyle(
-                    color: Color(0xFF9F7F88),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                subtitle: const Text(
-                  'Quantity: 1',
-                  style: TextStyle(
-                    color:Color(0xFF9F7F88),
-                  ),
-                ),
-                trailing: const Text(
-                  '0',
-                  style: TextStyle(
-                    color:Color(0xFF9F7F88),
-
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              color: Colors.white,
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              elevation: 5,
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor:  const Color(0xFFF0E4E7),
-                  child: const Icon(color:const Color(0xFF9F7F88),Icons.shopping_bag),
-                ),
-                title: const Text(
-                  'Item Name',
-                  style: TextStyle(
-                    color: Color(0xFF9F7F88),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                subtitle: const Text(
-                  'Quantity: 1',
-                  style: TextStyle(
-                    color:Color(0xFF9F7F88),
-
-                  ),
-                ),
-                trailing: const Text(
-                  '0',
-                  style: TextStyle(
-                    color:Color(0xFF9F7F88),
-
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              color: Colors.white,
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              elevation: 5,
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor:  const Color(0xFFF0E4E7),
-                  child: const Icon(color:const Color(0xFF9F7F88),Icons.shopping_bag),
-                ),
-                title: const Text(
-                  'Item Name',
-                  style: TextStyle(
-                    color: Color(0xFF9F7F88),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                subtitle: const Text(
-                    'Quantity: 1',
-                style: TextStyle(
-                    color:Color(0xFF9F7F88),
-
-                ),
-            ),
-                trailing: const Text(
-                    '0',
-                  style: TextStyle(
-                    color:Color(0xFF9F7F88),
-
-                ),
-              ),
-            ),
-            ),
            const Spacer(),
             SizedBox(
               width: double.infinity,
@@ -148,7 +42,7 @@ class CartScreen extends StatelessWidget {
           ],
         ),
       ),
-        ),
+
     );
   }
 }
