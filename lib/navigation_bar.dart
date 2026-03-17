@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/account_screen.dart';
 import 'package:loop_wear/cart_screen.dart';
-import 'package:loop_wear/favourites_screen.dart';
+import 'package:loop_wear/wishlist_screen.dart';
 import 'package:loop_wear/main_home_screen.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
           currentIndex: myIndex,
           items: const [
         BottomNavigationBarItem(icon:Icon(Icons.home) , label:'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite), label:'Favourites'),
+        BottomNavigationBarItem(icon: Icon(Icons.favorite), label:'Wishlist'),
         BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label:'Cart'),
         BottomNavigationBarItem(icon: Icon(Icons.person), label:'Account'),
       ]),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/my_product.dart';
+import 'package:loop_wear/plant_tree.dart';
 import 'package:loop_wear/product_card.dart';
 
 class BuildProducts extends StatelessWidget{
@@ -72,7 +73,6 @@ class BuildProducts extends StatelessWidget{
     else if (categoryName == "Winter Collection") {
       products = MyProducts.winter;
     }
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(backgroundColor: Colors.transparent,

@@ -12,7 +12,7 @@ class FavouritesScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        title: const Text('Favourites', style: TextStyle(
+        title: const Text('Wishlist', style: TextStyle(
             fontFamily: 'Philosopher', fontWeight: FontWeight.bold, color:Colors.white)),
         backgroundColor: const Color(0xFF9F7F88),
         iconTheme: IconThemeData(color: Colors.white),
@@ -21,18 +21,18 @@ class FavouritesScreen extends StatelessWidget {
       body:
       Padding(
         padding: const EdgeInsets.all(12.0),
-        child: GridView.builder(
-          itemCount: 3,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 15,
-            crossAxisSpacing: 15,
-            mainAxisExtent: 360,
-          ),
-          itemBuilder: (context, index) {
-            return ProductCard(product:MyProducts.allProducts[index]);
-          },
-        ),
+        // child: GridView.builder(
+        //   itemCount: 3,
+        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //     crossAxisCount: 2,
+        //     mainAxisSpacing: 15,
+        //     crossAxisSpacing: 15,
+        //     mainAxisExtent: 360,
+        //   ),
+        //   itemBuilder: (context, index) {
+        //     return ProductCard(product:MyProducts.allProducts[index]);
+        //   },
+        // ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loop_wear/available_size.dart';
 import 'package:loop_wear/product.dart';
@@ -13,6 +14,7 @@ class ProductDetails extends StatefulWidget{
 class _ProductDetailsState extends State<ProductDetails> {
   int selectedImageIndex=0;
   int count=0;
+  bool isClicked=false;
   @override
   Widget build(BuildContext context) {
     List<String> images = [
@@ -27,13 +29,22 @@ class _ProductDetailsState extends State<ProductDetails> {
           appBar: AppBar(
             iconTheme: IconThemeData(color: Color(0xFF9F7F88)),
             backgroundColor: Colors.transparent,
+            actions: [
+              IconButton(onPressed: () {
+                setState(() {
+                  isClicked = !isClicked;
+                });
+              },
+                icon: isClicked? Icon(CupertinoIcons.heart_fill,color:Colors.red,):
+                Icon(CupertinoIcons.heart,color:Color(0xFF9F7F88),),
+              ),
+            ],
           ),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 width:double.infinity,
-                //height:500,
                 color: Colors.white,
                 child:ClipRRect(
                   borderRadius: BorderRadius.only(
@@ -43,15 +54,13 @@ class _ProductDetailsState extends State<ProductDetails> {
                   child:Image.asset(
                       images[selectedImageIndex],fit: BoxFit.cover),
                 ),
-          
-          
               ),
               Container(
                 padding: EdgeInsets.all(16),
                 width: double.infinity,
-                //height:400,
                 color:Colors.white,
                 child:Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,10 +103,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                       children:[
-                        AvailableSize(size:"S"),
-                        AvailableSize(size:"M"),
-                        AvailableSize(size:"L"),
-                        AvailableSize(size:"XL"),
+                        AvailableSize(),
                     ]
                     ),
                     SizedBox(height:14),
@@ -122,22 +128,25 @@ class _ProductDetailsState extends State<ProductDetails> {
                             });
                           },
                           child: Container(
-                            margin: EdgeInsets.only(right: 8),
-                            padding: EdgeInsets.all(2),
+                            margin: EdgeInsets.only(right: 10),
+                            padding: EdgeInsets.zero,
                             decoration: BoxDecoration(
                               border: Border.all(
                                 color: selectedImageIndex == index
                                     ? Color(0xFF9F7F88)
                                     : Colors.transparent,
-                                width: 2,
+                                width: 3,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(30),
                             ),
-                            child: Image.asset(
-                              images[index],
-                              width: 32,
-                              height: 32,
-                              fit: BoxFit.cover,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: Image.asset(
+                                images[index],
+                                width: 40,
+                                height: 40,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         );
@@ -198,8 +207,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                        child:Icon(Icons.add,color: Colors.white,),
                      ),
                    ),
-      
-      
                  ],
                ),
              ),
@@ -215,8 +222,6 @@ class _ProductDetailsState extends State<ProductDetails> {
              )
            ],
          )
-      
-      
        ),
       ),
     );

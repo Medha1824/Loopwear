@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:loop_wear/plant_tree.dart';
 import 'package:loop_wear/product_card.dart';
 import 'package:loop_wear/search_screen.dart';
 import 'build_products.dart';
@@ -12,36 +15,71 @@ class MainHomeScreen extends StatefulWidget {
 }
 
 class _MainHomeScreenState extends State<MainHomeScreen> {
-  Widget buildCard(String name,String image) => Column(
-    children: [
-      SizedBox(height: 6),
-      Container(
-        height: 230,
-        width: 330,
-        color: Colors.white,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(30),
-          child: Material(
-            child: Ink.image(
-              image: AssetImage(image),
-              fit: BoxFit.cover,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BuildProducts(categoryName: name),
-                    ),
-                  );
-                },
+  late PageController pageController;
+  late Timer timer;
+  late int currentPage =0;
+  @override
+  void initState(){
+    super.initState();
+    pageController=PageController();
+    timer=Timer.periodic(Duration(seconds:3), (timer){
+      if(currentPage<2) {
+        currentPage++;
+      }
+      else{
+        currentPage=0;
+      }
+      pageController.animateToPage(currentPage,
+          duration: Duration(milliseconds: 500),
+          curve: Curves.easeIn);
+    });
+  }
+  @override
+  void dispose(){
+  timer.cancel();
+  pageController.dispose();
+    super.dispose();
+  }
+  Widget buildCard(String name, String image){
+      return Column(
+        children: [
+          SizedBox(height: 6),
+          Container(
+            height: 230,
+            width: double.infinity,
+            color: Colors.white,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Material(
+                child: Ink.image(
+                  image: AssetImage(image),
+                  fit: BoxFit.cover,
+                  child: InkWell(
+                    onTap: () {
+                      if (name == "Tree") {
+                        Navigator.push(
+                            context, MaterialPageRoute(
+                            builder: (context) => PlantTree()));
+                      }
+                      else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                BuildProducts(categoryName: name),
+                          ),
+                        );
+                      }
+                    },
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-      ),
-    ],
-  );
-
+        ],
+      );
+}
+   bool isClicked=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,21 +115,28 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 245,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
+              height: 250,
+              child: PageView(
+                    controller:pageController,
+                onPageChanged: (index){
+                      currentPage=index;
+                },
                 children: [
-                  SizedBox(width: 6),
-                  buildCard("Summer Collection","assets/photos/summer.jpg"),
-                  SizedBox(width: 12),
-                  buildCard("Winter Collection","assets/photos/winter.jpg"),
-                  SizedBox(width: 6),
-                  buildCard("Winter Collection","assets/photos/tree.jpg"),
-                  SizedBox(width: 6),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: buildCard("Summer Collection","assets/photos/summer.jpg"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: buildCard("Winter Collection","assets/photos/winter.jpg"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: buildCard("Tree","assets/photos/tree.jpg"),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -109,9 +154,8 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
             SizedBox(
-              height: 140,
+              height: 130,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
@@ -130,7 +174,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                     "assets/photos/Women/coord_7_multi.jpg",
                     "assets/photos/Kids/regular_3_yellow.jpg",
                     "assets/photos/Eco/scarf_5_1.jpg",
-                    "assets/photos/Summer/summer_6_purple.jpg",
+                    "assets/photos/Summer/summer_6_purple_1.jpg",
                     "assets/photos/Women/sweater_4_pink.jpg",
                   ];
                   return Padding(
@@ -174,9 +218,9 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(right:8.0,left:8),
               child: Row(
-                mainAxisAlignment: .start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Best Sellers",
@@ -187,16 +231,33 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextButton(
+                      onPressed: (){
+                        setState(() {
+                          isClicked=!isClicked;
+                        });
+                      },
+                      child: Text(
+                        isClicked?"View less":"View all",
+                        style: TextStyle(
+                          color: Color(0xFF9F7F88),
+                          fontFamily: 'Roboto',
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: MyProducts.allProducts.length,
+                itemCount: isClicked? MyProducts.best.length:3,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 15,
@@ -204,7 +265,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                   mainAxisExtent: 360,
                 ),
                 itemBuilder: (context, index) {
-                  return ProductCard(product: MyProducts.allProducts[index]);
+                  return ProductCard(product: MyProducts.best[index]);
                 },
               ),
             ),

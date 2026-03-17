@@ -10,7 +10,7 @@ class CheckoutScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF9F7F88),
         iconTheme: IconThemeData(color: Colors.white),
-        title: const Text('My Cart',style: TextStyle(color: Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
+        title: const Text('Check Out',style: TextStyle(color: Colors.white,fontFamily: 'Philosopher',fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

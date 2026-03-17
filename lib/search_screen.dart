@@ -137,7 +137,7 @@ class _SearchScreenState extends State<SearchScreen> {
             Row(
               children: const [
                 Text(
-                  "Recommend",
+                  "Recommended",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

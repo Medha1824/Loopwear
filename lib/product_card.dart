@@ -33,6 +33,7 @@ class _ProductCardState extends State<ProductCard> {
                   height:200,
                   width:double.infinity,
                   fit:BoxFit.cover,
+                    cacheWidth: 400,
                 ),
               ),
               SizedBox(height:5),
