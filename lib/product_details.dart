@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loop_wear/available_size.dart';
+import 'package:loop_wear/favourite_icon.dart';
 import 'package:loop_wear/product.dart';
 
 class ProductDetails extends StatefulWidget{
@@ -30,14 +31,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             iconTheme: IconThemeData(color: Color(0xFF9F7F88)),
             backgroundColor: Colors.transparent,
             actions: [
-              IconButton(onPressed: () {
-                setState(() {
-                  isClicked = !isClicked;
-                });
-              },
-                icon: isClicked? Icon(CupertinoIcons.heart_fill,color:Colors.red,):
-                Icon(CupertinoIcons.heart,color:Color(0xFF9F7F88),),
-              ),
+              FavouriteIcon(),
             ],
           ),
         body: SingleChildScrollView(

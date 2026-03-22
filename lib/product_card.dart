@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:loop_wear/favourite_icon.dart';
 import 'package:loop_wear/product.dart';
 import 'package:loop_wear/product_details.dart';
 
@@ -60,13 +61,7 @@ class _ProductCardState extends State<ProductCard> {
                   Row(
                     mainAxisAlignment: .end,
                     children: [
-                      IconButton(onPressed: () {
-                        setState(() {
-                          isClicked = !isClicked;
-                        });
-                      },
-                        icon: isClicked? Icon(CupertinoIcons.heart_fill,color:Colors.red,):Icon(CupertinoIcons.heart,color:Color(0xFF9F7F88),),
-                      ),
+                      FavouriteIcon(),
                       IconButton(onPressed: () {  },
                         icon: Icon(CupertinoIcons.cart,color:Color(0xFF9F7F88)),
                       )

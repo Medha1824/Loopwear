@@ -1411,4 +1411,17 @@ class MyProducts{
     ),
   ];
 
+  List<Product> products = List.generate(
+    allProducts.length,
+        (index) => Product(
+          id: index,
+          category:allProducts[index].category,
+          title: allProducts[index].title,
+          description: allProducts[index].description,
+          image1: allProducts[index].image1,
+          image2: allProducts[index].image2,
+          image3: allProducts[index].image3,
+          price:allProducts[index].price,
+    ),
+  );
 }
