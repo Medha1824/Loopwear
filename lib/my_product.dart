@@ -8,9 +8,9 @@ class MyProducts{
     ...summer,
     ...ecoWear,
   ];
-
   static List<Product> summer = [
     Product(
+      id: '1',
       category: "Summer Collection",
       title: "Summer 1",
       description: "Light and breezy summer wear.\nPerfect for hot sunny days.",
@@ -20,6 +20,7 @@ class MyProducts{
       image3: "assets/photos/Summer/summer_1_pink_1.jpg",
     ),
     Product(
+      id: '2',
       category: "Summer Collection",
       title: "Summer 2",
       description: "Cool and comfortable outfit.\nVibrant colors ideal for summer.",
@@ -29,6 +30,7 @@ class MyProducts{
       image3: "assets/photos/Summer/summer_2_yellow_1.jpg",
     ),
     Product(
+      id: '3',
       category: "Summer Collection",
       title: "Summer 3",
       description: "Soft and airy fabric.\nGreat for casual summer outings.",
@@ -38,6 +40,7 @@ class MyProducts{
       image3: "assets/photos/Summer/summer_3_green_1.jpg",
     ),
     Product(
+      id: '4',
       category: "Summer Collection",
       title: "Summer 4",
       description: "Comfortable summer top and bottom set.\nBreathable and lightweight.",
@@ -47,6 +50,7 @@ class MyProducts{
       image3: "assets/photos/Summer/summer_4_green_1.jpg",
     ),
     Product(
+      id: '5',
       category: "Summer Collection",
       title: "Summer 5",
       description: "Bright and stylish summer outfit.\nSoft material perfect for kids and adults.",
@@ -56,6 +60,7 @@ class MyProducts{
       image3: "assets/photos/Summer/summer_5_white_1.jpg",
     ),
     Product(
+      id: '6',
       category: "Summer Collection",
       title: "Summer 6",
       description: "Vibrant colors for sunny days.\nLightweight and comfortable fabric.",
@@ -65,6 +70,7 @@ class MyProducts{
       image3: "assets/photos/Summer/summer_6_white_1.jpg",
     ),
     Product(
+      id: '7',
       category: "Summer Collection",
       title: "Summer 7",
       description: "Airy summer clothing.\nSoft and perfect for outdoor activities.",
@@ -74,6 +80,7 @@ class MyProducts{
       image3: "assets/photos/Summer/summer_7_green_1.jpg",
     ),
     Product(
+      id: '8',
       category: "Summer Collection",
       title: "Summer 8",
       description: "Casual summer outfit.\nLight fabric and bright colors.",
@@ -83,6 +90,7 @@ class MyProducts{
       image3: "assets/photos/Summer/summer_8_yellow_1.jpg",
     ),
     Product(
+      id: '9',
       category: "Summer Collection",
       title: "Summer 9",
       description: "Comfortable summer wear.\nStylish and vibrant colors.",
@@ -101,6 +109,7 @@ class MyProducts{
 
   static List<Product> shirts = [
     Product(
+      id: '10',
       title: "Men's Classic Shirt 1",
       category: "Men",
       image1: "assets/photos/Men/shirt_1_black.jpg",
@@ -110,6 +119,7 @@ class MyProducts{
       price: "Tk 1250",
     ),
     Product(
+      id: '11',
       title: "Men's Classic Shirt 2",
       category: "Men",
       image1: "assets/photos/Men/shirt_2_black.jpg",
@@ -119,6 +129,7 @@ class MyProducts{
       price: "Tk 1300",
     ),
     Product(
+      id: '12',
       title: "Men's Classic Shirt 3",
       category: "Men",
       image1: "assets/photos/Men/shirt_3_beige.jpg",
@@ -128,6 +139,7 @@ class MyProducts{
       price: "Tk 1280",
     ),
     Product(
+      id: '13',
       title: "Men's Classic Shirt 4",
       category: "Men",
       image1: "assets/photos/Men/shirt_4_beige.jpg",
@@ -137,6 +149,7 @@ class MyProducts{
       price: "Tk 1350",
     ),
     Product(
+      id: '14',
       title: "Men's Classic Shirt 5",
       category: "Men",
       image1: "assets/photos/Men/shirt_5_green.jpg",
@@ -148,6 +161,7 @@ class MyProducts{
   ];
   static List<Product> tShirts = [
     Product(
+      id: '15',
       title: "Men's Casual T-Shirt 1",
       category: "Men",
       image1: "assets/photos/Men/tshirt_1_beige.jpg",
@@ -157,6 +171,7 @@ class MyProducts{
       price: "Tk 900",
     ),
     Product(
+      id: '16',
       title: "Men's Casual T-Shirt 2",
       category: "Men",
       image1: "assets/photos/Men/tshirt_2_black.jpg",
@@ -166,6 +181,7 @@ class MyProducts{
       price: "Tk 950",
     ),
     Product(
+      id: '17',
       title: "Men's Casual T-Shirt 3",
       category: "Men",
       image1: "assets/photos/Men/tshirt_3_beige.jpg",
@@ -175,6 +191,7 @@ class MyProducts{
       price: "Tk 920",
     ),
     Product(
+      id: '18',
       title: "Men's Casual T-Shirt 4",
       category: "Men",
       image1: "assets/photos/Men/tshirt_4_blue.jpg",
@@ -184,6 +201,7 @@ class MyProducts{
       price: "Tk 940",
     ),
     Product(
+      id: '19',
       title: "Men's Casual T-Shirt 5",
       category: "Men",
       image1: "assets/photos/Men/tshirt_5_brown.jpg",
@@ -193,6 +211,7 @@ class MyProducts{
       price: "Tk 970",
     ),
     Product(
+      id: '20',
       title: "Men's Casual T-Shirt 6",
       category: "Men",
       image1: "assets/photos/Men/tshirt_6_yellow.jpg",
@@ -204,6 +223,7 @@ class MyProducts{
   ];
   static List<Product> blazers = [
     Product(
+      id: '21',
       title: "Men's Blazer 1",
       category: "Men",
       image1: "assets/photos/Men/blazar_1_blue.jpg",
@@ -213,6 +233,7 @@ class MyProducts{
       price: "Tk 3200",
     ),
     Product(
+      id: '22',
       title: "Men's Blazer 2",
       category: "Men",
       image1: "assets/photos/Men/blazar_2_beige.jpg",
@@ -222,6 +243,7 @@ class MyProducts{
       price: "Tk 3300",
     ),
     Product(
+      id: '23',
       title: "Men's Blazer 3",
       category: "Men",
       image1: "assets/photos/Men/blazar_3_beige.jpg",
@@ -231,6 +253,7 @@ class MyProducts{
       price: "Tk 3400",
     ),
     Product(
+      id: '24',
       title: "Men's Blazer 4",
       category: "Men",
       image1: "assets/photos/Men/blazar_4_beige.jpg",
@@ -240,6 +263,7 @@ class MyProducts{
       price: "Tk 3500",
     ),
     Product(
+      id: '25',
       title: "Men's Blazer 5",
       category: "Men",
       image1: "assets/photos/Men/blazar_5_brown.jpg",
@@ -249,6 +273,7 @@ class MyProducts{
       price: "Tk 3600",
     ),
     Product(
+      id: '26',
       title: "Men's Blazer 6",
       category: "Men",
       image1: "assets/photos/Men/blazar_6_blue.jpg",
@@ -260,6 +285,7 @@ class MyProducts{
   ];
   static List<Product> pants = [
     Product(
+      id: '27',
       title: "Men's Pant 1",
       category: "Men",
       image1: "assets/photos/Men/pant_1_black.jpg",
@@ -269,6 +295,7 @@ class MyProducts{
       price: "Tk 1500",
     ),
     Product(
+      id: '28',
       title: "Men's Pant 2",
       category: "Men",
       image1: "assets/photos/Men/pant_2_beige.jpg",
@@ -278,6 +305,7 @@ class MyProducts{
       price: "Tk 1550",
     ),
     Product(
+      id: '29',
       title: "Men's Pant 3",
       category: "Men",
       image1: "assets/photos/Men/pant_3_blue.jpg",
@@ -287,6 +315,7 @@ class MyProducts{
       price: "Tk 1600",
     ),
     Product(
+      id: '30',
       title: "Men's Pant 4",
       category: "Men",
       image1: "assets/photos/Men/pant_4_black.jpg",
@@ -296,6 +325,7 @@ class MyProducts{
       price: "Tk 1620",
     ),
     Product(
+      id: '31',
       title: "Men's Pant 5",
       category: "Men",
       image1: "assets/photos/Men/pant_5_black.jpg",
@@ -305,6 +335,7 @@ class MyProducts{
       price: "Tk 1650",
     ),
     Product(
+      id: '32',
       title: "Men's Pant 6",
       category: "Men",
       image1: "assets/photos/Men/pant_6_beige.jpg",
@@ -314,6 +345,7 @@ class MyProducts{
       price: "Tk 1680",
     ),
     Product(
+      id: '33',
       title: "Men's Pant 7",
       category: "Men",
       image1: "assets/photos/Men/pant_7_blue.jpg",
@@ -325,6 +357,7 @@ class MyProducts{
   ];
   static List<Product> sweatersM = [
     Product(
+      id: '34',
       title: "Men's Sweater 1",
       category: "Men",
       image1: "assets/photos/Men/sweater_1_black.jpg",
@@ -334,6 +367,7 @@ class MyProducts{
       price: "Tk 2000",
     ),
     Product(
+      id: '35',
       title: "Men's Sweater 2",
       category: "Men",
       image1: "assets/photos/Men/sweater_2_blue.jpg",
@@ -343,6 +377,7 @@ class MyProducts{
       price: "Tk 2050",
     ),
     Product(
+      id: '36',
       title: "Men's Sweater 3",
       category: "Men",
       image1: "assets/photos/Men/sweater_3_brown.jpg",
@@ -352,6 +387,7 @@ class MyProducts{
       price: "Tk 2100",
     ),
     Product(
+      id: '37',
       title: "Men's Sweater 4",
       category: "Men",
       image1: "assets/photos/Men/sweater_4_brown.jpg",
@@ -361,6 +397,7 @@ class MyProducts{
       price: "Tk 2150",
     ),
     Product(
+      id: '38',
       title: "Men's Sweater 5",
       category: "Men",
       image1: "assets/photos/Men/sweater_5_blue.jpg",
@@ -370,6 +407,7 @@ class MyProducts{
       price: "Tk 2200",
     ),
     Product(
+      id: '39',
       title: "Men's Sweater 6",
       category: "Men",
       image1: "assets/photos/Men/sweater_6_beige.jpg",
@@ -390,6 +428,7 @@ class MyProducts{
   static List<Product> bottoms = [
 
     Product(
+      id: '40',
       title: "Classic Straight Pants",
       category: "Women",
       image1: "assets/photos/Women/bottom_1_brown.jpg",
@@ -400,6 +439,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '41',
       title: "Modern Casual Trousers",
       category: "Women",
       image1: "assets/photos/Women/bottom_2_beige.jpg",
@@ -410,6 +450,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '42',
       title: "Slim Fit Tailored Pants",
       category: "Women",
       image1: "assets/photos/Women/bottom_3_beige.jpg",
@@ -420,6 +461,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '43',
       title: "Relaxed Fit Wide Pants",
       category: "Women",
       image1: "assets/photos/Women/bottom_4_beige.jpg",
@@ -430,6 +472,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '44',
       title: "Minimal Chic Trousers",
       category: "Women",
       image1: "assets/photos/Women/bottom_5_black.jpg",
@@ -440,6 +483,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '45',
       title: "Soft Casual Bottoms",
       category: "Women",
       image1: "assets/photos/Women/bottom_6_brown.jpg",
@@ -450,6 +494,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '46',
       title: "Elegant Slim Pants",
       category: "Women",
       image1: "assets/photos/Women/bottom_7_black.jpg",
@@ -463,6 +508,7 @@ class MyProducts{
   static List<Product> coords = [
 
     Product(
+      id: '47',
       title:"Chic Co-Ord Set",
       category:"Women",
       image1:"assets/photos/Women/coord_1_brown.jpg",
@@ -473,6 +519,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '48',
       title:"Denim Style Co-Ord",
       category:"Women",
       image1:"assets/photos/Women/coord_2_brown.jpg",
@@ -483,6 +530,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '49',
       title:"Elegant Two Piece Set",
       category:"Women",
       image1:"assets/photos/Women/coord_3_blue.jpg",
@@ -493,6 +541,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '50',
       title:"Soft Neutral Co-Ord",
       category:"Women",
       image1:"assets/photos/Women/coord_4_beige.jpg",
@@ -503,6 +552,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '51',
       title:"Evening Co-Ord Outfit",
       category:"Women",
       image1:"assets/photos/Women/coord_5_black.jpg",
@@ -513,6 +563,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '52',
       title:"Urban Casual Co-Ord",
       category:"Women",
       image1:"assets/photos/Women/coord_6_black.jpg",
@@ -523,6 +574,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '53',
       title:"Fresh Summer Co-Ord",
       category:"Women",
       image1:"assets/photos/Women/coord_7_green.jpg",
@@ -533,6 +585,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '54',
       title:"Modern Fashion Co-Ord",
       category:"Women",
       image1:"assets/photos/Women/coord_8_black.jpg",
@@ -546,6 +599,7 @@ class MyProducts{
   static List<Product> dresses = [
 
     Product(
+      id: '55',
       title:"Elegant Evening Dress",
       category:"Women",
       image1:"assets/photos/Women/dress_1_blue.jpg",
@@ -556,6 +610,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '56',
       title:"Party Style Dress",
       category:"Women",
       image1:"assets/photos/Women/dress_2_blue.jpg",
@@ -566,6 +621,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '57',
       title:"Casual Midi Dress",
       category:"Women",
       image1:"assets/photos/Women/dress_3_black.jpg",
@@ -576,6 +632,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '58',
       title:"Summer Floral Dress",
       category:"Women",
       image1:"assets/photos/Women/dress_4_black.jpg",
@@ -586,6 +643,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '59',
       title:"Minimal Elegant Dress",
       category:"Women",
       image1:"assets/photos/Women/dress_5_black.jpg",
@@ -596,6 +654,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '60',
       title:"Soft Casual Dress",
       category:"Women",
       image1:"assets/photos/Women/dress_6_green.jpg",
@@ -609,6 +668,7 @@ class MyProducts{
   static List<Product> sweatersW = [
 
     Product(
+      id: '61',
       title:"Classic Knit Sweater",
       category:"Women",
       image1:"assets/photos/Women/sweater_1_blue.jpg",
@@ -619,6 +679,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '62',
       title:"Soft Winter Sweater",
       category:"Women",
       image1:"assets/photos/Women/sweater_2_beige.jpg",
@@ -629,6 +690,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '63',
       title:"Modern Knit Pullover",
       category:"Women",
       image1:"assets/photos/Women/sweater_3_blue.jpg",
@@ -639,6 +701,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '64',
       title:"Soft Pastel Sweater",
       category:"Women",
       image1:"assets/photos/Women/sweater_4_beige.jpg",
@@ -649,6 +712,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '65',
       title:"Minimal Knit Sweater",
       category:"Women",
       image1:"assets/photos/Women/sweater_5_beige.jpg",
@@ -659,6 +723,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '66',
       title:"Warm Casual Sweater",
       category:"Women",
       image1:"assets/photos/Women/sweater_6_beige.jpg",
@@ -669,6 +734,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '67',
       title:"Elegant Winter Pullover",
       category:"Women",
       image1:"assets/photos/Women/sweater_7_beige.jpg",
@@ -682,6 +748,7 @@ class MyProducts{
   static List<Product> tops = [
 
     Product(
+      id: '68',
       title:"Casual Cotton Top",
       category:"Women",
       image1:"assets/photos/Women/tops_1_blue.jpg",
@@ -692,6 +759,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '69',
       title:"Minimal Everyday Top",
       category:"Women",
       image1:"assets/photos/Women/tops_2_beige.jpg",
@@ -702,6 +770,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '70',
       title:"Modern Casual Top",
       category:"Women",
       image1:"assets/photos/Women/tops_3_blue.jpg",
@@ -712,6 +781,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '71',
       title:"Elegant Daily Top",
       category:"Women",
       image1:"assets/photos/Women/tops_4_beige.jpg",
@@ -722,6 +792,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '72',
       title:"Light Summer Top",
       category:"Women",
       image1:"assets/photos/Women/tops_5_white_b.jpg",
@@ -732,6 +803,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '73',
       title:"Soft Casual Blouse",
       category:"Women",
       image1:"assets/photos/Women/tops_6_pink.jpg",
@@ -742,6 +814,7 @@ class MyProducts{
     ),
 
     Product(
+      id: '74',
       title:"Bright Fashion Top",
       category:"Women",
       image1:"assets/photos/Women/tops_7_pink.jpg",
@@ -762,6 +835,7 @@ class MyProducts{
 
   static List<Product> kidsRegular = [
     Product(
+      id: '75',
       category: "Kids",
       title: "Kids Regular 1",
       description: "Comfortable cotton t-shirt suitable for daily wear.\nEasy to wash and soft on skin.",
@@ -771,6 +845,7 @@ class MyProducts{
       image3: "assets/photos/Kids/regular_1_green.jpg",
     ),
     Product(
+      id: '76',
       category: "Kids",
       title: "Kids Regular 2",
       description: "Soft and breathable fabric for active kids.\nPerfect for school and playtime.",
@@ -780,6 +855,7 @@ class MyProducts{
       image3: "assets/photos/Kids/regular_2_brown.jpg",
     ),
     Product(
+      id: '77',
       category: "Kids",
       title: "Kids Regular 3",
       description: "Durable t-shirt with vibrant colors.\nComfortable and easy to maintain.",
@@ -789,6 +865,7 @@ class MyProducts{
       image3: "assets/photos/Kids/regular_3_yellow.jpg",
     ),
     Product(
+      id: '78',
       category: "Kids",
       title: "Kids Regular 4",
       description: "Lightweight cotton top for everyday comfort.\nIdeal for indoor and outdoor activities.",
@@ -798,6 +875,7 @@ class MyProducts{
       image3: "assets/photos/Kids/regular_4_pink.jpg",
     ),
     Product(
+      id: '79',
       category: "Kids",
       title: "Kids Regular 5",
       description: "Soft, stretchable t-shirt with fun design.\nGreat for casual outings and playtime.",
@@ -807,6 +885,7 @@ class MyProducts{
       image3: "assets/photos/Kids/regular_5_white.jpg",
     ),
     Product(
+      id: '80',
       category: "Kids",
       title: "Kids Regular 6",
       description: "Cozy cotton t-shirt with vibrant color.\nEasy to wash and maintain for kids.",
@@ -818,6 +897,7 @@ class MyProducts{
   ];
   static List<Product> kidsNight = [
     Product(
+      id: '81',
       category: "Kids",
       title: "Kids Pajama 1",
       description: "Soft pajama set for night comfort.\nBreathable fabric for peaceful sleep.",
@@ -827,6 +907,7 @@ class MyProducts{
       image3: "assets/photos/Kids/pajama_1_3.jpg",
     ),
     Product(
+      id: '82',
       category: "Kids",
       title: "Kids Pajama 2",
       description: "Comfortable nightwear set for kids.\nSoft fabric for a restful sleep.",
@@ -836,6 +917,7 @@ class MyProducts{
       image3: "assets/photos/Kids/pajama_2_3.jpg",
     ),
     Product(
+      id: '83',
       category: "Kids",
       title: "Kids Pajama 3",
       description: "Lightweight cotton pajamas for nightwear.\nSafe and soft for kids’ skin.",
@@ -845,6 +927,7 @@ class MyProducts{
       image3: "assets/photos/Kids/pajama_3_3.jpg",
     ),
     Product(
+      id: '84',
       category: "Kids",
       title: "Kids Pajama 4",
       description: "Warm pajama set suitable for cooler nights.\nSoft and durable material.",
@@ -854,6 +937,7 @@ class MyProducts{
       image3: "assets/photos/Kids/pajama_4_3.jpg",
     ),
     Product(
+      id: '85',
       category: "Kids",
       title: "Kids Pajama 5",
       description: "Cozy nightwear set with fun patterns.\nIdeal for a comfortable sleep.",
@@ -865,6 +949,7 @@ class MyProducts{
   ];
   static List<Product> kidsDenims = [
     Product(
+      id: '86',
       category: "Kids",
       title: "Kids Denim 1",
       description: "Durable denim pants for active kids.\nComfortable for daily wear.",
@@ -874,6 +959,7 @@ class MyProducts{
       image3: "assets/photos/Kids/denim_1_brown.jpg",
     ),
     Product(
+      id: '87',
       category: "Kids",
       title: "Kids Denim 2",
       description: "Soft denim pants with stylish design.\nPerfect for school or outings.",
@@ -883,6 +969,7 @@ class MyProducts{
       image3: "assets/photos/Kids/denim_2_white.jpg",
     ),
     Product(
+      id: '88',
       category: "Kids",
       title: "Kids Denim 3",
       description: "Comfortable and durable denim pants.\nEasy to pair with any top.",
@@ -892,6 +979,7 @@ class MyProducts{
       image3: "assets/photos/Kids/denim_3_red.jpg",
     ),
     Product(
+      id: '89',
       category: "Kids",
       title: "Kids Denim 4",
       description: "Stylish denim pants for everyday wear.\nSoft and long-lasting fabric.",
@@ -901,6 +989,7 @@ class MyProducts{
       image3: "assets/photos/Kids/denim_4_yellow.jpg",
     ),
     Product(
+      id: '90',
       category: "Kids",
       title: "Kids Denim 5",
       description: "Casual denim pants for active children.\nComfortable and durable material.",
@@ -912,6 +1001,7 @@ class MyProducts{
   ];
   static List<Product> kidsJackets = [
     Product(
+      id: '91',
       category: "Kids",
       title: "Kids Jacket 1",
       description: "Warm jacket suitable for outdoor activities.\nDurable and comfortable.",
@@ -921,6 +1011,7 @@ class MyProducts{
       image3: "assets/photos/Kids/jacket_1_3.jpg",
     ),
     Product(
+      id: '92',
       category: "Kids",
       title: "Kids Jacket 2",
       description: "Comfortable jacket with stylish design.\nIdeal for cold weather outings.",
@@ -930,6 +1021,7 @@ class MyProducts{
       image3: "assets/photos/Kids/jacket_2_3.jpg",
     ),
     Product(
+      id: '93',
       category: "Kids",
       title: "Kids Jacket 3",
       description: "Cozy jacket with soft inner lining.\nPerfect for school and play.",
@@ -939,6 +1031,7 @@ class MyProducts{
       image3: "assets/photos/Kids/jacket_3_3.jpg",
     ),
     Product(
+      id: '94',
       category: "Kids",
       title: "Kids Jacket 4",
       description: "Stylish jacket with durable outer fabric.\nComfortable and easy to wear.",
@@ -948,6 +1041,7 @@ class MyProducts{
       image3: "assets/photos/Kids/jacket_4_3.jpg",
     ),
     Product(
+      id: '95',
       category: "Kids",
       title: "Kids Jacket 5",
       description: "Cozy and warm jacket for outdoor fun.\nSoft lining and durable design.",
@@ -957,6 +1051,7 @@ class MyProducts{
       image3: "assets/photos/Kids/jacket_5_3.jpg",
     ),
     Product(
+      id: '96',
       category: "Kids",
       title: "Kids Jacket 6",
       description: "Durable winter jacket for kids.\nKeeps warm in cold weather.",
@@ -968,6 +1063,7 @@ class MyProducts{
   ];
   static List<Product> kidsCoOrds = [
     Product(
+      id: '97',
       category: "Kids",
       title: "Kids Co-ord 1",
       description: "Matching top and bottom set.\nPerfect for casual outings.",
@@ -977,6 +1073,7 @@ class MyProducts{
       image3: "assets/photos/Kids/coord_1_red.jpg",
     ),
     Product(
+      id: '98',
       category: "Kids",
       title: "Kids Co-ord 2",
       description: "Stylish co-ord set for kids.\nSoft and comfortable fabric.",
@@ -986,6 +1083,7 @@ class MyProducts{
       image3: "assets/photos/Kids/coord_2_purple.jpg",
     ),
     Product(
+      id: '99',
       category: "Kids",
       title: "Kids Co-ord 3",
       description: "Vibrant co-ord set with fun colors.\nDurable and easy to wear.",
@@ -995,6 +1093,7 @@ class MyProducts{
       image3: "assets/photos/Kids/coord_3_white.jpg",
     ),
     Product(
+      id: '100',
       category: "Kids",
       title: "Kids Co-ord 4",
       description: "Comfortable co-ord set for daily wear.\nSoft material for sensitive skin.",
@@ -1004,6 +1103,7 @@ class MyProducts{
       image3: "assets/photos/Kids/coord_4_white.jpg",
     ),
     Product(
+      id: '101',
       category: "Kids",
       title: "Kids Co-ord 5",
       description: "Stylish top and bottom matching set.\nPerfect for school and casual outings.",
@@ -1013,6 +1113,7 @@ class MyProducts{
       image3: "assets/photos/Kids/coord_5_navy.jpg",
     ),
     Product(
+      id: '102',
       category: "Kids",
       title: "Kids Co-ord 6",
       description: "Cute co-ord set for kids.\nSoft and breathable material.",
@@ -1022,6 +1123,7 @@ class MyProducts{
       image3: "assets/photos/Kids/coord_6_red.jpg",
     ),
     Product(
+      id: '103',
       category: "Kids",
       title: "Kids Co-ord 7",
       description: "Matching top and bottom set.\nComfortable for everyday wear.",
@@ -1041,6 +1143,7 @@ class MyProducts{
 
   static List<Product> hats = [
     Product(
+      id: '104',
       category: "EcoWear",
       title: "Eco Hat 1",
       description: "Stylish eco-friendly hat made from sustainable materials.\nPerfect for sunny days or casual outings.",
@@ -1050,6 +1153,7 @@ class MyProducts{
       price: "Tk 890",
     ),
     Product(
+      id: '105',
       category: "EcoWear",
       title: "Eco Hat 2",
       description: "Lightweight and breathable, ideal for summer wear.\nCrafted with eco-conscious materials.",
@@ -1059,6 +1163,7 @@ class MyProducts{
       price: "Tk 920",
     ),
     Product(
+      id: '106',
       category: "EcoWear",
       title: "Eco Hat 3",
       description: "Perfect blend of style and sustainability.\nGreat for everyday outdoor use.",
@@ -1068,6 +1173,7 @@ class MyProducts{
       price: "Tk 950",
     ),
     Product(
+      id: '107',
       category: "EcoWear",
       title: "Eco Hat 4",
       description: "Classic design made from recycled fibers.\nAdds eco-chic style to any outfit.",
@@ -1077,6 +1183,7 @@ class MyProducts{
       price: "Tk 900",
     ),
     Product(
+      id: '108',
       category: "EcoWear",
       title: "Eco Hat 5",
       description: "Trendy sustainable hat for all seasons.\nSoft, comfortable, and durable.",
@@ -1086,6 +1193,7 @@ class MyProducts{
       price: "Tk 940",
     ),
     Product(
+      id: '109',
       category: "EcoWear",
       title: "Eco Hat 6",
       description: "Eco-friendly and stylish, perfect for daily wear.\nMade with sustainable materials.",
@@ -1097,6 +1205,7 @@ class MyProducts{
   ];
   static List<Product> bags = [
     Product(
+      id: '110',
       category: "EcoWear",
       title: "Eco Bag 1",
       description: "Compact and durable bag for everyday use.\nMade from environmentally friendly materials.",
@@ -1106,6 +1215,7 @@ class MyProducts{
       price: "Tk 1250",
     ),
     Product(
+      id: '111',
       category: "EcoWear",
       title: "Eco Bag 2",
       description: "Eco-conscious bag with a minimalist design.\nIdeal for shopping or casual outings.",
@@ -1115,6 +1225,7 @@ class MyProducts{
       price: "Tk 1320",
     ),
     Product(
+      id: '112',
       category: "EcoWear",
       title: "Eco Bag 3",
       description: "Stylish sustainable bag for daily essentials.\nMade with durable recycled materials.",
@@ -1124,6 +1235,7 @@ class MyProducts{
       price: "Tk 1400",
     ),
     Product(
+      id: '113',
       category: "EcoWear",
       title: "Eco Bag 4",
       description: "Functional and eco-friendly, fits all your needs.\nPerfect for work or travel.",
@@ -1133,6 +1245,7 @@ class MyProducts{
       price: "Tk 1380",
     ),
     Product(
+      id: '114',
       category: "EcoWear",
       title: "Eco Bag 5",
       description: "Chic and sustainable bag with modern design.\nMade from eco-friendly fabrics.",
@@ -1142,6 +1255,7 @@ class MyProducts{
       price: "Tk 1450",
     ),
     Product(
+      id: '115',
       category: "EcoWear",
       title: "Eco Bag 6",
       description: "Durable and stylish, perfect for daily wear.\nCrafted from sustainable materials.",
@@ -1153,6 +1267,7 @@ class MyProducts{
   ];
   static List<Product> footWear = [
     Product(
+      id: '116',
       category: "EcoWear",
       title: "Eco Footwear 1",
       description: "Comfortable eco-friendly shoes for everyday use.\nMade from sustainable materials.",
@@ -1162,6 +1277,7 @@ class MyProducts{
       price: "Tk 1780",
     ),
     Product(
+      id: '117',
       category: "EcoWear",
       title: "Eco Footwear 2",
       description: "Stylish and durable, perfect for casual outings.\nCrafted from recycled materials.",
@@ -1171,6 +1287,7 @@ class MyProducts{
       price: "Tk 1850",
     ),
     Product(
+      id: '118',
       category: "EcoWear",
       title: "Eco Footwear 3",
       description: "Modern eco-friendly design with comfort.\nIdeal for walking or daily wear.",
@@ -1180,6 +1297,7 @@ class MyProducts{
       price: "Tk 1900",
     ),
     Product(
+      id: '119',
       category: "EcoWear",
       title: "Eco Footwear 4",
       description: "Sustainable shoes designed for all-day comfort.\nEco-conscious and stylish.",
@@ -1189,6 +1307,7 @@ class MyProducts{
       price: "Tk 1950",
     ),
     Product(
+      id: '120',
       category: "EcoWear",
       title: "Eco Footwear 5",
       description: "Durable and lightweight eco-friendly footwear.\nPerfect for casual or semi-formal wear.",
@@ -1198,6 +1317,7 @@ class MyProducts{
       price: "Tk 2000",
     ),
     Product(
+      id: '121',
       category: "EcoWear",
       title: "Eco Footwear 6",
       description: "Comfortable and sustainable design for daily wear.\nMade from recycled eco materials.",
@@ -1209,6 +1329,7 @@ class MyProducts{
   ];
   static List<Product> scarves = [
     Product(
+      id: '122',
       category: "EcoWear",
       title: "Eco Scarf 1",
       description: "Soft and eco-friendly scarf, perfect for any outfit.\nMade from sustainable fabrics.",
@@ -1218,6 +1339,7 @@ class MyProducts{
       price: "Tk 650",
     ),
     Product(
+      id: '123',
       category: "EcoWear",
       title: "Eco Scarf 2",
       description: "Lightweight scarf for everyday wear.\nEco-conscious and comfortable.",
@@ -1227,6 +1349,7 @@ class MyProducts{
       price: "Tk 670",
     ),
     Product(
+      id: '124',
       category: "EcoWear",
       title: "Eco Scarf 3",
       description: "Chic sustainable scarf to complement any look.\nSoft, stylish, and eco-friendly.",
@@ -1236,6 +1359,7 @@ class MyProducts{
       price: "Tk 700",
     ),
     Product(
+      id: '125',
       category: "EcoWear",
       title: "Eco Scarf 4",
       description: "Elegant scarf made with recycled materials.\nAdds a sustainable touch to outfits.",
@@ -1245,6 +1369,7 @@ class MyProducts{
       price: "Tk 720",
     ),
     Product(
+      id: '126',
       category: "EcoWear",
       title: "Eco Scarf 5",
       description: "Soft, stylish, and environmentally friendly.\nPerfect for casual and formal wear.",
@@ -1263,127 +1388,57 @@ class MyProducts{
 
   static List<Product> best=[
     Product(
-      title:"Soft Winter Sweater",
-      category:"Women",
-      image1:"assets/photos/Women/sweater_2_beige.jpg",
-      image2:"assets/photos/Women/sweater_2_black.jpg",
-      image3:"assets/photos/Women/sweater_2_blue.jpg",
-      description:"Stylish winter sweater with cozy fabric.\nKeeps you warm while looking elegant.",
-      price:"Tk 2250",
-    ),
-    Product(
+      id: '88',
       category: "Kids",
-      title: "Kids Co-ord 2",
-      description: "Stylish co-ord set for kids.\nSoft and comfortable fabric.",
-      price: "Tk 1020",
-      image1: "assets/photos/Kids/coord_2_maroon.jpg",
-      image2: "assets/photos/Kids/coord_2_pink.jpg",
-      image3: "assets/photos/Kids/coord_2_purple.jpg",
+      title: "Kids Denim 3",
+      description: "Comfortable and durable denim pants.\nEasy to pair with any top.",
+      price: "Tk 810",
+      image1: "assets/photos/Kids/denim_3_black.jpg",
+      image2: "assets/photos/Kids/denim_3_blue.jpg",
+      image3: "assets/photos/Kids/denim_3_red.jpg",
     ),
     Product(
-      category: "Summer Collection",
-      title: "Summer 3",
-      description: "Soft and airy fabric.\nGreat for casual summer outings.",
-      price: "Tk 910",
-      image1: "assets/photos/Summer/summer_3_beige_1.jpg",
-      image2: "assets/photos/Summer/summer_3_blue_1.jpg",
-      image3: "assets/photos/Summer/summer_3_green_1.jpg",
-    ),
-    Product(
-      title:"Light Summer Top",
+      id: '50',
+      title:"Soft Neutral Co-Ord",
       category:"Women",
-      image1:"assets/photos/Women/tops_5_white_b.jpg",
-      image2:"assets/photos/Women/tops_5_white_p.jpg",
-      image3:"assets/photos/Women/tops_5_yellow.jpg",
-      description:"Light breathable summer top for comfort.\nPerfect for warm weather fashion.",
-      price:"Tk 1320",
+      image1:"assets/photos/Women/coord_4_beige.jpg",
+      image2:"assets/photos/Women/coord_4_blue.jpg",
+      image3:"assets/photos/Women/coord_4_white.jpg",
+      description:"Minimal co-ord outfit with elegant neutral tones.\nComfortable fabric with relaxed fit.",
+      price:"Tk 2990",
     ),
     Product(
-      category: "EcoWear",
-      title: "Eco Scarf 4",
-      description: "Elegant scarf made with recycled materials.\nAdds a sustainable touch to outfits.",
-      image1: "assets/photos/Eco/scarf_4_1.jpg",
-      image2: "assets/photos/Eco/scarf_4_2.jpg",
-      image3: "assets/photos/Eco/scarf_4_3.jpg",
-      price: "Tk 720",
+      id: '34',
+      title: "Men's Sweater 1",
+      category: "Men",
+      image1: "assets/photos/Men/sweater_1_black.jpg",
+      image2: "assets/photos/Men/sweater_1_brown.jpg",
+      image3: "assets/photos/Men/sweater_1_green.jpg",
+      description: "Warm and comfortable sweater.\nPerfect for chilly days and casual outings.",
+      price: "Tk 2000",
     ),
     Product(
+      id: '99',
       category: "Kids",
-      title: "Kids Jacket 1",
-      description: "Warm jacket suitable for outdoor activities.\nDurable and comfortable.",
-      price: "Tk 1200",
-      image1: "assets/photos/Kids/jacket_1_1.jpg",
-      image2: "assets/photos/Kids/jacket_1_2.jpg",
-      image3: "assets/photos/Kids/jacket_1_3.jpg",
+      title: "Kids Co-ord 3",
+      description: "Vibrant co-ord set with fun colors.\nDurable and easy to wear.",
+      price: "Tk 1030",
+      image1: "assets/photos/Kids/coord_3_blue.jpg",
+      image2: "assets/photos/Kids/coord_3_brown.jpg",
+      image3: "assets/photos/Kids/coord_3_white.jpg",
     ),
     Product(
-      title: "Men's Classic Shirt 3",
-      category: "Men",
-      image1: "assets/photos/Men/shirt_3_beige.jpg",
-      image2: "assets/photos/Men/shirt_3_blue.jpg",
-      image3: "assets/photos/Men/shirt_3_green.jpg",
-      description: "Elegant shirt with a perfect fit.\nIdeal for work or casual outings.",
-      price: "Tk 1280",
-    ),Product(
-      category: "EcoWear",
-      title: "Eco Footwear 4",
-      description: "Sustainable shoes designed for all-day comfort.\nEco-conscious and stylish.",
-      image1: "assets/photos/Eco/foot_4_1.jpg",
-      image2: "assets/photos/Eco/foot_4_2.jpg",
-      image3: "assets/photos/Eco/foot_4_3.jpg",
-      price: "Tk 1950",
-    ),
-    Product(
-      title: "Men's Casual T-Shirt 4",
-      category: "Men",
-      image1: "assets/photos/Men/tshirt_4_blue.jpg",
-      image2: "assets/photos/Men/tshirt_4_green.jpg",
-      image3: "assets/photos/Men/tshirt_4_purple.jpg",
-      description: "Lightweight t-shirt for daily wear.\nKeeps you comfortable in all conditions.",
-      price: "Tk 940",
-    ),Product(
-      title:"Party Style Dress",
+      id: '57',
+      title:"Casual Midi Dress",
       category:"Women",
-      image1:"assets/photos/Women/dress_2_blue.jpg",
-      image2:"assets/photos/Women/dress_2_maroon.jpg",
-      image3:"assets/photos/Women/dress_2_violet.jpg",
-      description:"Stylish party dress with modern silhouette.\nPerfect for celebrations and occasions.",
-      price:"Tk 2890",
-    ),Product(
-      category: "EcoWear",
-      title: "Eco Bag 4",
-      description: "Functional and eco-friendly, fits all your needs.\nPerfect for work or travel.",
-      image1: "assets/photos/Eco/bag_4_1.jpg",
-      image2: "assets/photos/Eco/bag_4_2.jpg",
-      image3: "assets/photos/Eco/bag_4_3.jpg",
-      price: "Tk 1380",
+      image1:"assets/photos/Women/dress_3_black.jpg",
+      image2:"assets/photos/Women/dress_3_blue.jpg",
+      image3:"assets/photos/Women/dress_3_brown.jpg",
+      description:"Comfortable midi dress for everyday fashion.\nSoft fabric with relaxed fit.",
+      price:"Tk 2450",
     ),
     Product(
-      title: "Men's Blazer 1",
-      category: "Men",
-      image1: "assets/photos/Men/blazar_1_blue.jpg",
-      image2: "assets/photos/Men/blazar_1_brown.jpg",
-      image3: "assets/photos/Men/blazar_1_green.jpg",
-      description: "Smart blazer for formal occasions.\nPerfect for office or evening events.",
-      price: "Tk 3200",
-    ),Product(
-      title:"Elegant Two Piece Set",
-      category:"Women",
-      image1:"assets/photos/Women/coord_3_blue.jpg",
-      image2:"assets/photos/Women/coord_3_brown.jpg",
-      image3:"assets/photos/Women/coord_3_maroon.jpg",
-      description:"Beautiful coordinated set for a polished style.\nPerfect for outings and casual events.",
-      price:"Tk 3050",
-    ),Product(
-      category: "EcoWear",
-      title: "Eco Hat 2",
-      description: "Lightweight and breathable, ideal for summer wear.\nCrafted with eco-conscious materials.",
-      image1: "assets/photos/Eco/hat_2_1.jpg",
-      image2: "assets/photos/Eco/hat_2_2.jpg",
-      image3: "assets/photos/Eco/hat_2_3.jpg",
-      price: "Tk 920",
-    ),
-    Product(
+      id: '27',
       title: "Men's Pant 1",
       category: "Men",
       image1: "assets/photos/Men/pant_1_black.jpg",
@@ -1393,35 +1448,264 @@ class MyProducts{
       price: "Tk 1500",
     ),
     Product(
-      title: "Slim Fit Tailored Pants",
-      category: "Women",
-      image1: "assets/photos/Women/bottom_3_beige.jpg",
-      image2: "assets/photos/Women/bottom_3_maroon.jpg",
-      image3: "assets/photos/Women/bottom_3_white.jpg",
-      description: "Smart slim-fit pants with a tailored look.\nGreat for professional or smart casual outfits.",
-      price: "Tk 1990",
-    ),Product(
-      title: "Men's Sweater 1",
-      category: "Men",
-      image1: "assets/photos/Men/sweater_1_black.jpg",
-      image2: "assets/photos/Men/sweater_1_brown.jpg",
-      image3: "assets/photos/Men/sweater_1_green.jpg",
-      description: "Warm and comfortable sweater.\nPerfect for chilly days and casual outings.",
-      price: "Tk 2000",
+      id: '65',
+      title:"Minimal Knit Sweater",
+      category:"Women",
+      image1:"assets/photos/Women/sweater_5_beige.jpg",
+      image2:"assets/photos/Women/sweater_5_black.jpg",
+      image3:"assets/photos/Women/sweater_5_green.jpg",
+      description:"Clean minimalist sweater for modern style.\nWarm and comfortable winter clothing.",
+      price:"Tk 2300",
     ),
-  ];
 
-  List<Product> products = List.generate(
-    allProducts.length,
-        (index) => Product(
-          id: index,
-          category:allProducts[index].category,
-          title: allProducts[index].title,
-          description: allProducts[index].description,
-          image1: allProducts[index].image1,
-          image2: allProducts[index].image2,
-          image3: allProducts[index].image3,
-          price:allProducts[index].price,
+    Product(
+      id: '112',
+      category: "EcoWear",
+      title: "Eco Bag 3",
+      description: "Stylish sustainable bag for daily essentials.\nMade with durable recycled materials.",
+      image1: "assets/photos/Eco/bag_3_1.jpg",
+      image2: "assets/photos/Eco/bag_3_2.jpg",
+      image3: "assets/photos/Eco/bag_3_3.jpg",
+      price: "Tk 1400",
     ),
-  );
+    Product(
+      id: '68',
+      title:"Casual Cotton Top",
+      category:"Women",
+      image1:"assets/photos/Women/tops_1_blue.jpg",
+      image2:"assets/photos/Women/tops_1_pink.jpg",
+      image3:"assets/photos/Women/tops_1_yellow.jpg",
+      description:"Soft cotton top perfect for daily outfits.\nComfortable fit with modern design.",
+      price:"Tk 1290",
+    ),
+    Product(
+      id: '21',
+      title: "Men's Blazer 1",
+      category: "Men",
+      image1: "assets/photos/Men/blazar_1_blue.jpg",
+      image2: "assets/photos/Men/blazar_1_brown.jpg",
+      image3: "assets/photos/Men/blazar_1_green.jpg",
+      description: "Smart blazer for formal occasions.\nPerfect for office or evening events.",
+      price: "Tk 3200",
+    ),
+
+    Product(
+      id: '118',
+      category: "EcoWear",
+      title: "Eco Footwear 3",
+      description: "Modern eco-friendly design with comfort.\nIdeal for walking or daily wear.",
+      image1: "assets/photos/Eco/foot_3_1.jpg",
+      image2: "assets/photos/Eco/foot_3_2.jpg",
+      image3: "assets/photos/Eco/foot_3_3.jpg",
+      price: "Tk 1900",
+    ),
+    Product(
+      id: '15',
+      title: "Men's Casual T-Shirt 1",
+      category: "Men",
+      image1: "assets/photos/Men/tshirt_1_beige.jpg",
+      image2: "assets/photos/Men/tshirt_1_blue.jpg",
+      image3: "assets/photos/Men/tshirt_1_pink.jpg",
+      description: "Soft and breathable cotton t-shirt.\nIdeal for summer and casual outings.",
+      price: "Tk 900",
+    ),
+    Product(
+      id: '122',
+      category: "EcoWear",
+      title: "Eco Scarf 1",
+      description: "Soft and eco-friendly scarf, perfect for any outfit.\nMade from sustainable fabrics.",
+      image1: "assets/photos/Eco/scarf_1_1.jpg",
+      image2: "assets/photos/Eco/scarf_1_2.jpg",
+      image3: "assets/photos/Eco/scarf_1_3.jpg",
+      price: "Tk 650",
+    ),
+    Product(
+      id: '10',
+      title: "Men's Classic Shirt 1",
+      category: "Men",
+      image1: "assets/photos/Men/shirt_1_black.jpg",
+      image2: "assets/photos/Men/shirt_1_blue.jpg",
+      image3: "assets/photos/Men/shirt_1_maroon.jpg",
+      description: "A comfortable, stylish shirt for daily wear.\nPerfect for casual and semi-formal occasions.",
+      price: "Tk 1250",
+    ),
+    Product(
+      id: '1',
+      category: "Summer Collection",
+      title: "Summer 1",
+      description: "Light and breezy summer wear.\nPerfect for hot sunny days.",
+      price: "Tk 900",
+      image1: "assets/photos/Summer/summer_1_blue_1.jpg",
+      image2: "assets/photos/Summer/summer_1_green_1.jpg",
+      image3: "assets/photos/Summer/summer_1_pink_1.jpg",
+    ),
+
+  ];
+  // static List<Product> best=[
+  //   Product(
+  //     id: '127',
+  //     title:"Soft Winter Sweater",
+  //     category:"Women",
+  //     image1:"assets/photos/Women/sweater_2_beige.jpg",
+  //     image2:"assets/photos/Women/sweater_2_black.jpg",
+  //     image3:"assets/photos/Women/sweater_2_blue.jpg",
+  //     description:"Stylish winter sweater with cozy fabric.\nKeeps you warm while looking elegant.",
+  //     price:"Tk 2250",
+  //   ),
+  //   Product(
+  //     id: '128',
+  //     category: "Kids",
+  //     title: "Kids Co-ord 2",
+  //     description: "Stylish co-ord set for kids.\nSoft and comfortable fabric.",
+  //     price: "Tk 1020",
+  //     image1: "assets/photos/Kids/coord_2_maroon.jpg",
+  //     image2: "assets/photos/Kids/coord_2_pink.jpg",
+  //     image3: "assets/photos/Kids/coord_2_purple.jpg",
+  //   ),
+  //   Product(
+  //     id: '129',
+  //     category: "Summer Collection",
+  //     title: "Summer 3",
+  //     description: "Soft and airy fabric.\nGreat for casual summer outings.",
+  //     price: "Tk 910",
+  //     image1: "assets/photos/Summer/summer_3_beige_1.jpg",
+  //     image2: "assets/photos/Summer/summer_3_blue_1.jpg",
+  //     image3: "assets/photos/Summer/summer_3_green_1.jpg",
+  //   ),
+  //   Product(
+  //     id: '130',
+  //     title:"Light Summer Top",
+  //     category:"Women",
+  //     image1:"assets/photos/Women/tops_5_white_b.jpg",
+  //     image2:"assets/photos/Women/tops_5_white_p.jpg",
+  //     image3:"assets/photos/Women/tops_5_yellow.jpg",
+  //     description:"Light breathable summer top for comfort.\nPerfect for warm weather fashion.",
+  //     price:"Tk 1320",
+  //   ),
+  //   Product(
+  //     id: '131',
+  //     category: "EcoWear",
+  //     title: "Eco Scarf 4",
+  //     description: "Elegant scarf made with recycled materials.\nAdds a sustainable touch to outfits.",
+  //     image1: "assets/photos/Eco/scarf_4_1.jpg",
+  //     image2: "assets/photos/Eco/scarf_4_2.jpg",
+  //     image3: "assets/photos/Eco/scarf_4_3.jpg",
+  //     price: "Tk 720",
+  //   ),
+  //   Product(
+  //     id: '132',
+  //     category: "Kids",
+  //     title: "Kids Jacket 1",
+  //     description: "Warm jacket suitable for outdoor activities.\nDurable and comfortable.",
+  //     price: "Tk 1200",
+  //     image1: "assets/photos/Kids/jacket_1_1.jpg",
+  //     image2: "assets/photos/Kids/jacket_1_2.jpg",
+  //     image3: "assets/photos/Kids/jacket_1_3.jpg",
+  //   ),
+  //   Product(
+  //     id: '133',
+  //     title: "Men's Classic Shirt 3",
+  //     category: "Men",
+  //     image1: "assets/photos/Men/shirt_3_beige.jpg",
+  //     image2: "assets/photos/Men/shirt_3_blue.jpg",
+  //     image3: "assets/photos/Men/shirt_3_green.jpg",
+  //     description: "Elegant shirt with a perfect fit.\nIdeal for work or casual outings.",
+  //     price: "Tk 1280",
+  //   ),Product(
+  //     id: '134',
+  //     category: "EcoWear",
+  //     title: "Eco Footwear 4",
+  //     description: "Sustainable shoes designed for all-day comfort.\nEco-conscious and stylish.",
+  //     image1: "assets/photos/Eco/foot_4_1.jpg",
+  //     image2: "assets/photos/Eco/foot_4_2.jpg",
+  //     image3: "assets/photos/Eco/foot_4_3.jpg",
+  //     price: "Tk 1950",
+  //   ),
+  //   Product(
+  //     id: '135',
+  //     title: "Men's Casual T-Shirt 4",
+  //     category: "Men",
+  //     image1: "assets/photos/Men/tshirt_4_blue.jpg",
+  //     image2: "assets/photos/Men/tshirt_4_green.jpg",
+  //     image3: "assets/photos/Men/tshirt_4_purple.jpg",
+  //     description: "Lightweight t-shirt for daily wear.\nKeeps you comfortable in all conditions.",
+  //     price: "Tk 940",
+  //   ),Product(
+  //     id: '136',
+  //     title:"Party Style Dress",
+  //     category:"Women",
+  //     image1:"assets/photos/Women/dress_2_blue.jpg",
+  //     image2:"assets/photos/Women/dress_2_maroon.jpg",
+  //     image3:"assets/photos/Women/dress_2_violet.jpg",
+  //     description:"Stylish party dress with modern silhouette.\nPerfect for celebrations and occasions.",
+  //     price:"Tk 2890",
+  //   ),Product(
+  //     id: '137',
+  //     category: "EcoWear",
+  //     title: "Eco Bag 4",
+  //     description: "Functional and eco-friendly, fits all your needs.\nPerfect for work or travel.",
+  //     image1: "assets/photos/Eco/bag_4_1.jpg",
+  //     image2: "assets/photos/Eco/bag_4_2.jpg",
+  //     image3: "assets/photos/Eco/bag_4_3.jpg",
+  //     price: "Tk 1380",
+  //   ),
+  //   Product(
+  //     id: '138',
+  //     title: "Men's Blazer 1",
+  //     category: "Men",
+  //     image1: "assets/photos/Men/blazar_1_blue.jpg",
+  //     image2: "assets/photos/Men/blazar_1_brown.jpg",
+  //     image3: "assets/photos/Men/blazar_1_green.jpg",
+  //     description: "Smart blazer for formal occasions.\nPerfect for office or evening events.",
+  //     price: "Tk 3200",
+  //   ),Product(
+  //     id: '139',
+  //     title:"Elegant Two Piece Set",
+  //     category:"Women",
+  //     image1:"assets/photos/Women/coord_3_blue.jpg",
+  //     image2:"assets/photos/Women/coord_3_brown.jpg",
+  //     image3:"assets/photos/Women/coord_3_maroon.jpg",
+  //     description:"Beautiful coordinated set for a polished style.\nPerfect for outings and casual events.",
+  //     price:"Tk 3050",
+  //   ),Product(
+  //     id: '140',
+  //     category: "EcoWear",
+  //     title: "Eco Hat 2",
+  //     description: "Lightweight and breathable, ideal for summer wear.\nCrafted with eco-conscious materials.",
+  //     image1: "assets/photos/Eco/hat_2_1.jpg",
+  //     image2: "assets/photos/Eco/hat_2_2.jpg",
+  //     image3: "assets/photos/Eco/hat_2_3.jpg",
+  //     price: "Tk 920",
+  //   ),
+  //   Product(
+  //     id: '141',
+  //     title: "Men's Pant 1",
+  //     category: "Men",
+  //     image1: "assets/photos/Men/pant_1_black.jpg",
+  //     image2: "assets/photos/Men/pant_1_blue.jpg",
+  //     image3: "assets/photos/Men/pant_1_grey.jpg",
+  //     description: "Comfortable and stylish pants.\nPerfect for casual or office wear.",
+  //     price: "Tk 1500",
+  //   ),
+  //   Product(
+  //     id: '142',
+  //     title: "Slim Fit Tailored Pants",
+  //     category: "Women",
+  //     image1: "assets/photos/Women/bottom_3_beige.jpg",
+  //     image2: "assets/photos/Women/bottom_3_maroon.jpg",
+  //     image3: "assets/photos/Women/bottom_3_white.jpg",
+  //     description: "Smart slim-fit pants with a tailored look.\nGreat for professional or smart casual outfits.",
+  //     price: "Tk 1990",
+  //   ),Product(
+  //     id: '143',
+  //     title: "Men's Sweater 1",
+  //     category: "Men",
+  //     image1: "assets/photos/Men/sweater_1_black.jpg",
+  //     image2: "assets/photos/Men/sweater_1_brown.jpg",
+  //     image3: "assets/photos/Men/sweater_1_green.jpg",
+  //     description: "Warm and comfortable sweater.\nPerfect for chilly days and casual outings.",
+  //     price: "Tk 2000",
+  //   ),
+  // ];
+
 }

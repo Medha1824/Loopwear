@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loop_wear/available_size.dart';
 import 'package:loop_wear/favourite_icon.dart';
 import 'package:loop_wear/product.dart';
 
 class ProductDetails extends StatefulWidget{
-  final Product product;
+   final Product product;
   const ProductDetails( {super.key, required this.product, });
 
   @override
@@ -31,7 +30,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             iconTheme: IconThemeData(color: Color(0xFF9F7F88)),
             backgroundColor: Colors.transparent,
             actions: [
-              FavouriteIcon(),
+              FavouriteIcon(id: widget.product.id ),
             ],
           ),
         body: SingleChildScrollView(

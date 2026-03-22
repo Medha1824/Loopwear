@@ -61,7 +61,7 @@ class _ProductCardState extends State<ProductCard> {
                   Row(
                     mainAxisAlignment: .end,
                     children: [
-                      FavouriteIcon(),
+                      FavouriteIcon(id: widget.product.id),
                       IconButton(onPressed: () {  },
                         icon: Icon(CupertinoIcons.cart,color:Color(0xFF9F7F88)),
                       )

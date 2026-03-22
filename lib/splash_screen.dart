@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:loop_wear/storage_utility.dart';
 import 'package:loop_wear/welcome_screen.dart';
+import 'package:get/get.dart';
 
+import 'favourite_controller.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -25,6 +28,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    TLocalStorage.instance().init('loopwear');
+
+    Get.lazyPut<FavouriteController>(() => FavouriteController());
     return Scaffold(
       backgroundColor: const Color(0xFF9F7F88),
       body: SafeArea(

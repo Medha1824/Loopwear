@@ -13,11 +13,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int myIndex=0;
-  List<Widget> widgetList= const[
-    MainHomeScreen(),
+  List<Widget> widgetList= [
+    const MainHomeScreen(),
     FavouritesScreen(),
-    CartScreen(),
-    AccountScreen()
+    const CartScreen(),
+    const AccountScreen()
   ];
   @override
   Widget build(BuildContext context) {
