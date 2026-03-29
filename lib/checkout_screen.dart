@@ -123,7 +123,7 @@ class CheckoutScreen extends StatelessWidget {
 
             // Cart Summary
             const Text(
-              'Cart Summary',
+              'Order Summary',
               style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
@@ -134,15 +134,16 @@ class CheckoutScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ListTile(
-                    title: const Text('Item 1', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
-                    subtitle: const Text('Quantity: 2', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
+                    title: const Text('Subtotal', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
                     trailing: const Text('৳200', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
                   ),
-                 // const Divider(),
-                  const SizedBox(height: 8),
                   ListTile(
-                    title: const Text('Item 2', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
-                    subtitle: const Text('Quantity: 1', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
+                    title: const Text('Discount', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
+                    trailing: const Text('৳150', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
+                  ),
+
+                  ListTile(
+                    title: const Text('Shipping Fee Total', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
                     trailing: const Text('৳150', style: TextStyle(color: Color(0xFF9F7F88),fontSize: 18, fontWeight: FontWeight.bold),),
                   ),
                 ],
