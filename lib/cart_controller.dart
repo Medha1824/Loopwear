@@ -7,21 +7,25 @@ import 'package:loop_wear/loaders.dart';
 import 'package:loop_wear/product.dart';
 import 'package:flutter/material.dart';
 
-
 class CartController extends GetxController {
   static CartController get instance => Get.find();
   final _auth = FirebaseAuth.instance;
   final _db = FirebaseFirestore.instance;
+
   RxInt noOfCartItems = 0.obs;
   RxDouble totalCartPrice = 0.0.obs;
   RxInt productQuantityInCart = 1.obs;
-
   RxList<CartItemModel> cartItems = <CartItemModel>[].obs;
+
+  // Subtotal getter
+  double get subtotal => totalCartPrice.value;
+
   @override
   void onInit() {
     super.onInit();
-    loadCartFromFirebase(); // load cart when controller is created
+    loadCartFromFirebase();
   }
+
   void addToCart({
     required BuildContext context,
     required Product product,
@@ -30,7 +34,6 @@ class CartController extends GetxController {
     required int quantity,
     required String cartImage,
   }) {
-
     if (productQuantityInCart.value < 1) {
       TLoaders.customToast(
         context: context,
@@ -40,7 +43,6 @@ class CartController extends GetxController {
     }
 
     String variationId = "${selectedColor}_${selectedSize}";
-
 
     CartItemModel newItem = CartItemModel(
       productId: product.id,
@@ -55,8 +57,9 @@ class CartController extends GetxController {
       variationId: variationId,
       selectedVariation: {
         "color": selectedColor,
-        "size": selectedSize ?? '',
-      }, cartImage: cartImage,
+        "size": selectedSize,
+      },
+      cartImage: cartImage,
     );
 
     int index = cartItems.indexWhere((item) =>
@@ -68,8 +71,8 @@ class CartController extends GetxController {
     } else {
       cartItems.add(newItem);
     }
-    String uid = _auth.currentUser!.uid;
 
+    String uid = _auth.currentUser!.uid;
     _db.collection('users')
         .doc(uid)
         .collection('cart')
@@ -77,46 +80,40 @@ class CartController extends GetxController {
         .set(newItem.toJson());
 
     updateCartTotals();
-
     productQuantityInCart.value = 1;
 
     TLoaders.customToast(
       context: context,
       message: "Added to cart",
     );
-    for (var item in CartController.instance.cartItems) {
+
+    for (var item in cartItems) {
       print("${item.title} | ${item.selectedVariation} | Qty: ${item.quantity}");
     }
   }
+
   void decreaseQuantity(BuildContext context, CartItemModel item) {
     String uid = _auth.currentUser!.uid;
 
     if (item.quantity > 1) {
       item.quantity--;
-
-      /// update quantity in firebase
       _db.collection('users')
           .doc(uid)
           .collection('cart')
           .doc(item.productId + item.variationId)
           .update({'quantity': item.quantity});
-
     } else {
       cartItems.remove(item);
-
-      /// remove from firebase
       _db.collection('users')
           .doc(uid)
           .collection('cart')
           .doc(item.productId + item.variationId)
           .delete();
-
       TLoaders.customToast(
         context: context,
         message: "Item removed from cart",
       );
     }
-
     updateCartTotals();
   }
 
@@ -149,5 +146,54 @@ class CartController extends GetxController {
 
     noOfCartItems.value = totalItems;
     totalCartPrice.value = totalPrice;
+  }
+
+  Future<void> placeOrder(BuildContext context) async {
+    String uid = _auth.currentUser!.uid;
+
+    if (cartItems.isEmpty) {
+      TLoaders.customToast(
+        context: context,
+        message: "Cart is empty",
+      );
+      return;
+    }
+
+    String orderId = DateTime.now().millisecondsSinceEpoch.toString();
+
+    final order = {
+      'orderId': orderId,
+      'totalPrice': totalCartPrice.value,
+      'totalItems': noOfCartItems.value,
+      'date': DateTime.now().toIso8601String(),
+      'items': cartItems.map((e) => e.toJson()).toList(),
+    };
+
+    await _db
+        .collection('users')
+        .doc(uid)
+        .collection('orders')
+        .doc(orderId)
+        .set(order);
+
+    cartItems.clear();
+
+    await _db
+        .collection('users')
+        .doc(uid)
+        .collection('cart')
+        .get()
+        .then((snapshot) {
+      for (var doc in snapshot.docs) {
+        doc.reference.delete();
+      }
+    });
+
+    updateCartTotals();
+
+    TLoaders.customToast(
+      context: context,
+      message: "Order placed successfully",
+    );
   }
 }

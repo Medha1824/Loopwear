@@ -37,14 +37,6 @@ class CartScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Obx(() {
-        if (controller.cartItems.isEmpty) {
-          return const Center(
-            child: Text(
-              "Your cart is empty",
-              style: TextStyle(fontSize: 18),
-            ),
-          );
-        }
 
         return Column(
           children: [

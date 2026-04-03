@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/setting_screen.dart';
+import 'package:loop_wear/Order_history.dart';
 import 'navigation_drawer_widget.dart';
+import 'package:get/get.dart';
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
 
@@ -64,7 +66,7 @@ class AccountScreen extends StatelessWidget {
                   'My Orders',
                   style: TextStyle(color:Color(0xFF9F7F88), fontSize: 20),
               ),
-              onTap: () {},
+              onTap: () { Get.to(() => const OrderHistoryPage());},
             ),
             ListTile(
               leading: const Icon(color:const Color(0xFF9F7F88),Icons.settings_outlined),
