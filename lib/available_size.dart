@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AvailableSize extends StatefulWidget {
+  final Function(String) onSizeSelected;
 
-  const AvailableSize({super.key});
+  const AvailableSize({super.key,required this.onSizeSelected});
 
   @override
   State<AvailableSize> createState() => _AvailableSizeState();
@@ -20,7 +21,9 @@ class _AvailableSizeState extends State<AvailableSize> {
                 setState(() {
                   selectedSize = index;
                 });
+                widget.onSizeSelected(size[index]);
               },
+
               child: Container(
                 margin: EdgeInsets.only(right: 16),
                 width: 40,

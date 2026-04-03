@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:loop_wear/product_card.dart';
+import 'package:loop_wear/product_card_vertical.dart';
 import 'favourite_controller.dart';
 import 'my_product.dart';
 import 'navigation_drawer_widget.dart';

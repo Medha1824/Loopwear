@@ -12,7 +12,8 @@ final String id;
     return Obx(
       () => IconButton(
         onPressed: () {
-        return controller.toggleFavouriteProduct(context, id);
+        return controller.toggleFavouriteProduct(context,
+            id);
       },
         icon: controller.isFavourite(id) ? Icon(CupertinoIcons.heart_fill,color:Colors.red,):
         Icon(CupertinoIcons.heart,color:Color(0xFF9F7F88),),

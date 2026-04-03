@@ -13,7 +13,7 @@ class ProductCard extends StatefulWidget{
 }
 
 class _ProductCardState extends State<ProductCard> {
-  bool isClicked=false;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(

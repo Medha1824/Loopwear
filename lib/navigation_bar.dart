@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:loop_wear/account_screen.dart';
 import 'package:loop_wear/cart_screen.dart';
 import 'package:loop_wear/wishlist_screen.dart';
 import 'package:loop_wear/main_home_screen.dart';
+
+import 'cart_controller.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -37,11 +40,31 @@ class _MyHomePageState extends State<MyHomePage> {
             });
           },
           currentIndex: myIndex,
-          items: const [
-        BottomNavigationBarItem(icon:Icon(Icons.home) , label:'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite), label:'Wishlist'),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label:'Cart'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label:'Account'),
+          items: [
+        const BottomNavigationBarItem(icon:Icon(Icons.home) , label:'Home'),
+        const BottomNavigationBarItem(icon: Icon(Icons.favorite), label:'Wishlist'),
+            BottomNavigationBarItem(
+              icon: Obx(() => Stack(
+                children: [
+                  const Icon(Icons.shopping_cart),
+                  if (CartController.instance.noOfCartItems.value > 0)
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      child: CircleAvatar(
+                        radius: 6,
+                        backgroundColor: Colors.red,
+                        child: Text(
+                          '${CartController.instance.noOfCartItems.value}',
+                          style: const TextStyle(fontSize: 8, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                ],
+              )),
+              label: 'Cart',
+            ),
+        const BottomNavigationBarItem(icon: Icon(Icons.person), label:'Account'),
       ]),
     );
   }

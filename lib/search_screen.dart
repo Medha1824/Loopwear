@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'build_products.dart';
 import 'my_product.dart';
-import 'product_card.dart';
+import 'product_card_vertical.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});

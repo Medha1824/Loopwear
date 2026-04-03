@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:loop_wear/cart_screen.dart';
+import 'package:loop_wear/product.dart';
+
+import 'cart_controller.dart';
+import 'loaders.dart';
 
 class PlantTree extends StatefulWidget {
   const PlantTree({super.key});
@@ -104,7 +109,31 @@ class _PlantTreeState extends State<PlantTree> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                    if (count <= 0) {
+                      TLoaders.customToast(
+                        context: context,
+                        message: "Select quantity",
+                      );
+                      return;
+                    }
 
+                    CartController.instance.addToCart(
+                      context: context,
+                      product: Product(
+                        id: 'tree',
+                        title: 'Tree Donation',
+                        price: '10',
+                        image1: 'assets/photos/plant.jpg',
+                        image2: 'assets/photos/plant.jpg',
+                        image3: 'assets/photos/plant.jpg',
+                        description: 'Plant a tree',
+                        category: 'EcoWear',
+                      ),
+                      selectedColor: 'N/A',
+                      selectedSize: 'N/A',
+                      quantity: count,
+                      cartImage: 'assets/photos/plant.jpg',
+                    );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF9F7F88),

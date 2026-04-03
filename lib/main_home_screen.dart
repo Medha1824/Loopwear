@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:loop_wear/plant_tree.dart';
-import 'package:loop_wear/product_card.dart';
+import 'package:loop_wear/product_card_vertical.dart';
 import 'package:loop_wear/search_screen.dart';
 import 'build_products.dart';
 import 'my_product.dart';

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loop_wear/my_product.dart';
-import 'package:loop_wear/plant_tree.dart';
-import 'package:loop_wear/product_card.dart';
+import 'package:loop_wear/product_card_vertical.dart';
 
 class BuildProducts extends StatelessWidget{
   final String categoryName;
@@ -85,7 +84,7 @@ class BuildProducts extends StatelessWidget{
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisExtent: 360,
-            crossAxisCount:2 ,
+            crossAxisCount:2,
             mainAxisSpacing: 15,
             crossAxisSpacing: 15,
           ),
