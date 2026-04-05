@@ -29,7 +29,18 @@ class _ProductDetailsState extends State<ProductDetails> {
     selectedSize = null;
     selectedColor = null;
   }
+String color(String image){
+    List<String> parts = image.split('_');
+    String colorFind=parts.last;
+    String color=colorFind.split('.').first;
+    if(color=='1' || color=='2' || color=='3'){
+      return "random";
+    }
+    else{
+      return color;
+    }
 
+}
   @override
   Widget build(BuildContext context) {
     List<String> images = [
@@ -187,8 +198,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                         return GestureDetector(
                           onTap: () {
                             setState(() {
-                              selectedColor = "color_$index";
                               selectedImageIndex = index;
+                              selectedColor = color(images[selectedImageIndex]);
                             });
                           },
                           child: Container(
@@ -309,7 +320,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                     return;
                   }
 
-                  CartController.instance.productQuantityInCart.value = count;
 
                   CartController.instance.addToCart(
                     context: context,

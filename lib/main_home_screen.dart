@@ -173,8 +173,8 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                     "assets/photos/Men/blazar_4_green.jpg",
                     "assets/photos/Women/coord_7_multi.jpg",
                     "assets/photos/Kids/regular_3_yellow.jpg",
-                    "assets/photos/Eco/scarf_5_1.jpg",
-                    "assets/photos/Summer/summer_6_purple_1.jpg",
+                    "assets/photos/Eco/scarf_5_white.jpg",
+                    "assets/photos/Summer/summer_6_purple.jpg",
                     "assets/photos/Women/sweater_4_pink.jpg",
                   ];
                   return Padding(
@@ -253,7 +253,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: GridView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
@@ -262,7 +262,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                   crossAxisCount: 2,
                   mainAxisSpacing: 15,
                   crossAxisSpacing: 15,
-                  mainAxisExtent: 360,
+                  mainAxisExtent: 290,
                 ),
                 itemBuilder: (context, index) {
                   return ProductCard(product: MyProducts.best[index]);

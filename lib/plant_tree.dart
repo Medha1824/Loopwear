@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loop_wear/cart_screen.dart';
 import 'package:loop_wear/product.dart';
 
 import 'cart_controller.dart';
@@ -109,13 +108,13 @@ class _PlantTreeState extends State<PlantTree> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                    if (count <= 0) {
-                      TLoaders.customToast(
-                        context: context,
-                        message: "Select quantity",
-                      );
-                      return;
-                    }
+                    // if (count == 0) {
+                    //   TLoaders.customToast(
+                    //     context: context,
+                    //     message: "Select quantity",
+                    //   );
+                    //   return;
+                    // }
 
                     CartController.instance.addToCart(
                       context: context,
