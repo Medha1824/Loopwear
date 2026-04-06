@@ -44,7 +44,7 @@ class ProductCardHorizontal extends StatelessWidget {
                 const SizedBox(height: 6),
                 Text(
                   "Color: ${cartItem.selectedVariation?['color'] ?? '-'} | Size: ${cartItem.selectedVariation?['size'] ?? '-'}",
-                  style: const TextStyle(fontSize: 14, color: Colors.black54),
+                  style: const TextStyle(fontSize: 14, color: Color(0xFF9F7F88)),
                 ),
                 const SizedBox(height: 6),
                 Row(
@@ -84,13 +84,13 @@ class ProductCardHorizontal extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Text(
-                      "Tk ${(cartItem.price * cartItem.quantity).toStringAsFixed(2)}",
-                      style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF9F7F88)),
-                    )
+                        Text(
+                          "Tk ${(cartItem.price * cartItem.quantity).toStringAsFixed(2)}",
+                          style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF9F7F88)),
+                        ),
                   ],
                 ),
               ],

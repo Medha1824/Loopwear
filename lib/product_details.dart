@@ -75,7 +75,7 @@ String color(String image){
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(12),
                 width: double.infinity,
                 color:Colors.white,
                 child:Column(
@@ -84,21 +84,36 @@ String color(String image){
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(widget.product.title,style:TextStyle(
-                          fontSize: 23,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF9F7F88),
-                        ),),
-                        Text(widget.product.price,style:TextStyle(
-                          fontSize: 23,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF9F7F88),
-                        ),),
+                            Text(widget.product.title,style:TextStyle(
+                              fontSize: 23,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF9F7F88),
+                            ),),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            if(widget.product.beforeSale != null) ...[
+                              Text(widget.product.beforeSale!,style:TextStyle(
+                                fontSize: 15,
+                                fontFamily: 'Roboto',
+                                decoration: TextDecoration.lineThrough,
+                                decorationColor: Color(0xFF9F7F88),
+                                decorationThickness:1.5,
+                                color: Color(0xFF9F7F88),
+                              ),),
+                            ],
+                            Text(widget.product.price,style:TextStyle(
+                              fontSize: 23,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF9F7F88),
+                            ),),
+                          ],
+                        ),
                       ],
                     ),
-                    SizedBox(height:14),
+                    //SizedBox(height:14),
                     Text(widget.product.description
                         ,style:TextStyle(
                           fontSize: 14,

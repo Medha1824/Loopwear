@@ -7,7 +7,7 @@ class Product {
   final String image3;
   final String description;
   final String price;
-  final String? sale;
+  final String? beforeSale;
 
   Product({
     required this.id,
@@ -18,7 +18,7 @@ class Product {
     required this.image3,
     required this.description,
     required this.price,
-    this.sale,
+    this.beforeSale,
   });
 
 

@@ -15,6 +15,7 @@ class MyProducts{
       title: "Summer 1",
       description: "Light and breezy summer wear.\nPerfect for hot sunny days.",
       price: "Tk 900",
+      beforeSale: "Tk 1500",
       image1: "assets/photos/Summer/summer_1_blue.jpg",
       image2: "assets/photos/Summer/summer_1_green.jpg",
       image3: "assets/photos/Summer/summer_1_pink.jpg",
@@ -25,6 +26,7 @@ class MyProducts{
       title: "Summer 2",
       description: "Cool and comfortable outfit.\nVibrant colors ideal for summer.",
       price: "Tk 920",
+      beforeSale: "Tk 1400",
       image1: "assets/photos/Summer/summer_2_pink.jpg",
       image2: "assets/photos/Summer/summer_2_white.jpg",
       image3: "assets/photos/Summer/summer_2_yellow.jpg",
@@ -35,6 +37,7 @@ class MyProducts{
       title: "Summer 3",
       description: "Soft and airy fabric.\nGreat for casual summer outings.",
       price: "Tk 910",
+      beforeSale: "Tk 1550",
       image1: "assets/photos/Summer/summer_3_beige.jpg",
       image2: "assets/photos/Summer/summer_3_blue.jpg",
       image3: "assets/photos/Summer/summer_3_green.jpg",
@@ -45,6 +48,7 @@ class MyProducts{
       title: "Summer 4",
       description: "Comfortable summer top and bottom set.\nBreathable and lightweight.",
       price: "Tk 940",
+      beforeSale: "Tk 1500",
       image1: "assets/photos/Summer/summer_4_beige.jpg",
       image2: "assets/photos/Summer/summer_4_brown.jpg",
       image3: "assets/photos/Summer/summer_4_green.jpg",
@@ -55,6 +59,7 @@ class MyProducts{
       title: "Summer 5",
       description: "Bright and stylish summer outfit.\nSoft material perfect for kids and adults.",
       price: "Tk 950",
+      beforeSale: "Tk 1500",
       image1: "assets/photos/Summer/summer_5_green.jpg",
       image2: "assets/photos/Summer/summer_5_pink.jpg",
       image3: "assets/photos/Summer/summer_5_white.jpg",
@@ -65,6 +70,7 @@ class MyProducts{
       title: "Summer 6",
       description: "Vibrant colors for sunny days.\nLightweight and comfortable fabric.",
       price: "Tk 960",
+      beforeSale: "Tk 1700",
       image1: "assets/photos/Summer/summer_6_green.jpg",
       image2: "assets/photos/Summer/summer_6_purple.jpg",
       image3: "assets/photos/Summer/summer_6_white.jpg",
@@ -75,6 +81,7 @@ class MyProducts{
       title: "Summer 7",
       description: "Airy summer clothing.\nSoft and perfect for outdoor activities.",
       price: "Tk 940",
+      beforeSale: "Tk 1390",
       image1: "assets/photos/Summer/summer_7_beige.jpg",
       image2: "assets/photos/Summer/summer_7_blue.jpg",
       image3: "assets/photos/Summer/summer_7_green.jpg",
@@ -85,6 +92,7 @@ class MyProducts{
       title: "Summer 8",
       description: "Casual summer outfit.\nLight fabric and bright colors.",
       price: "Tk 950",
+      beforeSale: "Tk 1430",
       image1: "assets/photos/Summer/summer_8_green.jpg",
       image2: "assets/photos/Summer/summer_8_red.jpg",
       image3: "assets/photos/Summer/summer_8_yellow.jpg",
@@ -95,6 +103,7 @@ class MyProducts{
       title: "Summer 9",
       description: "Comfortable summer wear.\nStylish and vibrant colors.",
       price: "Tk 970",
+      beforeSale: "Tk 1600",
       image1: "assets/photos/Summer/summer_9_red.jpg",
       image2: "assets/photos/Summer/summer_9_blue.jpg",
       image3: "assets/photos/Summer/summer_9_navy.jpg",
@@ -365,6 +374,7 @@ class MyProducts{
       image3: "assets/photos/Men/sweater_1_green.jpg",
       description: "Warm and comfortable sweater.\nPerfect for chilly days and casual outings.",
       price: "Tk 2000",
+      beforeSale: "Tk 3500",
     ),
     Product(
       id: '35',
@@ -375,6 +385,7 @@ class MyProducts{
       image3: "assets/photos/Men/sweater_2_red.jpg",
       description: "Cozy sweater with vibrant colors.\nIdeal for winter or casual wear.",
       price: "Tk 2050",
+      beforeSale: "Tk 3570",
     ),
     Product(
       id: '36',
@@ -385,6 +396,7 @@ class MyProducts{
       image3: "assets/photos/Men/sweater_3_pink.jpg",
       description: "Elegant sweater with comfortable fabric.\nGreat for daily or office use.",
       price: "Tk 2100",
+      beforeSale: "Tk 3550",
     ),
     Product(
       id: '37',
@@ -395,6 +407,7 @@ class MyProducts{
       image3: "assets/photos/Men/sweater_4_red.jpg",
       description: "Stylish sweater with perfect fit.\nSuitable for casual and semi-formal occasions.",
       price: "Tk 2150",
+      beforeSale: "Tk 3600",
     ),
     Product(
       id: '38',
@@ -405,6 +418,7 @@ class MyProducts{
       image3: "assets/photos/Men/sweater_5_grey.jpg",
       description: "Comfortable sweater with trendy colors.\nPerfect for office or casual outings.",
       price: "Tk 2200",
+      beforeSale: "Tk 3660",
     ),
     Product(
       id: '39',
@@ -415,6 +429,7 @@ class MyProducts{
       image3: "assets/photos/Men/sweater_6_grey.jpg",
       description: "Premium sweater with soft fabric.\nIdeal for winter and casual wear.",
       price: "Tk 2250",
+      beforeSale: "Tk 3730",
     ),
   ];
   static List<Product> men = [
@@ -676,6 +691,7 @@ class MyProducts{
       image3:"assets/photos/Women/sweater_1_maroon.jpg",
       description:"Warm knit sweater designed for comfort.\nPerfect winter essential for daily wear.",
       price:"Tk 2190",
+      beforeSale: "Tk 3300",
     ),
 
     Product(
@@ -687,6 +703,7 @@ class MyProducts{
       image3:"assets/photos/Women/sweater_2_blue.jpg",
       description:"Stylish winter sweater with cozy fabric.\nKeeps you warm while looking elegant.",
       price:"Tk 2250",
+      beforeSale: "Tk 3330",
     ),
 
     Product(
@@ -698,6 +715,7 @@ class MyProducts{
       image3:"assets/photos/Women/sweater_3_white.jpg",
       description:"Contemporary pullover sweater for winter fashion.\nComfortable knit with relaxed fit.",
       price:"Tk 2290",
+      beforeSale: "Tk 3370",
     ),
 
     Product(
@@ -709,6 +727,7 @@ class MyProducts{
       image3:"assets/photos/Women/sweater_4_white.jpg",
       description:"Beautiful pastel sweater with soft texture.\nPerfect for cozy winter outfits.",
       price:"Tk 2190",
+      beforeSale: "Tk 3390",
     ),
 
     Product(
@@ -720,6 +739,7 @@ class MyProducts{
       image3:"assets/photos/Women/sweater_5_green.jpg",
       description:"Clean minimalist sweater for modern style.\nWarm and comfortable winter clothing.",
       price:"Tk 2300",
+      beforeSale: "Tk 3400",
     ),
 
     Product(
@@ -731,6 +751,7 @@ class MyProducts{
       image3:"assets/photos/Women/sweater_6_maroon.jpg",
       description:"Classic sweater with relaxed winter design.\nSoft knit fabric for everyday warmth.",
       price:"Tk 2350",
+      beforeSale: "Tk 3450",
     ),
 
     Product(
@@ -742,6 +763,7 @@ class MyProducts{
       image3:"assets/photos/Women/sweater_7_pink.jpg",
       description:"Elegant pullover sweater for winter outfits.\nStylish look with cozy warmth.",
       price:"Tk 2390",
+      beforeSale: "Tk 3540",
     ),
 
   ];
@@ -1006,6 +1028,7 @@ class MyProducts{
       title: "Kids Jacket 1",
       description: "Warm jacket suitable for outdoor activities.\nDurable and comfortable.",
       price: "Tk 1200",
+      beforeSale: "Tk 1900",
       image1: "assets/photos/Kids/jacket_1_1.jpg",
       image2: "assets/photos/Kids/jacket_1_2.jpg",
       image3: "assets/photos/Kids/jacket_1_3.jpg",
@@ -1016,6 +1039,7 @@ class MyProducts{
       title: "Kids Jacket 2",
       description: "Comfortable jacket with stylish design.\nIdeal for cold weather outings.",
       price: "Tk 1250",
+      beforeSale: "Tk 1930",
       image1: "assets/photos/Kids/jacket_2_1.jpg",
       image2: "assets/photos/Kids/jacket_2_2.jpg",
       image3: "assets/photos/Kids/jacket_2_3.jpg",
@@ -1026,6 +1050,7 @@ class MyProducts{
       title: "Kids Jacket 3",
       description: "Cozy jacket with soft inner lining.\nPerfect for school and play.",
       price: "Tk 1230",
+      beforeSale: "Tk 1990",
       image1: "assets/photos/Kids/jacket_3_1.jpg",
       image2: "assets/photos/Kids/jacket_3_2.jpg",
       image3: "assets/photos/Kids/jacket_3_3.jpg",
@@ -1036,6 +1061,7 @@ class MyProducts{
       title: "Kids Jacket 4",
       description: "Stylish jacket with durable outer fabric.\nComfortable and easy to wear.",
       price: "Tk 1270",
+      beforeSale: "Tk 2000",
       image1: "assets/photos/Kids/jacket_4_1.jpg",
       image2: "assets/photos/Kids/jacket_4_2.jpg",
       image3: "assets/photos/Kids/jacket_4_3.jpg",
@@ -1046,6 +1072,7 @@ class MyProducts{
       title: "Kids Jacket 5",
       description: "Cozy and warm jacket for outdoor fun.\nSoft lining and durable design.",
       price: "Tk 1290",
+      beforeSale: "Tk 2100",
       image1: "assets/photos/Kids/jacket_5_1.jpg",
       image2: "assets/photos/Kids/jacket_5_2.jpg",
       image3: "assets/photos/Kids/jacket_5_3.jpg",
@@ -1056,6 +1083,7 @@ class MyProducts{
       title: "Kids Jacket 6",
       description: "Durable winter jacket for kids.\nKeeps warm in cold weather.",
       price: "Tk 1300",
+      beforeSale: "Tk 2200",
       image1: "assets/photos/Kids/jacket_6_1.jpg",
       image2: "assets/photos/Kids/jacket_6_2.jpg",
       image3: "assets/photos/Kids/jacket_6_3.jpg",
@@ -1416,6 +1444,7 @@ class MyProducts{
       image3: "assets/photos/Men/sweater_1_green.jpg",
       description: "Warm and comfortable sweater.\nPerfect for chilly days and casual outings.",
       price: "Tk 2000",
+      beforeSale: "Tk 3500",
     ),
     Product(
       id: '99',
@@ -1456,6 +1485,7 @@ class MyProducts{
       image3:"assets/photos/Women/sweater_5_green.jpg",
       description:"Clean minimalist sweater for modern style.\nWarm and comfortable winter clothing.",
       price:"Tk 2300",
+      beforeSale: "Tk 3400",
     ),
 
     Product(
@@ -1535,6 +1565,7 @@ class MyProducts{
       title: "Summer 1",
       description: "Light and breezy summer wear.\nPerfect for hot sunny days.",
       price: "Tk 900",
+      beforeSale: "Tk 1500",
       image1: "assets/photos/Summer/summer_1_blue.jpg",
       image2: "assets/photos/Summer/summer_1_green.jpg",
       image3: "assets/photos/Summer/summer_1_pink.jpg",

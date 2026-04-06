@@ -262,7 +262,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                   crossAxisCount: 2,
                   mainAxisSpacing: 15,
                   crossAxisSpacing: 15,
-                  mainAxisExtent: 290,
+                  mainAxisExtent: 310,
                 ),
                 itemBuilder: (context, index) {
                   return ProductCard(product: MyProducts.best[index]);
