@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:loop_wear/setting_screen.dart';
 import 'package:loop_wear/Order_history.dart';
+import 'login_screen.dart';
 import 'navigation_drawer_widget.dart';
 import 'package:get/get.dart';
+
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
 
@@ -89,7 +92,14 @@ class AccountScreen extends StatelessWidget {
                   'Logout',
                 style: TextStyle(color:Color(0xFF9F7F88), fontSize: 20),
               ),
-              onTap: () {
+              onTap: () async{
+                await FirebaseAuth.instance.signOut();
+
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                      (route) => false,
+                );
               },
             ),
           ],

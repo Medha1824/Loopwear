@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:loop_wear/home_screen.dart';
 import 'package:loop_wear/login_screen.dart';
+import 'package:loop_wear/wrapper.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

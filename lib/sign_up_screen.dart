@@ -1,8 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
 import 'package:loop_wear/navigation_bar.dart';
 import 'package:loop_wear/login_screen.dart';
+import 'package:loop_wear/wrapper.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpScreen  extends StatefulWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+
+  signUp()async{
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email.text, password: password.text);
+    Get.offAll(() => MyHomePage());
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
@@ -40,7 +58,9 @@ class SignUpPage extends StatelessWidget {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+
           TextField(
+            controller: email,
             decoration: InputDecoration(
             hintText: "Email",
               hintStyle: TextStyle(
@@ -56,6 +76,7 @@ class SignUpPage extends StatelessWidget {
           ),
           SizedBox(height: 20,),
           TextField(
+            controller: password,
             decoration: InputDecoration(
               hintText: "Password",
               hintStyle: TextStyle(
@@ -88,6 +109,7 @@ class SignUpPage extends StatelessWidget {
           ),
           SizedBox(height: 20,),
           ElevatedButton(onPressed: (){
+            signUp();
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => MyHomePage()),

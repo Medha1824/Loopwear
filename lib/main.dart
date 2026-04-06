@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'cart_controller.dart';
+import 'firebase_options.dart';
 import 'splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await FirebaseAuth.instance.signInAnonymously();
   await GetStorage.init();
   Get.put(CartController());
