@@ -12,10 +12,10 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseAuth.instance.signInAnonymously();
+  //await FirebaseAuth.instance.signInAnonymously();
   await GetStorage.init();
   Get.put(CartController());
-  await FirebaseAuth.instance.signInAnonymously();
+  //await FirebaseAuth.instance.signInAnonymously();
   //Get.put(FavouriteController(),permanent: true);
   runApp(const MyApp());
 }

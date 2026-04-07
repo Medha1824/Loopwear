@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:loop_wear/navigation_bar.dart';
 import 'package:loop_wear/sign_up_screen.dart';
+
+import 'cart_controller.dart';
+import 'favourite_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,22 +16,51 @@ class LoginPage extends StatefulWidget {
 
 }
 class _LoginPageState extends State<LoginPage> {
-  Future login(String email, String password) async
-  {
+  Future<UserCredential?> login(String email, String password) async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: email, password: password);
+      return await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
     } catch (e) {
-      print('Something is wrong');
+      print('Login error: $e');
+      return null;
     }
   }
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
-  signIn()async{
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email.text, password: password.text);
+  Future<void> signIn() async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+        email: email.text,
+        password: password.text,
+      );
+
+      final user = userCredential.user;
+
+      if (user != null) {
+        CartController.instance.clearCart();   // safety
+        CartController.instance.setUser(user.uid);
+
+        final favController = Get.find<FavouriteController>();
+        favController.setUser(user.uid);
+      }
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => MyHomePage()),
+      );
+
+    } catch (e) {
+      print("Login error: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Login failed: ${e.toString()}")),
+      );
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -109,26 +143,19 @@ class _LoginPageState extends State<LoginPage> {
 
         SizedBox(height: 20),
         ElevatedButton(
-            onPressed: ()  {
-              signIn();
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => MyHomePage()),
-              );
-            },
-            child: Text(
-              "Login",
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-            style: ElevatedButton.styleFrom(
-              shape: StadiumBorder(),
-              padding: EdgeInsets.symmetric(vertical: 16),
-              backgroundColor: const Color (0xFF9F7F88),
-
-            )
-
+    onPressed: () async {
+    await signIn();
+    },
+          child: Text(
+            "Login",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+          style: ElevatedButton.styleFrom(
+            shape: StadiumBorder(),
+            padding: EdgeInsets.symmetric(vertical: 16),
+            backgroundColor: const Color(0xFF9F7F88),
+          ),
         )
-
       ],
     );
   }

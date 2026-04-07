@@ -316,13 +316,13 @@ String color(String image){
                   bool productHasSizes = (int.parse(widget.product.id) >= 116 &&
                       int.parse(widget.product.id) <= 121) ||
                       widget.product.category != 'EcoWear';
+                  final colorToAdd = selectedColor ?? color(images[0]);
 
-                  if (selectedColor == null ||
-                      (productHasSizes && selectedSize == null)) {
+                  if (productHasSizes && selectedSize == null){
                     TLoaders.customToast(
                       context: context,
                       message:
-                      "Select color${productHasSizes ? ' and size' : ''}",
+                      productHasSizes ? 'Select size' : '',
                     );
                     return;
                   }
@@ -339,7 +339,7 @@ String color(String image){
                   CartController.instance.addToCart(
                     context: context,
                     product: widget.product,
-                    selectedColor: selectedColor!,
+                    selectedColor: colorToAdd,
                     selectedSize: productHasSizes ? selectedSize! : '',
                     quantity: count,
                     cartImage: images[selectedImageIndex],

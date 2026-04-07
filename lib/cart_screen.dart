@@ -37,11 +37,16 @@ class CartScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Obx(() {
-        if (controller.cartItems.isEmpty) {
+
+        if (controller.cartItems.isEmpty && controller.loading.value) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        if (controller.cartItems.isEmpty && !controller.loading.value) {
           return const Center(
             child: Text(
               "Your cart is empty",
-              style: TextStyle(fontSize: 18,color:Color(0xFF9F7F88)),
+              style: TextStyle(fontSize: 18, color: Color(0xFF9F7F88)),
             ),
           );
         }
