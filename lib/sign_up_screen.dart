@@ -34,6 +34,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController confirmpassword= TextEditingController();
 
   Future<void> register() async {
+    if (username.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(backgroundColor:const Color(0xFF9F7F88),
+              content: Text("Username is required",
+                  style: TextStyle(color: Colors.white),),),
+      );
+      return;
+    }
     if (email.text.isEmpty || password.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(backgroundColor:const Color(0xFF9F7F88),
@@ -42,7 +50,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),);
       return;
     }
-
+    if (password.text != confirmpassword.text) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(backgroundColor:const Color(0xFF9F7F88),
+            content: Text("Passwords do not match",
+              style: TextStyle(color: Colors.white),),),
+      );
+      return;
+    }
     try {
       final userCredential = await signUp(email.text, password.text);
 
@@ -62,9 +77,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
         box.write('username', username.text);
         box.write('email', email.text);
       }
-
-
-
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => MyHomePage()),

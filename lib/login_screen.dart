@@ -7,6 +7,7 @@ import 'package:loop_wear/sign_up_screen.dart';
 
 import 'cart_controller.dart';
 import 'favourite_controller.dart';
+import 'forgot.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -152,7 +153,14 @@ class _LoginPageState extends State<LoginPage> {
         Align(
           alignment: Alignment.centerRight,
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Forgot(),
+                ),
+              );
+            },
             child: Text(
               "Forgot password?",
               style: TextStyle(color: const Color(0xFF9F7F88)),
