@@ -28,14 +28,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
       return null;
     }
   }
+  TextEditingController username=TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController confirmpassword= TextEditingController();
 
   Future<void> register() async {
     if (email.text.isEmpty || password.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Email & Password required")),
-      );
+        SnackBar(backgroundColor:const Color(0xFF9F7F88),
+          content: Text("Email & Password required",
+                                style: TextStyle(color: Colors.white),),
+      ),);
       return;
     }
 
@@ -102,25 +106,60 @@ class _SignUpScreenState extends State<SignUpScreen> {
   _header(context){
     return Column(
         children: [
-          Text(
-            "Create Account",
-            style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,
-                color: const Color (0xFF9F7F88)),
+          SizedBox(
+            height: 80,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Create Account",
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF9F7F88),
+                  ),
+                ),
+                Text(
+                  "Enter details to get started",
+                  style: TextStyle(
+                    color: const Color(0xFF9F7F88),
+                  ),
+                ),
+              ],
+            ),
           ),
-          Text("Enter details to get started",
-                style: TextStyle( color: const Color(0xFF9F7F88)),
-          ),
-
         ],
-    );
-  }
+      );
+    }
+
   _inputFields(context){
     return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-
-          TextField(
+          SizedBox(
+            height:40,
+            child: TextField(
+            controller: username,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              hintText: "Username",
+              hintStyle: TextStyle(
+                color: Colors.white,
+              ),
+              filled: true,
+              fillColor: const Color(0xFF9F7F88),
+              prefixIcon: Icon(Icons.person ,color: Colors.white),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(18),
+                  borderSide: BorderSide.none),
+            ),
+            obscureText: true,
+          ),),
+          SizedBox(height: 15,),
+          SizedBox(height: 40,
+          child:TextField(
             controller: email,
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
             hintText: "Email",
               hintStyle: TextStyle(
@@ -133,10 +172,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide.none),
             ),
-          ),
-          SizedBox(height: 20,),
+          ),),
+          SizedBox(height: 15,),
+          SizedBox(height: 40,
+          child:
           TextField(
             controller: password,
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
               hintText: "Password",
               hintStyle: TextStyle(
@@ -150,18 +192,40 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   borderSide: BorderSide.none),
             ),
             obscureText: true,
-          ),
+          ),),
+          SizedBox(height: 15,),
+          SizedBox(height: 40,
+            child:
+            TextField(
+            controller: confirmpassword,
+            style: TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              hintText: "Confirm Password",
+              hintStyle: TextStyle(
+                color: Colors.white,
+              ),
+              filled: true,
+              fillColor: const Color(0xFF9F7F88),
+              prefixIcon: Icon(Icons.lock,color: Colors.white),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(18),
+                  borderSide: BorderSide.none),
+            ),
+            obscureText: true,
+          ),),
 
-          SizedBox(height: 20,),
+          SizedBox(height: 15,),
           ElevatedButton(onPressed: () async{
             await register();},
+            child: SizedBox(height: 40,
+            child: Center(
              child: Text(
               "Sign Up",
               style: TextStyle(fontSize: 20,color: Colors.white),
-          ),
+          ),),),
               style: ElevatedButton.styleFrom(
                 shape: StadiumBorder(),
-                padding: EdgeInsets.symmetric(vertical: 16),
+                padding: EdgeInsets.symmetric(vertical: 5),
                 backgroundColor:  const Color (0xFF9F7F88),
 
               )

@@ -59,7 +59,9 @@ class _LoginPageState extends State<LoginPage> {
 
 
     }  on FirebaseAuthException catch (e) {
-  String message = "Login failed";
+      String message = "Login failed";
+      Color snackColor = Color(0xFF9F7F88);
+
 
   if (e.code == 'user-not-found') {
   message = "No user found for this email";
@@ -70,8 +72,11 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   ScaffoldMessenger.of(context).showSnackBar(
-  SnackBar(content: Text(message)),
+    SnackBar(backgroundColor: snackColor,
+      content:Text(message,
+        style: const TextStyle(color: Colors.white),),),
   );
+
 
   }}
   @override
@@ -111,6 +116,7 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         TextField(
           controller: email,
+          style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
             hintText: "Email",
             hintStyle: TextStyle(
@@ -128,6 +134,7 @@ class _LoginPageState extends State<LoginPage> {
         SizedBox(height: 20),
         TextField(
           controller: password,
+          style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
             hintText: "Password",
             hintStyle: TextStyle(
