@@ -5,7 +5,7 @@ import 'package:loop_wear/Order_history.dart';
 import 'package:loop_wear/cart_controller.dart';
 import 'package:loop_wear/navigation_bar.dart';
 import 'package:loop_wear/setting_screen.dart';
-import 'package:get_storage/get_storage.dart';
+
 
 import 'favourite_controller.dart';
 import 'login_screen.dart';
@@ -17,10 +17,10 @@ class AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final box = GetStorage();
-    String username = box.read('username') ?? "No Username";
-    String email = box.read('email') ?? "No Email";
+    User? user = FirebaseAuth.instance.currentUser;
 
+    String username = user?.displayName ?? "No Username";
+    String email = user?.email ?? "No Email";
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -137,7 +137,7 @@ class AccountScreen extends StatelessWidget {
 
                   // 3. Sign out from Firebase
                   await FirebaseAuth.instance.signOut();
-                  box.erase();
+
                   // 4. Go to login screen
                   Navigator.pushAndRemoveUntil(
                     context,

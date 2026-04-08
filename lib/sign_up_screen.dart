@@ -69,6 +69,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
       if (user != null) {
         // new user
+        await user.updateDisplayName(username.text);
         CartController.instance.clearCart();
         CartController.instance.setUser(user.uid);
         final favController = Get.find<FavouriteController>();

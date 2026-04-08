@@ -1,14 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
+
 
 class SettingScreen extends StatelessWidget {
   SettingScreen({super.key});
-  final box = GetStorage();
 
   @override
   Widget build(BuildContext context) {
-    String username = box.read('username') ?? "No Username";
-    String email = box.read('email') ?? "No Email";
+    User? user = FirebaseAuth.instance.currentUser;
+
+    String username = user?.displayName ?? "No Username";
+    String email = user?.email ?? "No Email";
     return Scaffold(backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xFF9F7F88),
