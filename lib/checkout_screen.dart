@@ -124,11 +124,23 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             ),
             const SizedBox(height: 8),
             Card(
+              color: Colors.white,
               elevation: 5,
               child: ListTile(
                 leading: const Icon(Icons.location_on, color: Color(0xFF9F7F88)),
-                title: const Text('Mirpur 2'),
-                subtitle: const Text('Rupnagar, Dhaka'),
+                title: const Text('Mirpur 2',
+                    style: TextStyle(
+                    color: Color(0xFF9F7F88),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+                ),
+                subtitle: const Text('Rupnagar, Dhaka',
+                  style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+
+                ),
               ),
             ),
             const SizedBox(height: 16),
@@ -141,39 +153,73 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             ),
             const SizedBox(height: 8),
             Card(
+              color: Colors.white,
               elevation: 5,
               child: ListTile(
                 leading: const Icon(Icons.payment, color: Color(0xFF9F7F88)),
-                title: const Text('Credit Card'),
+                title: const Text('Credit Card',
+                    style: TextStyle(
+                    color: Color(0xFF9F7F88),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+
+                ),
                 trailing: TextButton(
                   onPressed: () {
                     showPaymentBottomSheet(context, "Credit Card");
                   },
-                  child: const Text('Select'),
+                  child: const Text('Select',
+                    style: TextStyle(
+                        color: Color(0xFF9F7F88),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),
             Card(
+              color: Colors.white,
               elevation: 5,
               child: ListTile(
-                title: const Text('Bkash Payment'),
+                title: const Text('Bkash Payment',
+                  style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
                 trailing: TextButton(
                   onPressed: () {
                     showPaymentBottomSheet(context, "Bkash");
                   },
-                  child: const Text('Select'),
+                  child: const Text('Select',
+                    style: TextStyle(
+                        color: Color(0xFF9F7F88),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),
             Card(
+              color: Colors.white,
               elevation: 5,
               child: ListTile(
-                title: const Text('Nagad Payment'),
+                title: const Text('Nagad Payment',
+                  style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
                 trailing: TextButton(
                   onPressed: () {
                     showPaymentBottomSheet(context, "Nagad");
                   },
-                  child: const Text('Select'),
+                  child: const Text('Select',
+                    style: TextStyle(
+                        color: Color(0xFF9F7F88),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),
@@ -188,20 +234,36 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const SizedBox(height: 8),
             Obx(
                   () => Card(
+                    color: Colors.white,
                 elevation: 5,
                 child: Column(
                   children: [
                     ListTile(
-                      title: const Text('Subtotal'),
-                      trailing: Text('৳${cartController.subtotal.toStringAsFixed(2)}'),
+                      title: const Text('Subtotal',
+                        style: TextStyle(
+                            color: Color(0xFF9F7F88),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      trailing: Text('${cartController.subtotal.toStringAsFixed(2)}'),
                     ),
                     ListTile(
-                      title: const Text('Discount'),
-                      trailing: Text('৳$discount'),
+                      title: const Text('Discount',
+                        style: TextStyle(
+                            color: Color(0xFF9F7F88),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      trailing: Text('$discount'),
                     ),
                     ListTile(
-                      title: const Text('Shipping'),
-                      trailing: Text('৳$shipping'),
+                      title: const Text('Shipping',
+                        style: TextStyle(
+                            color: Color(0xFF9F7F88),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      trailing: Text('$shipping'),
                     ),
                   ],
                 ),
@@ -210,10 +272,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             const SizedBox(height: 16),
             Obx(
                   () => Card(
+                    color: Colors.white,
                 elevation: 5,
                 child: ListTile(
-                  title: const Text('Total'),
-                  trailing: Text('৳${(cartController.subtotal + discount + shipping).toStringAsFixed(2)}'),
+                  title: const Text('Total',
+                    style: TextStyle(
+                        color: Color(0xFF9F7F88),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  trailing: Text('${(cartController.subtotal + discount + shipping).toStringAsFixed(2)}'),
                 ),
               ),
             ),
@@ -222,6 +290,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  elevation: 5,
+                ),
                 onPressed: () {
                   cartController.placeOrder(context);
                   Navigator.push(
@@ -231,7 +303,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     ),
                   );
                 },
-                child: const Text('Place Order'),
+                child: const Text('Place Order',
+                  style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ],

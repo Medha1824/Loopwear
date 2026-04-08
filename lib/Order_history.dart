@@ -10,6 +10,7 @@ class OrderHistoryPage extends StatelessWidget {
     final uid = FirebaseAuth.instance.currentUser!.uid;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xFF9F7F88),
         iconTheme: const IconThemeData(
@@ -50,11 +51,22 @@ class OrderHistoryPage extends StatelessWidget {
               final data = orders[index];
 
               return Card(
+                color: Colors.white,
                 margin: const EdgeInsets.all(10),
-                child: ExpansionTile(
-                  title: Text("Order ID: ${data['orderId']}"),
+                child: ListTile(
+                  title: Text("Order ID: ${data['orderId']}",
+                    style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   subtitle: Text(
-                      "Total: ${data['totalPrice']} | Items: ${data['totalItems']}"),
+                      "Total: ${data['totalPrice']} | Items: ${data['totalItems']}",
+                    style: TextStyle(
+                      color: Color(0xFF9F7F88),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
 
                 ),
               );
