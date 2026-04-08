@@ -80,10 +80,10 @@ class BuildProducts extends StatelessWidget{
           subsection!=null? "$categoryName - $subsection":categoryName, style: TextStyle(
           fontFamily: 'Philosopher', fontWeight: FontWeight.bold, color:Color(0xFF9F7F88)))),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(12.0),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisExtent: 360,
+            mainAxisExtent: 310,
             crossAxisCount:2,
             mainAxisSpacing: 15,
             crossAxisSpacing: 15,

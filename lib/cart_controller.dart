@@ -6,6 +6,7 @@ import 'package:loop_wear/cart_item.dart';
 import 'package:loop_wear/loaders.dart';
 import 'package:loop_wear/product.dart';
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 class CartController extends GetxController {
   static CartController get instance => Get.find();
@@ -14,18 +15,52 @@ class CartController extends GetxController {
 
   RxInt noOfCartItems = 0.obs;
   RxDouble totalCartPrice = 0.0.obs;
-  RxInt productQuantityInCart = 1.obs;
+  //RxInt productQuantityInCart = 1.obs;
   RxList<CartItemModel> cartItems = <CartItemModel>[].obs;
+  RxBool loading = true.obs;
+  StreamSubscription<QuerySnapshot<Map<String, dynamic>>>? _cartSubscription;
 
-  // Subtotal getter
   double get subtotal => totalCartPrice.value;
 
   @override
   void onInit() {
     super.onInit();
-    loadCartFromFirebase();
+    final user = _auth.currentUser;
+    if (user != null) setUser(user.uid);
   }
+  void setUser(String uid) {
+    // Cancel previous listener if exists
+    _cartSubscription?.cancel();
 
+    // Clear old cart
+    cartItems.clear();
+    noOfCartItems.value = 0;
+    totalCartPrice.value = 0.0;
+
+    // Listen to new user's cart
+    loading.value = true;
+    _cartSubscription = _db
+        .collection('users')
+        .doc(uid)
+        .collection('cart')
+        .snapshots()
+        .listen((snapshot) {
+      cartItems.clear();
+      for (var doc in snapshot.docs) {
+        cartItems.add(CartItemModel.fromJson(doc.data()));
+      }
+      updateCartTotals();
+      loading.value = false;
+    });
+  }
+  void clearCart() {
+    cartItems.clear();
+    noOfCartItems.value = 0;
+    totalCartPrice.value = 0.0;
+
+    _cartSubscription?.cancel();
+    _cartSubscription = null;
+  }
   void addToCart({
     required BuildContext context,
     required Product product,
@@ -34,7 +69,7 @@ class CartController extends GetxController {
     required int quantity,
     required String cartImage,
   }) {
-    if (productQuantityInCart.value < 1) {
+    if (quantity < 1) {
       TLoaders.customToast(
         context: context,
         message: "Select Quantity",
@@ -53,7 +88,7 @@ class CartController extends GetxController {
       image1: product.image1,
       image2: product.image2,
       image3: product.image3,
-      quantity: productQuantityInCart.value,
+      quantity: quantity,
       variationId: variationId,
       selectedVariation: {
         "color": selectedColor,
@@ -66,21 +101,24 @@ class CartController extends GetxController {
     item.productId == newItem.productId &&
         item.variationId == newItem.variationId);
 
+    String uid = _auth.currentUser!.uid;
+
     if (index != -1) {
       cartItems[index].quantity += newItem.quantity;
+      _db.collection('users').doc(uid)
+          .collection('cart')
+          .doc(newItem.productId + newItem.variationId)
+          .update({'quantity': cartItems[index].quantity});
     } else {
       cartItems.add(newItem);
+      _db.collection('users').doc(uid)
+          .collection('cart')
+          .doc(newItem.productId + newItem.variationId)
+          .set(newItem.toJson(), SetOptions(merge: true));
     }
 
-    String uid = _auth.currentUser!.uid;
-    _db.collection('users')
-        .doc(uid)
-        .collection('cart')
-        .doc(newItem.productId + newItem.variationId)
-        .set(newItem.toJson());
-
     updateCartTotals();
-    productQuantityInCart.value = 1;
+    //productQuantityInCart.value = 1;
 
     TLoaders.customToast(
       context: context,
@@ -117,22 +155,20 @@ class CartController extends GetxController {
     updateCartTotals();
   }
 
-  Future<void> loadCartFromFirebase() async {
+  void loadCartFromFirebase() {
     String uid = _auth.currentUser!.uid;
+    loading.value = true;
 
-    final snapshot = await _db
-        .collection('users')
-        .doc(uid)
-        .collection('cart')
-        .get();
-
-    cartItems.clear();
-
-    for (var doc in snapshot.docs) {
-      cartItems.add(CartItemModel.fromJson(doc.data()));
-    }
-
-    updateCartTotals();
+    _db.collection('users').doc(uid).collection('cart')
+        .snapshots()
+        .listen((snapshot) {
+      cartItems.clear();
+      for (var doc in snapshot.docs) {
+        cartItems.add(CartItemModel.fromJson(doc.data()));
+      }
+      updateCartTotals();
+      loading.value = false;
+    });
   }
 
   void updateCartTotals() {

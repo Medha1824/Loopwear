@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:loop_wear/setting_screen.dart';
-import 'package:loop_wear/Order_history.dart';
-import 'navigation_drawer_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:loop_wear/Order_history.dart';
+import 'package:loop_wear/cart_controller.dart';
+import 'package:loop_wear/navigation_bar.dart';
+import 'package:loop_wear/setting_screen.dart';
+
+import 'favourite_controller.dart';
+import 'login_screen.dart';
+import 'navigation_drawer_widget.dart';
+
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
 
@@ -19,12 +26,11 @@ class AccountScreen extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Philosopher',
             fontWeight: FontWeight.bold,
-            color :Colors.white,
+            color: Colors.white,
           ),
         ),
         centerTitle: true,
       ),
-
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(30),
         child: Column(
@@ -48,48 +54,89 @@ class AccountScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-           const SizedBox(height: 4),
+            const SizedBox(height: 4),
             const Text(
               'tartila@example.com',
-              style: TextStyle(color:Color(0xFF9F7F88), fontSize: 16),
+              style: TextStyle(color: Color(0xFF9F7F88), fontSize: 16),
             ),
-           const SizedBox(height: 20),
-
-           const Divider(thickness: 3,
-             color:Color(0xFF9F7F88),
+            const SizedBox(height: 20),
+            const Divider(
+              thickness: 3,
+              color: Color(0xFF9F7F88),
             ),
 
+            // My Orders
             ListTile(
-              leading: const Icon(color:const Color(0xFF9F7F88),Icons.shopping_bag_outlined),
-              contentPadding: EdgeInsets.zero,
-              title: const Text(
-                  'My Orders',
-                  style: TextStyle(color:Color(0xFF9F7F88), fontSize: 20),
+              leading: const Icon(
+                Icons.shopping_bag_outlined,
+                color: Color(0xFF9F7F88),
               ),
-              onTap: () { Get.to(() => const OrderHistoryPage());},
-            ),
-            ListTile(
-              leading: const Icon(color:const Color(0xFF9F7F88),Icons.settings_outlined),
               contentPadding: EdgeInsets.zero,
               title: const Text(
-                  'Settings',
-                style: TextStyle(color:Color(0xFF9F7F88), fontSize: 20),
+                'My Orders',
+                style: TextStyle(color: Color(0xFF9F7F88), fontSize: 20),
+              ),
+              onTap: () {
+                Get.to(() => const OrderHistoryPage());
+              },
+            ),
+
+            // Settings
+            ListTile(
+              leading: const Icon(
+                Icons.settings_outlined,
+                color: Color(0xFF9F7F88),
+              ),
+              contentPadding: EdgeInsets.zero,
+              title: const Text(
+                'Settings',
+                style: TextStyle(color: Color(0xFF9F7F88), fontSize: 20),
               ),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SettingScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => const SettingScreen(),
+                  ),
                 );
               },
             ),
+
+            // Logout
             ListTile(
-              leading: const Icon(color:const Color(0xFF9F7F88),Icons.logout ),
+              leading: const Icon(
+                Icons.logout,
+                color: Color(0xFF9F7F88),
+              ),
               contentPadding: EdgeInsets.zero,
               title: const Text(
-                  'Logout',
-                style: TextStyle(color:Color(0xFF9F7F88), fontSize: 20),
+                'Logout',
+                style: TextStyle(color: Color(0xFF9F7F88), fontSize: 20),
               ),
-              onTap: () {
+              onTap: () async {
+                try {
+                  // 1. Clear cart
+                  CartController.instance.clearCart();
+
+                  // 2. Clear wishlist
+                  final favController = Get.find<FavouriteController>();
+                  favController.favourites.clear();
+
+                  // 3. Sign out from Firebase
+                  await FirebaseAuth.instance.signOut();
+
+                  // 4. Go to login screen
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                        (route) => false,
+                  );
+                } catch (e) {
+                  print("Logout error: $e");
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Logout failed: ${e.toString()}")),
+                  );
+                }
               },
             ),
           ],

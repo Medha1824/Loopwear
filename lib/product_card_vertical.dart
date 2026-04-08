@@ -49,24 +49,37 @@ class _ProductCardState extends State<ProductCard> {
                       color: Color(0xFF9F7F88),
                     ),
                   ),
-                  Text(widget.product.price ,
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF9F7F88),
-                    ),
-                  ),
-
                   Row(
-                    mainAxisAlignment: .end,
+                    mainAxisAlignment: .spaceBetween,
                     children: [
+                      Column(
+                        crossAxisAlignment: .start,
+                        children: [
+                          if(widget.product.beforeSale != null) ...[
+                            Text(widget.product.beforeSale! ,
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: 'Roboto',
+                                decoration: TextDecoration.lineThrough,
+                                decorationColor: Color(0xFF9F7F88),
+                                decorationThickness:1,
+                                color: Color(0xFF9F7F88),
+                              ),
+                            ),
+                          ],
+                          Text(widget.product.price ,
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF9F7F88),
+                            ),
+                          ),
+                        ],
+                      ),
                       FavouriteIcon(id: widget.product.id),
-                      IconButton(onPressed: () {  },
-                        icon: Icon(CupertinoIcons.cart,color:Color(0xFF9F7F88)),
-                      )
                     ],
-                  )
+                  ),
                 ],
               )
             ]

@@ -29,7 +29,18 @@ class _ProductDetailsState extends State<ProductDetails> {
     selectedSize = null;
     selectedColor = null;
   }
+String color(String image){
+    List<String> parts = image.split('_');
+    String colorFind=parts.last;
+    String color=colorFind.split('.').first;
+    if(color=='1' || color=='2' || color=='3'){
+      return "random";
+    }
+    else{
+      return color;
+    }
 
+}
   @override
   Widget build(BuildContext context) {
     List<String> images = [
@@ -64,7 +75,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(12),
                 width: double.infinity,
                 color:Colors.white,
                 child:Column(
@@ -73,21 +84,36 @@ class _ProductDetailsState extends State<ProductDetails> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(widget.product.title,style:TextStyle(
-                          fontSize: 23,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF9F7F88),
-                        ),),
-                        Text(widget.product.price,style:TextStyle(
-                          fontSize: 23,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF9F7F88),
-                        ),),
+                            Text(widget.product.title,style:TextStyle(
+                              fontSize: 23,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF9F7F88),
+                            ),),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            if(widget.product.beforeSale != null) ...[
+                              Text(widget.product.beforeSale!,style:TextStyle(
+                                fontSize: 15,
+                                fontFamily: 'Roboto',
+                                decoration: TextDecoration.lineThrough,
+                                decorationColor: Color(0xFF9F7F88),
+                                decorationThickness:1.5,
+                                color: Color(0xFF9F7F88),
+                              ),),
+                            ],
+                            Text(widget.product.price,style:TextStyle(
+                              fontSize: 23,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF9F7F88),
+                            ),),
+                          ],
+                        ),
                       ],
                     ),
-                    SizedBox(height:14),
+                    //SizedBox(height:14),
                     Text(widget.product.description
                         ,style:TextStyle(
                           fontSize: 14,
@@ -187,8 +213,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                         return GestureDetector(
                           onTap: () {
                             setState(() {
-                              selectedColor = "color_$index";
                               selectedImageIndex = index;
+                              selectedColor = color(images[selectedImageIndex]);
                             });
                           },
                           child: Container(
@@ -290,13 +316,13 @@ class _ProductDetailsState extends State<ProductDetails> {
                   bool productHasSizes = (int.parse(widget.product.id) >= 116 &&
                       int.parse(widget.product.id) <= 121) ||
                       widget.product.category != 'EcoWear';
+                  final colorToAdd = selectedColor ?? color(images[0]);
 
-                  if (selectedColor == null ||
-                      (productHasSizes && selectedSize == null)) {
+                  if (productHasSizes && selectedSize == null){
                     TLoaders.customToast(
                       context: context,
                       message:
-                      "Select color${productHasSizes ? ' and size' : ''}",
+                      productHasSizes ? 'Select size' : '',
                     );
                     return;
                   }
@@ -309,12 +335,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                     return;
                   }
 
-                  CartController.instance.productQuantityInCart.value = count;
 
                   CartController.instance.addToCart(
                     context: context,
                     product: widget.product,
-                    selectedColor: selectedColor!,
+                    selectedColor: colorToAdd,
                     selectedSize: productHasSizes ? selectedSize! : '',
                     quantity: count,
                     cartImage: images[selectedImageIndex],
