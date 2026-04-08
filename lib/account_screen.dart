@@ -23,10 +23,17 @@ class AccountScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         backgroundColor: const Color(0xFF9F7F88),
         iconTheme: IconThemeData(color: Colors.white),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const MyHomePage()),
+            );
+          },
+        ),
         title: const Text(
           'My Account',
           style: TextStyle(
