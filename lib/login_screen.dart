@@ -34,34 +34,46 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> signIn() async {
     try {
-      UserCredential userCredential = await FirebaseAuth.instance
+      final userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
         email: email.text,
         password: password.text,
       );
 
-      final user = userCredential.user;
 
-      if (user != null) {
-        CartController.instance.clearCart();   // safety
-        CartController.instance.setUser(user.uid);
+        final user = userCredential.user;
 
-        final favController = Get.find<FavouriteController>();
-        favController.setUser(user.uid);
-      }
+        if (user != null) {
+          CartController.instance.clearCart(); // safety
+          CartController.instance.setUser(user.uid);
 
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => MyHomePage()),
-      );
+          final favController = Get.find<FavouriteController>();
+          favController.setUser(user.uid);
+        }
 
-    } catch (e) {
-      print("Login error: $e");
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Login failed: ${e.toString()}")),
-      );
-    }
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => MyHomePage()),
+        );
+
+
+
+    }  on FirebaseAuthException catch (e) {
+  String message = "Login failed";
+
+  if (e.code == 'user-not-found') {
+  message = "No user found for this email";
+  } else if (e.code == 'wrong-password') {
+  message = "Wrong password";
+  } else if (e.code == 'invalid-email') {
+  message = "Invalid email format";
   }
+
+  ScaffoldMessenger.of(context).showSnackBar(
+  SnackBar(content: Text(message)),
+  );
+
+  }}
   @override
   Widget build(BuildContext context) {
     return SafeArea(
