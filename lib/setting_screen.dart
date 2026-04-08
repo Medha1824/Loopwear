@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 
 class SettingScreen extends StatelessWidget {
-  const SettingScreen({super.key});
+  SettingScreen({super.key});
+  final box = GetStorage();
 
   @override
   Widget build(BuildContext context) {
+    String username = box.read('username') ?? "No Username";
+    String email = box.read('email') ?? "No Email";
     return Scaffold(backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xFF9F7F88),
@@ -36,13 +40,13 @@ class SettingScreen extends StatelessWidget {
             ),
           ),
             const SizedBox(height: 16),
-            const Text(
-              'Tartila Gofur',
+            Text(
+              username,
               style: TextStyle(fontSize: 22,color: Color(0xFF9F7F88), fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 4),
-            const Text(
-              'tartila@example.com',
+              Text(
+              email,
               style: TextStyle(color: Color(0xFF9F7F88), fontSize: 16),
             ),
             const SizedBox(height: 20),
@@ -59,8 +63,8 @@ class SettingScreen extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              subtitle: const Text(
-                  'Tartila Gofur',
+              subtitle:  Text(
+                  username,
                 style: TextStyle(
                  // fontSize: 13,
                   color: Color(0xFF9F7F88),
@@ -75,7 +79,7 @@ class SettingScreen extends StatelessWidget {
 
             ListTile(
               leading: const Icon(Icons.email,color: Color(0xFF9F7F88), ),
-              title: const Text(
+              title: Text(
                   'Email',
                 style: TextStyle(
                   fontSize: 16,
@@ -83,8 +87,8 @@ class SettingScreen extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              subtitle: const Text(
-                  'tartila@example.com',
+              subtitle: Text(
+                  email,
                 style: TextStyle(
                   // fontSize: 13,
                   color: Color(0xFF9F7F88),

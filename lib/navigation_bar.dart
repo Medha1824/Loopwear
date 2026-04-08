@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const MainHomeScreen(),
     FavouritesScreen(),
     const CartScreen(),
-    const AccountScreen()
+     AccountScreen()
   ];
   @override
   Widget build(BuildContext context) {

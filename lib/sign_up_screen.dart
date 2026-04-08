@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:loop_wear/navigation_bar.dart';
 import 'package:loop_wear/login_screen.dart';
-
+import 'package:get_storage/get_storage.dart';
 
 import 'cart_controller.dart';
 import 'favourite_controller.dart';
@@ -56,10 +56,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
         // new user
         CartController.instance.clearCart();
         CartController.instance.setUser(user.uid);
-
         final favController = Get.find<FavouriteController>();
         favController.setUser(user.uid);
+        final box = GetStorage();
+        box.write('username', username.text);
+        box.write('email', email.text);
       }
+
 
 
       Navigator.pushReplacement(
@@ -153,7 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide.none),
             ),
-            obscureText: true,
+            //obscureText: true,
           ),),
           SizedBox(height: 15,),
           SizedBox(height: 40,
@@ -215,8 +218,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),),
 
           SizedBox(height: 15,),
-          ElevatedButton(onPressed: () async{
-            await register();},
+          ElevatedButton(onPressed: () async {
+            await register(
+            );},
             child: SizedBox(height: 40,
             child: Center(
              child: Text(

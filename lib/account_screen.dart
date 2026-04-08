@@ -5,16 +5,22 @@ import 'package:loop_wear/Order_history.dart';
 import 'package:loop_wear/cart_controller.dart';
 import 'package:loop_wear/navigation_bar.dart';
 import 'package:loop_wear/setting_screen.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'favourite_controller.dart';
 import 'login_screen.dart';
 import 'navigation_drawer_widget.dart';
 
 class AccountScreen extends StatelessWidget {
-  const AccountScreen({super.key});
+  AccountScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
+    final box = GetStorage();
+    String username = box.read('username') ?? "No Username";
+    String email = box.read('email') ?? "No Email";
+
     return Scaffold(
       backgroundColor: Colors.white,
       drawer: NavigationDrawerWidget(),
@@ -46,8 +52,8 @@ class AccountScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            const Text(
-              'Tartila Gofur',
+            Text(
+              username,
               style: TextStyle(
                 fontSize: 22,
                 color: Color(0xFF9F7F88),
@@ -55,8 +61,8 @@ class AccountScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 4),
-            const Text(
-              'tartila@example.com',
+            Text(
+              email,
               style: TextStyle(color: Color(0xFF9F7F88), fontSize: 16),
             ),
             const SizedBox(height: 20),
@@ -96,7 +102,7 @@ class AccountScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SettingScreen(),
+                    builder: (context) =>  SettingScreen(),
                   ),
                 );
               },
@@ -124,7 +130,7 @@ class AccountScreen extends StatelessWidget {
 
                   // 3. Sign out from Firebase
                   await FirebaseAuth.instance.signOut();
-
+                  box.erase();
                   // 4. Go to login screen
                   Navigator.pushAndRemoveUntil(
                     context,
